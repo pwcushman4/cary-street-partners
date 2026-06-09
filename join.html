@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Our Firm — Cary Street Partners</title>
+  <meta name="description" content="Experienced advisors and advisor teams — explore what it means to build your practice within an independent firm that puts clients and advisors first.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #08152B;
+      --navy-mid:   #0E1E3D;
+      --navy-light: #162B52;
+      --gold:       #C9A96E;
+      --gold-light: #E4CFA0;
+      --border-dark: rgba(255,255,255,0.08);
+      --border-gold: rgba(201,169,110,0.25);
+      --ease-out: cubic-bezier(0.22,1,0.36,1);
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--navy);
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      transition: background 0.4s, padding 0.4s;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      background: rgba(8,21,43,0.96);
+      padding: 16px 40px;
+      border-bottom-color: var(--border-dark);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo img { height: 44px; width: auto; display: block; }
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.625rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+    .nav-back svg { transition: transform 0.2s; }
+    .nav-back:hover svg { transform: translateX(-3px); }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 180px 40px 100px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.5875rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 32px;
+    }
+    .hero-eyebrow-line {
+      display: block;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.75rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: #fff;
+      max-width: 780px;
+      margin-bottom: 32px;
+    }
+    h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.5);
+      max-width: 560px;
+      border-left: 1px solid rgba(201,169,110,0.3);
+      padding-left: 20px;
+    }
+
+    /* ── STATS BAND ── */
+    #stats {
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .stats-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 48px 40px;
+      border-right: 1px solid var(--border-dark);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.75rem;
+      font-weight: 300;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-num em { color: var(--gold); font-style: normal; }
+    .stat-label {
+      font-size: 0.5875rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ── WHY JOIN ── */
+    #why {
+      padding: 120px 40px;
+    }
+    .why-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.5875rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .section-eyebrow-line {
+      width: 24px; height: 1px;
+      background: var(--gold);
+      display: block;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.875rem, 3vw, 2.75rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin-bottom: 72px;
+      max-width: 600px;
+    }
+    .section-title em { font-style: italic; color: var(--gold-light); }
+    .pillars {
+      display: flex;
+      flex-direction: column;
+    }
+    .pillar {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border-dark);
+      display: grid;
+      grid-template-columns: 48px 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .pillar:first-child { border-top: 1px solid var(--border-dark); }
+    .pillar-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1.4;
+    }
+    .pillar-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.6;
+      padding-top: 4px;
+    }
+    .pillar-text {
+      font-size: 0.8375rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+    }
+
+    /* ── DIFFERENTIATORS GRID ── */
+    #differentiators {
+      padding: 0 40px 120px;
+    }
+    .diff-inner { max-width: 1280px; margin: 0 auto; }
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(201,169,110,0.12);
+      border: 1px solid rgba(201,169,110,0.12);
+    }
+    .diff-card {
+      background: var(--navy);
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.35s;
+    }
+    .diff-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-out);
+    }
+    .diff-card:hover { background: rgba(201,169,110,0.03); }
+    .diff-card:hover::before { transform: scaleX(1); }
+    .diff-icon {
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .diff-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .diff-text {
+      font-size: 0.8rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+    }
+
+    /* ── PROCESS ── */
+    #process {
+      padding: 120px 40px;
+      border-top: 1px solid var(--border-dark);
+    }
+    .process-inner { max-width: 1280px; margin: 0 auto; }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+      margin-top: 72px;
+    }
+    .process-step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      margin-bottom: 16px;
+    }
+    .process-step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .process-step-text {
+      font-size: 0.8rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+    }
+
+    /* ── FORM SECTION ── */
+    #contact {
+      padding: 120px 40px;
+      background: var(--navy-mid);
+    }
+    .contact-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: start;
+    }
+    .contact-copy h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.875rem, 3vw, 2.5rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      margin-bottom: 20px;
+    }
+    .contact-copy h2 em { font-style: italic; color: var(--gold-light); }
+    .contact-copy p {
+      font-size: 0.875rem;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.45);
+      font-weight: 300;
+      margin-bottom: 40px;
+    }
+    .contact-trust {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.4);
+    }
+    .contact-trust-item::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .form-panel {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-dark);
+      padding: 52px 44px;
+    }
+    .form-panel h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .form-panel > p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.38);
+      font-weight: 300;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .form-field { margin-bottom: 20px; }
+    .form-label {
+      display: block;
+      font-size: 0.5875rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 8px;
+    }
+    .form-input {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      font-size: 0.875rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: var(--gold);
+      background: rgba(201,169,110,0.06);
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.35); }
+    textarea.form-input { resize: vertical; min-height: 100px; }
+    .form-disclaimer {
+      font-size: 0.625rem;
+      color: rgba(255,255,255,0.42);
+      line-height: 1.6;
+      margin-top: 16px;
+      font-weight: 300;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6375rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, gap 0.2s;
+      width: 100%;
+      justify-content: center;
+      margin-top: 8px;
+    }
+    .btn-primary:hover { background: var(--gold-light); gap: 14px; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 40px;
+      border-top: 1px solid var(--border-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .footer-legal {
+      font-size: 0.625rem;
+      color: rgba(255,255,255,0.22);
+      line-height: 1.6;
+      max-width: 700px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-shrink: 0;
+    }
+    .footer-links a {
+      font-size: 0.5875rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+
+    @media (max-width: 1024px) {
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .pillar { grid-template-columns: 40px 1fr; }
+      .pillar-text { grid-column: 2; }
+      .diff-grid { grid-template-columns: 1fr 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .contact-inner { grid-template-columns: 1fr; gap: 60px; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 20px 24px; }
+      #hero { padding: 140px 24px 80px; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .stat-item { padding: 32px 24px; }
+      #why, #differentiators, #process { padding: 80px 24px; }
+      .diff-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; gap: 32px; }
+      #contact { padding: 80px 24px; }
+      .form-panel { padding: 36px 28px; }
+      footer { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
+      .pillar { grid-template-columns: 40px 1fr; }
+      .pillar-text { grid-column: 1 / -1; padding-left: 72px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="cary-street-partners.html" class="nav-logo">
+    <img src="images/csp-logo-nav.svg" alt="Cary Street Partners">
+  </a>
+  <a href="cary-street-partners.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to Homepage
+  </a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-eyebrow reveal">
+    <span class="hero-eyebrow-line" aria-hidden="true"></span>
+    For Financial Advisors
+  </div>
+  <h1 class="reveal reveal-delay-1">
+    Built for advisors who've outgrown<br>
+    their <em>firm's ambitions.</em>
+  </h1>
+  <p class="hero-sub reveal reveal-delay-2">
+    Cary Street Partners is one of the fastest-growing independent wealth
+    management firms in the Southeast. We recruit experienced advisors and
+    advisor teams who are ready to build something meaningful — without
+    the constraints of a wirehouse or the isolation of going fully independent.
+  </p>
+</section>
+
+
+<!-- WHY JOIN -->
+<section id="why">
+  <div class="why-inner">
+    <div class="section-eyebrow reveal">
+      <span class="section-eyebrow-line" aria-hidden="true"></span>
+      The Platform
+    </div>
+    <h2 class="section-title reveal reveal-delay-1">
+      Everything you need to build<br>
+      your best <em>practice.</em>
+    </h2>
+    <div class="pillars">
+      <div class="pillar reveal">
+        <span class="pillar-num">01</span>
+        <div class="pillar-title">Your Book. Your Clients. Your Practice.</div>
+        <p class="pillar-text">We provide the platform, infrastructure, and support. You retain the relationships you've built — with no proprietary product requirements, no cross-selling mandates, and no quota pressure. Your clients remain yours.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">02</span>
+        <div class="pillar-title">Institutional Infrastructure, Human Scale</div>
+        <p class="pillar-text">Access our investment research, planning technology, compliance support, and national custodial relationships — without losing the personal culture that makes great advisors effective. We scale without bureaucracy.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">03</span>
+        <div class="pillar-title">Partnership Economics</div>
+        <p class="pillar-text">Our compensation model is among the most competitive in the independent channel. Equity participation opportunities exist for senior advisors and team leaders joining the firm at meaningful AUM levels.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">04</span>
+        <div class="pillar-title">Collaborative Investment Platform</div>
+        <p class="pillar-text">Leverage our in-house CIO team, model portfolios, and full open-architecture access — without being forced to use them. You choose the approach that best serves your clients and your practice philosophy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section id="differentiators">
+  <div class="diff-inner">
+    <div class="section-eyebrow reveal">
+      <span class="section-eyebrow-line" aria-hidden="true"></span>
+      Why Advisors Choose Us
+    </div>
+    <h2 class="section-title reveal reveal-delay-1">
+      Independent by structure.<br>
+      <em>Exceptional</em> by standard.
+    </h2>
+    <div class="diff-grid">
+      <div class="diff-card reveal">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="diff-title">No Proprietary Products</div>
+        <p class="diff-text">You'll never be required to sell a firm-manufactured product. Our open architecture means you access the full investment landscape — guided entirely by client needs.</p>
+      </div>
+      <div class="diff-card reveal reveal-delay-1">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="diff-title">Fiduciary, Always</div>
+        <p class="diff-text">Every advisor at Cary Street Partners operates under a fiduciary standard. It's not a marketing claim — it's the legal framework that governs every recommendation we make.</p>
+      </div>
+      <div class="diff-card reveal reveal-delay-2">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
+        </div>
+        <div class="diff-title">Competitive Economics</div>
+        <p class="diff-text">Transparent, advisor-friendly payout structure with no hidden fees or platform charges that erode your earnings. We believe the economics should reward the people who do the work.</p>
+      </div>
+      <div class="diff-card reveal">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="diff-title">Planning-First Technology</div>
+        <p class="diff-text">Best-in-class planning software, CRM, portfolio management, and reporting tools — fully integrated and supported. Less time on operations, more time with clients.</p>
+      </div>
+      <div class="diff-card reveal reveal-delay-1">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div class="diff-title">21 Offices, National Reach</div>
+        <p class="diff-text">Join a national network while maintaining your local identity. Our multi-office structure means you're supported — without disappearing into a corporate brand.</p>
+      </div>
+      <div class="diff-card reveal reveal-delay-2">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <div class="diff-title">In-House CIO &amp; Research</div>
+        <p class="diff-text">Access a dedicated investment team, model portfolios, and original market commentary — resources typically available only at firms ten times our size.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSITION PROCESS -->
+<section id="process">
+  <div class="process-inner">
+    <div class="section-eyebrow reveal">
+      <span class="section-eyebrow-line" aria-hidden="true"></span>
+      How It Works
+    </div>
+    <h2 class="section-title reveal reveal-delay-1">
+      A thoughtful transition.<br>
+      <em>No disruption</em> to your clients.
+    </h2>
+    <div class="process-steps">
+      <div class="reveal">
+        <div class="process-step-num">01</div>
+        <div class="process-step-title">Confidential Conversation</div>
+        <p class="process-step-text">A private, no-obligation call with our advisor development team. We learn about your practice, your clients, and what you're looking for. Nothing is shared without your consent.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="process-step-num">02</div>
+        <div class="process-step-title">Practice Assessment</div>
+        <p class="process-step-text">We analyze your book together — AUM composition, revenue, client demographics — and model what your practice would look like on our platform, including compensation projections.</p>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="process-step-num">03</div>
+        <div class="process-step-title">Transition Planning</div>
+        <p class="process-step-text">Our dedicated transition team handles the operational complexity. Client communications, account transfers, technology onboarding — all coordinated to minimize disruption and protect your relationships.</p>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="process-step-num">04</div>
+        <div class="process-step-title">Day One Readiness</div>
+        <p class="process-step-text">From your first day, you're fully supported — compliance, technology, investment resources, and a team around you. The goal is that your clients notice no gap and experience only an improvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-copy reveal">
+      <div class="section-eyebrow" style="margin-bottom:20px">
+        <span class="section-eyebrow-line" aria-hidden="true"></span>
+        Start the Conversation
+      </div>
+      <h2>Have a <em>confidential</em><br>conversation.</h2>
+      <p>
+        Every advisor who contacts us receives a response within 48 hours.
+        Our conversations are completely confidential — your current firm
+        is never contacted, and nothing is shared without your explicit consent.
+      </p>
+      <div class="contact-trust">
+        <div class="contact-trust-item">Complete confidentiality guaranteed</div>
+        <div class="contact-trust-item">No obligation — learn and decide at your pace</div>
+        <div class="contact-trust-item">Response within 48 business hours</div>
+        <div class="contact-trust-item">Speak directly with senior leadership</div>
+      </div>
+    </div>
+    <div class="form-panel reveal reveal-delay-1">
+      <h3>Tell us about your practice.</h3>
+      <p>Complete this form and a member of our advisor development team will reach out within 48 hours.</p>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-field">
+          <label class="form-label" for="r-name">Full Name</label>
+          <input class="form-input" type="text" id="r-name" name="name" placeholder="Your name" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="r-firm">Current Firm</label>
+          <input class="form-input" type="text" id="r-firm" name="firm" placeholder="Current employer" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="r-aum">Approximate AUM</label>
+          <input class="form-input" type="text" id="r-aum" name="aum" placeholder="e.g. $50M – $150M">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="r-email">Email Address</label>
+          <input class="form-input" type="email" id="r-email" name="email" placeholder="you@example.com" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="r-phone">Phone (Optional)</label>
+          <input class="form-input" type="tel" id="r-phone" name="phone" placeholder="(000) 000-0000" autocomplete="tel">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="r-note">Anything you'd like us to know</label>
+          <textarea class="form-input" id="r-note" name="note" placeholder="Your timeline, questions, or context…"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">
+          Submit Confidentially
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <p class="form-disclaimer">Your information is kept strictly confidential. Submitting this form does not obligate you to any action, and your current employer is never contacted.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-legal">
+    &copy; 2025 Cary Street Partners Financial, LLC. All rights reserved. Cary Street Partners is an SEC Registered Investment Advisor. This page is intended for financial professionals only and does not constitute an offer of employment.
+  </p>
+  <div class="footer-links">
+    <a href="cary-street-partners.html">Home</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/disclosures">Disclosures</a>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// Reveal observer — trigger once
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('visible');
+    observer.unobserve(entry.target);
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(el => observer.observe(el));
+
+// Form handler
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = 'Submitted — We\'ll Be in Touch Within 48 Hours';
+  btn.style.background = '#2d4a2d';
+  btn.style.color = '#a8d5a2';
+  btn.disabled = true;
+}
+</script>
+</body>
+</html>
