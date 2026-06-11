@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cary Street Partners — Independent Wealth Management</title>
+<title>Cary Street Partners ‚Äî Independent Wealth Management</title>
 <meta name="description" content="Cary Street Partners is an independent wealth management firm managing over $12 billion in assets for affluent families, business owners, and institutions.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="leaflet.css"/>
 <style>
-/* ─── RESET & BASE ─────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ RESET & BASE ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
 body{
@@ -21,7 +21,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-/* ─── DESIGN TOKENS ────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ DESIGN TOKENS ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 :root{
   --navy:#08152B;
   --navy-mid:#0E1E3D;
@@ -40,7 +40,7 @@ body{
   --ease-in-out:cubic-bezier(0.4,0,0.2,1);
 }
 
-/* ─── TYPOGRAPHY ───────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ TYPOGRAPHY ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 .display{
   font-family:'Cormorant Garamond',serif;
   font-weight:300;
@@ -65,7 +65,7 @@ body{
   font-weight:300;
 }
 
-/* ─── UTILITY ──────────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ UTILITY ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 .container{max-width:1280px;margin:0 auto;padding:0 40px}
 .container-sm{max-width:900px;margin:0 auto;padding:0 40px}
 .gold{color:var(--gold)}
@@ -77,7 +77,7 @@ body{
 .reveal-delay-4{transition-delay:0.32s}
 .reveal-delay-5{transition-delay:0.40s}
 
-/* ─── NAVIGATION ───────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ NAVIGATION ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #nav{
   position:fixed;
   top:32px;left:0;right:0;
@@ -152,7 +152,7 @@ body{
 .nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
 .nav-mobile-toggle span{display:block;width:24px;height:1px;background:#fff;margin:6px 0;transition:transform 0.3s,opacity 0.3s}
 
-/* ─── HERO ─────────────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ HERO ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #hero{
   position:relative;
   min-height:100vh;
@@ -182,7 +182,7 @@ body{
   );
 }
 .hero-cursor-glow.active{ opacity:1; }
-/* ── Base grid (always-on, very dim) */
+/* ‚îÄ‚îÄ Base grid (always-on, very dim) */
 .hero-grid{
   position:absolute;
   inset:0;
@@ -190,7 +190,7 @@ body{
     linear-gradient(rgba(201,169,110,0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(201,169,110,0.045) 1px, transparent 1px);
   background-size:80px 80px;
-  /* Fade at right edge only — let grid reach the bottom so it blends into the next section */
+  /* Fade at right edge only ‚Äî let grid reach the bottom so it blends into the next section */
   mask-image:linear-gradient(to bottom,
     black 0%,
     black 55%,
@@ -198,7 +198,7 @@ body{
   );
 }
 
-/* ── Cursor-illuminated grid layer — same grid, much brighter, masked to cursor proximity */
+/* ‚îÄ‚îÄ Cursor-illuminated grid layer ‚Äî same grid, much brighter, masked to cursor proximity */
 .hero-grid-lit{
   position:absolute;
   inset:0;
@@ -216,12 +216,12 @@ body{
 }
 .hero-grid-lit.active{ opacity:1; }
 
-/* ── Blueprint crosshair — hair-thin + reticle that tracks the cursor */
+/* ‚îÄ‚îÄ Blueprint crosshair ‚Äî hair-thin + reticle that tracks the cursor */
 .hero-crosshair{
   position:absolute;
   z-index:3;
   pointer-events:none;
-  /* size covers just one grid cell — snaps visually to grid */
+  /* size covers just one grid cell ‚Äî snaps visually to grid */
   width:80px;
   height:80px;
   /* centered on cursor via JS left/top */
@@ -260,7 +260,7 @@ body{
   transform:translateX(-50%);
 }
 
-/* ── Crosshair center dot — the intersection point */
+/* ‚îÄ‚îÄ Crosshair center dot ‚Äî the intersection point */
 .hero-crosshair-dot{
   position:absolute;
   z-index:3;
@@ -279,45 +279,100 @@ body{
 .hero-content{
   position:relative;
   z-index:2;
-  display:flex;
-  align-items:center;
-  gap:80px;
-  padding:140px 80px 120px 120px;
-  max-width:1400px;
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  grid-template-rows:auto auto 1fr;
+  padding:128px 0 96px 120px;
+  max-width:1440px;
   margin:0 auto;
   width:100%;
 }
-.hero-left{
-  flex:0 0 52%;
-}
-.hero-right{
-  flex:1;
+/* ‚îÄ‚îÄ Editorial figure ‚Äî bleeds past the container's right edge,
+     rises up under the headline so type and image interlock */
+.hero-figure{
+  grid-column:7 / 13;
+  grid-row:3;
   position:relative;
-  perspective:1200px;
-  perspective-origin:50% 50%;
+  z-index:1;
+  align-self:start;
+  margin-top:-84px;
+  /* full-bleed right: cancel the centered container's right gutter */
+  margin-right:calc((min(100vw,1440px) - 100vw)/2);
 }
 .hero-photo-stack{
   position:relative;
-  height:560px;
+  /* native ratio of the photograph ‚Äî no cover-crop, the wordmark always survives */
+  aspect-ratio:700/467;
   will-change:transform;
-  transform-style:preserve-3d;
+}
+/* Offset hairline frame ‚Äî steps off the photo toward the text column,
+   echoing the blueprint grid behind it */
+.hero-photo-stack::before{
+  content:'';
+  position:absolute;
+  top:-24px;left:-24px;right:24px;bottom:24px;
+  border:1px solid rgba(201,169,110,0.32);
+  pointer-events:none;
+  z-index:2;
 }
 .hero-sign-photo{
   width:100%;
   height:100%;
-  object-fit:contain;
-  object-position:center center;
+  object-fit:cover;
+  object-position:center 58%;
   display:block;
+  filter:saturate(0.92) contrast(1.04) brightness(0.96);
+}
+/* Scrim melts the photo's left edge into the navy page and
+   washes the highlights toward the gold of the palette */
+.hero-figure-scrim{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg, rgba(8,21,43,0.85) 0%, rgba(8,21,43,0.38) 22%, transparent 52%),
+    linear-gradient(180deg, rgba(8,21,43,0.62) 0%, transparent 26%),
+    linear-gradient(0deg, rgba(8,21,43,0.45) 0%, transparent 24%),
+    linear-gradient(115deg, rgba(201,169,110,0.10) 0%, transparent 45%);
+}
+.hero-figure-caption{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:14px;
+  margin-top:20px;
+  padding-right:56px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.625rem;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.38);
+}
+.hero-figure-caption::before{
+  content:'';
+  width:32px;height:1px;
+  background:var(--gold);
+  opacity:0.6;
+}
+.hero-leftcol{
+  grid-column:1 / 7;
+  grid-row:3;
+  align-self:start;
+  padding-top:8px;
+  padding-right:40px;
 }
 .hero-photo-2{
   display:none;
   opacity:0;
 }
 .hero-eyebrow{
+  grid-column:1 / 8;
+  grid-row:1;
   display:flex;
   align-items:center;
   gap:16px;
-  margin-bottom:40px;
+  margin-bottom:36px;
 }
 .hero-eyebrow-line{
   width:40px;height:1px;background:var(--gold);
@@ -331,14 +386,18 @@ body{
   opacity:0.85;
 }
 .hero-headline{
+  grid-column:1 / 13;
+  grid-row:2;
+  position:relative;
+  z-index:2;
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3.5rem,7vw,7rem);
+  font-size:clamp(3.4rem,6.4vw,6.6rem);
   font-weight:300;
-  line-height:1.05;
-  letter-spacing:-0.02em;
+  line-height:1.04;
+  letter-spacing:-0.015em;
   color:#fff;
-  max-width:820px;
-  margin-bottom:32px;
+  margin-bottom:56px;
+  padding-right:48px;
 }
 .hero-headline em{
   font-style:italic;
@@ -358,7 +417,7 @@ body{
   padding-left:20px;
 }
 
-/* ── MISSION DROPDOWN ──────────────────────── */
+/* ‚îÄ‚îÄ MISSION DROPDOWN ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 .hero-mission{
   margin-bottom:52px;
   max-width:460px;
@@ -442,8 +501,41 @@ body{
 .hero-actions{
   display:flex;
   align-items:center;
-  gap:32px;
+  gap:30px;
   flex-wrap:wrap;
+}
+/* Hero CTA carries more weight than the sitewide button */
+.hero-actions .btn-primary{
+  padding:19px 44px;
+  font-size:0.72rem;
+  letter-spacing:0.2em;
+}
+/* Editorial footnote ‚Äî anchors the lower-left quadrant against the deep photo column */
+.hero-note{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  margin-top:76px;
+  max-width:400px;
+}
+.hero-note-rule{
+  flex:0 0 32px;
+  height:1px;
+  margin-top:14px;
+  background:var(--gold);
+  opacity:0.55;
+}
+.hero-note p{
+  margin:0;
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.35rem;
+  font-weight:400;
+  line-height:1.5;
+  color:rgba(255,255,255,0.52);
+}
+.hero-note p em{
+  font-style:italic;
+  color:var(--gold-light);
 }
 .btn-primary{
   display:inline-flex;
@@ -484,8 +576,7 @@ body{
 .hero-scroll{
   position:absolute;
   bottom:48px;
-  left:50%;
-  transform:translateX(-50%);
+  left:120px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -530,16 +621,16 @@ body{
   user-select:none;
 }
 
-/* ─── CREDIBILITY BAR ──────────────────────────────────────── */
-/* ─── AMBIENT GRID CONTINUITY SYSTEM ───────────────────────── */
-/* Hero grid fades to bottom — pick it up in subsequent sections */
+/* ‚îÄ‚îÄ‚îÄ CREDIBILITY BAR ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+/* ‚îÄ‚îÄ‚îÄ AMBIENT GRID CONTINUITY SYSTEM ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+/* Hero grid fades to bottom ‚Äî pick it up in subsequent sections */
 /* Sections that carry the grid need position:relative */
 #credibility,
 #philosophy,
 #services{
   position:relative;
 }
-/* Grid overlay — each section gets a ::before pseudo-element with decreasing opacity */
+/* Grid overlay ‚Äî each section gets a ::before pseudo-element with decreasing opacity */
 #credibility::before,
 #philosophy::before,
 #services::before{
@@ -553,7 +644,7 @@ body{
   pointer-events:none;
   z-index:0;
 }
-/* Opacity steps: hero ~0.045 → credibility 75% → philosophy 50% → services 15% */
+/* Opacity steps: hero ~0.045 ‚Üí credibility 75% ‚Üí philosophy 50% ‚Üí services 15% */
 #credibility::before { opacity:0.034; }
 #philosophy::before  { opacity:0.022; }
 #services::before    { opacity:0.008; }
@@ -609,8 +700,8 @@ body{
   margin-top:4px;
 }
 
-/* ─── PHILOSOPHY ───────────────────────────────────────────── */
-/* ─── WHY CHOOSE CSP ───────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ PHILOSOPHY ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+/* ‚îÄ‚îÄ‚îÄ WHY CHOOSE CSP ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #why-csp{
   background:var(--navy);
   padding:120px 40px;
@@ -832,7 +923,7 @@ body{
   font-weight:300;
 }
 
-/* ─── SERVICES ─────────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ SERVICES ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #services{
   background:var(--navy);
   padding:120px 40px;
@@ -963,7 +1054,7 @@ body{
 .service-card.featured .service-arrow{color:var(--gold)}
 .service-card.featured::before{background:var(--gold-light)}
 
-/* ─── WHO WE SERVE ─────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ WHO WE SERVE ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #who-we-serve{
   background:var(--navy);
   padding:120px 40px;
@@ -1023,7 +1114,7 @@ body{
   padding:5px 10px;
 }
 
-/* ─── PROCESS ──────────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ PROCESS ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #process{
   background:var(--navy);
   padding:120px 40px;
@@ -1088,7 +1179,7 @@ body{
   font-weight:300;
 }
 
-/* ─── ADVISOR TEAM ─────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ ADVISOR TEAM ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #team{
   background:var(--navy);
   padding:120px 40px;
@@ -1212,7 +1303,7 @@ body{
   color:rgba(201,169,110,0.15);
   letter-spacing:0.1em;
 }
-/* ── Team sub-section divider (Executive Team / Senior Leadership) */
+/* ‚îÄ‚îÄ Team sub-section divider (Executive Team / Senior Leadership) */
 .team-sub-header{
   display:flex;
   align-items:center;
@@ -1242,8 +1333,8 @@ body{
   white-space:nowrap;
 }
 
-/* ─── RICHMOND HERITAGE ────────────────────────────────────── */
-/* ─── HERITAGE / OUR FOOTPRINT ─────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ RICHMOND HERITAGE ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+/* ‚îÄ‚îÄ‚îÄ HERITAGE / OUR FOOTPRINT ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #heritage{
   background:var(--navy);
   padding:0 0 120px;
@@ -1263,7 +1354,7 @@ body{
   white-space:nowrap;
 }
 
-/* ── Metrics band ── */
+/* ‚îÄ‚îÄ Metrics band ‚îÄ‚îÄ */
 .heritage-metrics{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -1308,7 +1399,7 @@ body{
   margin-top:12px;
 }
 
-/* ── Main asymmetric grid ── */
+/* ‚îÄ‚îÄ Main asymmetric grid ‚îÄ‚îÄ */
 .heritage-inner{
   max-width:1400px;
   margin:0 auto;
@@ -1321,7 +1412,7 @@ body{
   padding:0 48px;
 }
 
-/* ── Map column ── */
+/* ‚îÄ‚îÄ Map column ‚îÄ‚îÄ */
 .heritage-visual{
   position:relative;
   padding-right:72px;
@@ -1336,7 +1427,7 @@ body{
   display:block;
 }
 
-/* ── Pulsing map marker keyframes ── */
+/* ‚îÄ‚îÄ Pulsing map marker keyframes ‚îÄ‚îÄ */
 @keyframes csp-dot-pulse{
   0%{box-shadow:0 0 0 0 rgba(201,169,110,0.55)}
   65%{box-shadow:0 0 0 7px rgba(201,169,110,0)}
@@ -1361,7 +1452,7 @@ body{
   border:1.5px solid rgba(255,255,255,0.35);
 }
 
-/* ── Content column ── */
+/* ‚îÄ‚îÄ Content column ‚îÄ‚îÄ */
 .heritage-copy{
   padding-left:56px;
   border-left:1px solid rgba(201,169,110,0.12);
@@ -1432,7 +1523,7 @@ body{
 }
 .heritage-cta-link:hover{color:#fff;border-color:rgba(255,255,255,0.4);}
 
-/* ─── OFFICE BAND ──────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ OFFICE BAND ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 .office-band{
   position:relative;
   overflow:hidden;
@@ -1485,7 +1576,7 @@ body{
   color:rgba(255,255,255,0.6);
 }
 
-/* ─── INSIGHTS ─────────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ INSIGHTS ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #insights{
   background:var(--navy);
   padding:120px 40px;
@@ -1577,7 +1668,7 @@ body{
   color:var(--gold-light);
 }
 
-/* ─── CLIENT STORIES ───────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ CLIENT STORIES ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #testimonials{
   background:var(--navy);
   padding:120px 40px;
@@ -1586,7 +1677,7 @@ body{
 }
 .testimonials-inner{max-width:1280px;margin:0 auto;position:relative;z-index:1;}
 
-/* 2×2 grid of story cards */
+/* 2√ó2 grid of story cards */
 .stories-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -1688,8 +1779,8 @@ body{
   transform:translateX(4px);
 }
 
-/* ─── RECRUITING ───────────────────────────────────────────── */
-/* ─── ADVISOR TEASER ───────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ RECRUITING ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
+/* ‚îÄ‚îÄ‚îÄ ADVISOR TEASER ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #advisor-teaser{
   border-top:1px solid var(--border-dark);
   border-bottom:1px solid var(--border-dark);
@@ -1733,7 +1824,7 @@ body{
   white-space:nowrap;
 }
 
-/* ─── CTA ──────────────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ CTA ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #cta{
   background:var(--navy);
   padding:120px 40px;
@@ -1832,7 +1923,7 @@ body{
   opacity:0.7;
 }
 
-/* ─── FOOTER ───────────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ FOOTER ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #footer{
   background:#050D1A;
   padding:80px 40px 40px;
@@ -1917,7 +2008,7 @@ body{
 .footer-disclosures a{color:inherit;text-decoration:none;transition:color 0.2s}
 .footer-disclosures a:hover{color:rgba(255,255,255,0.4)}
 
-/* ─── ANNOUNCEMENT BANNER ──────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ ANNOUNCEMENT BANNER ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #banner{
   background:var(--gold);
   padding:7px 40px;
@@ -1959,7 +2050,7 @@ body{
   font-size:1rem;
 }
 
-/* ─── MOBILE NAV DRAWER ────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ MOBILE NAV DRAWER ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 .nav-drawer{
   position:fixed;
   inset:0;
@@ -1998,7 +2089,7 @@ body{
 .nav-drawer-link a:hover{color:var(--gold)}
 .nav-drawer-cta{margin-top:40px}
 
-/* ─── RESPONSIVE ───────────────────────────────────────────── */
+/* ‚îÄ‚îÄ‚îÄ RESPONSIVE ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 @media(max-width:1024px){
   .cred-inner{grid-template-columns:repeat(2,1fr)}
   .cred-item:nth-child(2){border-right:none}
@@ -2033,11 +2124,16 @@ body{
   .nav-links{display:none}
   .nav-cta{display:none}
   .nav-mobile-toggle{display:block}
-  .hero-content{padding:120px 24px 80px;flex-direction:column;gap:48px}
-  .hero-left{flex:none;width:100%}
-  .hero-right{flex:none;width:100%}
-  .hero-photo-stack{height:320px}
-  .hero-sign-photo{height:100%}
+  .hero-content{display:flex;flex-direction:column;padding:120px 24px 80px;gap:0}
+  .hero-eyebrow{margin-bottom:28px}
+  .hero-headline{font-size:clamp(2.5rem,11vw,3.4rem);margin-bottom:36px;padding-right:0}
+  .hero-figure{margin:0 -24px 40px;align-self:stretch}
+  .hero-photo-stack::before{top:12px;left:12px;right:12px;bottom:12px}
+  .hero-figure-caption{margin-top:14px;padding-right:24px;font-size:0.5625rem}
+  .hero-leftcol{width:100%;padding-top:0;padding-right:0}
+  .hero-note{margin-top:48px;max-width:100%}
+  .hero-note p{font-size:1.15rem}
+  .hero-scroll{display:none}
   .hero-badge{display:none}
   #credibility{padding:40px 24px}
   .cred-inner{grid-template-columns:repeat(2,1fr);gap:0}
@@ -2086,7 +2182,7 @@ body{
   *{animation-duration:0.01ms !important;transition-duration:0.01ms !important}
 }
 
-/* ── SERVICE MODAL ─────────────────────────────── */
+/* ‚îÄ‚îÄ SERVICE MODAL ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ */
 #service-modal{
   position:fixed;inset:0;z-index:9000;
   display:flex;align-items:stretch;justify-content:flex-end;
@@ -2230,17 +2326,22 @@ body{
   <div class="hero-crosshair" id="heroCrosshair" aria-hidden="true"></div>
   <div class="hero-crosshair-dot" id="heroCrosshairDot" aria-hidden="true"></div>
   <div class="hero-content">
-    <div class="hero-left">
-      <div class="hero-eyebrow reveal">
-        <span class="hero-eyebrow-line" aria-hidden="true"></span>
-        <span class="hero-eyebrow-text">Est. 1999 &nbsp;&bull;&nbsp; HQ: Richmond, VA &nbsp;&bull;&nbsp; A Higher Standard</span>
+    <div class="hero-eyebrow reveal">
+      <span class="hero-eyebrow-line" aria-hidden="true"></span>
+      <span class="hero-eyebrow-text">Est. 1999 &nbsp;&bull;&nbsp; Richmond, Virginia &nbsp;&bull;&nbsp; Independent &amp; Fiduciary</span>
+    </div>
+    <h1 class="hero-headline reveal reveal-delay-1">
+      A <em>higher standard</em> for<br>
+      the wealth you've built.
+    </h1>
+    <figure class="hero-figure reveal reveal-delay-2">
+      <div class="hero-photo-stack" id="hero-photo-stack">
+        <img class="hero-sign-photo" id="hero-photo-1" src="hero-sign.jpg" alt="Advisors in discussion behind the reclaimed-wood Cary Street Partners sign at the firm's Richmond headquarters">
+        <div class="hero-figure-scrim" aria-hidden="true"></div>
       </div>
-      <h1 class="hero-headline reveal reveal-delay-1">
-        A <em>higher standard</em><br>
-        for the wealth<br>
-        you've built.
-      </h1>
-
+      <figcaption class="hero-figure-caption">The Partners' Table &mdash; 901 East Cary Street, Richmond</figcaption>
+    </figure>
+    <div class="hero-leftcol">
       <div class="hero-mission reveal reveal-delay-3">
         <button class="mission-trigger" aria-expanded="false" aria-controls="mission-body" id="mission-trigger">
           <span class="mission-trigger-label">Our Mission</span>
@@ -2250,7 +2351,7 @@ body{
         </button>
         <div class="mission-body" id="mission-body" role="region" aria-labelledby="mission-trigger">
           <div class="mission-body-inner">
-            <p class="mission-text">A leading independent wealth management firm committed to excellence in all aspects of our business — elevating the standard for individuals, families, and institutions across every stage of their financial life.</p>
+            <p class="mission-text">A leading independent wealth management firm committed to excellence in all aspects of our business ‚Äî elevating the standard for individuals, families, and institutions across every stage of their financial life.</p>
             <div class="mission-rule" aria-hidden="true"></div>
           </div>
         </div>
@@ -2265,10 +2366,9 @@ body{
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
-    </div>
-    <div class="hero-right reveal reveal-delay-2" aria-hidden="true">
-      <div class="hero-photo-stack" id="hero-photo-stack">
-        <img class="hero-sign-photo" id="hero-photo-1" src="hero-sign.jpg" alt="Cary Street Partners sign">
+      <div class="hero-note reveal reveal-delay-5">
+        <span class="hero-note-rule" aria-hidden="true"></span>
+        <p>Twenty-five years independent. <em>$12 billion</em> entrusted by the families and institutions we serve.</p>
       </div>
     </div>
   </div>
@@ -2317,11 +2417,11 @@ body{
   <div class="philosophy-footer">
     <div class="philosophy-pillar reveal">
       <div class="philosophy-pillar-title" style="color:#fff">Fiduciary, Always</div>
-      <p class="philosophy-pillar-text">We are legally and ethically required to act in your best interest — at every meeting, in every recommendation, without exception. It is not a marketing claim. It is our legal standard.</p>
+      <p class="philosophy-pillar-text">We are legally and ethically required to act in your best interest ‚Äî at every meeting, in every recommendation, without exception. It is not a marketing claim. It is our legal standard.</p>
     </div>
     <div class="philosophy-pillar reveal reveal-delay-1">
       <div class="philosophy-pillar-title" style="color:#fff">Independent Thinking</div>
-      <p class="philosophy-pillar-text">We access the full universe of investment solutions without constraint. Our recommendations are driven entirely by research and your objectives — not by internal product shelves.</p>
+      <p class="philosophy-pillar-text">We access the full universe of investment solutions without constraint. Our recommendations are driven entirely by research and your objectives ‚Äî not by internal product shelves.</p>
     </div>
     <div class="philosophy-pillar reveal reveal-delay-2">
       <div class="philosophy-pillar-title" style="color:#fff">Relationships, Not Transactions</div>
@@ -2340,7 +2440,7 @@ body{
         </div>
         <h2 class="why-csp-title">Why Families Choose<br><em>Cary Street Partners</em></h2>
       </div>
-      <p class="why-csp-sub">The right firm isn't just about returns. It's about who's in your corner — and how they're structured to serve you.</p>
+      <p class="why-csp-sub">The right firm isn't just about returns. It's about who's in your corner ‚Äî and how they're structured to serve you.</p>
     </div>
     <div class="why-csp-grid">
 
@@ -2354,7 +2454,7 @@ body{
         </div>
         <div class="why-card-title">Independent Advice</div>
         <div class="why-card-divider"></div>
-        <p class="why-card-body">No proprietary products. No sales quotas. Recommendations are driven entirely by research and your goals — never by what the firm needs to sell.</p>
+        <p class="why-card-body">No proprietary products. No sales quotas. Recommendations are driven entirely by research and your goals ‚Äî never by what the firm needs to sell.</p>
       </div>
 
       <!-- Card 2 -->
@@ -2367,7 +2467,7 @@ body{
         </div>
         <div class="why-card-title">Fiduciary Standard</div>
         <div class="why-card-divider"></div>
-        <p class="why-card-body">We are legally and ethically obligated to act in your best interest — at every meeting, in every recommendation. Not a marketing claim. A legal standard.</p>
+        <p class="why-card-body">We are legally and ethically obligated to act in your best interest ‚Äî at every meeting, in every recommendation. Not a marketing claim. A legal standard.</p>
       </div>
 
       <!-- Card 3 -->
@@ -2393,7 +2493,7 @@ body{
         </div>
         <div class="why-card-title">National Resources.<br>Personal Relationships.</div>
         <div class="why-card-divider"></div>
-        <p class="why-card-body">Institutional-grade capabilities across 21 offices — delivered through advisors who know your name, your family, and your full financial picture.</p>
+        <p class="why-card-body">Institutional-grade capabilities across 21 offices ‚Äî delivered through advisors who know your name, your family, and your full financial picture.</p>
       </div>
 
     </div>
@@ -2421,7 +2521,7 @@ body{
         <path d="M4 12l16 8 16-8M20 20v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       <h3 class="service-name">Wealth Planning</h3>
-      <p class="service-desc">A comprehensive financial plan that brings together your entire financial life — income, assets, tax strategy, estate planning, and life goals — into a single, coherent vision.</p>
+      <p class="service-desc">A comprehensive financial plan that brings together your entire financial life ‚Äî income, assets, tax strategy, estate planning, and life goals ‚Äî into a single, coherent vision.</p>
       <span class="service-arrow">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </div>
 
@@ -2431,7 +2531,7 @@ body{
         <path d="M6 34V22M14 34V14M22 34V18M30 34V8M38 34H2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
       <h3 class="service-name">Investment Management</h3>
-      <p class="service-desc">Disciplined, research-driven portfolio management built around your risk tolerance, time horizon, and liquidity needs — with full access to the global investment landscape.</p>
+      <p class="service-desc">Disciplined, research-driven portfolio management built around your risk tolerance, time horizon, and liquidity needs ‚Äî with full access to the global investment landscape.</p>
       <span class="service-arrow">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     </div>
 
@@ -2505,7 +2605,7 @@ body{
       <div class="serve-card reveal">
         <div class="serve-card-number" aria-hidden="true">01</div>
         <h3 class="serve-card-type">Affluent Families</h3>
-        <p class="serve-card-desc">Families with complex financial lives benefit from our integrated approach — coordinating investments, taxes, estate plans, and education funding under one roof.</p>
+        <p class="serve-card-desc">Families with complex financial lives benefit from our integrated approach ‚Äî coordinating investments, taxes, estate plans, and education funding under one roof.</p>
         <div class="serve-card-tags">
           <span class="serve-tag">Estate Planning</span>
           <span class="serve-tag">Tax Strategy</span>
@@ -2559,12 +2659,12 @@ body{
       <div class="process-step reveal">
         <div class="process-step-num" aria-hidden="true">01</div>
         <h3 class="process-step-title">Discovery</h3>
-        <p class="process-step-text">We begin by listening — not presenting. An in-depth conversation about your full financial picture, your goals, your concerns, and what a successful future looks like to you.</p>
+        <p class="process-step-text">We begin by listening ‚Äî not presenting. An in-depth conversation about your full financial picture, your goals, your concerns, and what a successful future looks like to you.</p>
       </div>
       <div class="process-step reveal reveal-delay-1">
         <div class="process-step-num" aria-hidden="true">02</div>
         <h3 class="process-step-title">Strategy</h3>
-        <p class="process-step-text">We construct a comprehensive financial plan that connects every dimension of your wealth — investments, taxes, estate, insurance, and liquidity — into one integrated strategy.</p>
+        <p class="process-step-text">We construct a comprehensive financial plan that connects every dimension of your wealth ‚Äî investments, taxes, estate, insurance, and liquidity ‚Äî into one integrated strategy.</p>
       </div>
       <div class="process-step reveal reveal-delay-2">
         <div class="process-step-num" aria-hidden="true">03</div>
@@ -2603,7 +2703,7 @@ body{
       <div class="team-group-label">150+ Financial Professionals Nationwide</div>
     </div>
 
-    <!-- ── Senior Leadership ── -->
+    <!-- ‚îÄ‚îÄ Senior Leadership ‚îÄ‚îÄ -->
     <div class="team-sub-header reveal">
       <span class="team-sub-label">Senior Leadership</span>
     </div>
@@ -2616,7 +2716,7 @@ body{
         <div class="team-card-content">
           <div class="team-card-role">Chief Executive Officer</div>
           <h3 class="team-card-name">Joseph R. Schmuckler</h3>
-          <p class="team-card-bio">Former Wall Street executive with a career spanning Kidder Peabody, Nomura, and MUFG — leading CSP's strategic vision since 2015.</p>
+          <p class="team-card-bio">Former Wall Street executive with a career spanning Kidder Peabody, Nomura, and MUFG ‚Äî leading CSP's strategic vision since 2015.</p>
         </div>
       </div>
       <!-- 2. Walter -->
@@ -2638,7 +2738,7 @@ body{
         <div class="team-card-content">
           <div class="team-card-role">Chief Technology Officer, Managing Director</div>
           <h3 class="team-card-name">Leon H. Chen</h3>
-          <p class="team-card-bio">26 years of technology leadership at Nomura and MUFG — architecting the platform that powers CSP's 150+ advisor network since 2015.</p>
+          <p class="team-card-bio">26 years of technology leadership at Nomura and MUFG ‚Äî architecting the platform that powers CSP's 150+ advisor network since 2015.</p>
         </div>
       </div>
       <!-- 4. Wes -->
@@ -2647,7 +2747,7 @@ body{
         <div class="team-card-gradient" aria-hidden="true"></div>
         <div class="team-card-initials" aria-hidden="true">WG</div>
         <div class="team-card-content">
-          <div class="team-card-role">Chief Operating Officer, CFP®</div>
+          <div class="team-card-role">Chief Operating Officer, CFP¬Æ</div>
           <h3 class="team-card-name">Wesley H. Gallup</h3>
           <p class="team-card-bio">Oversees firm-wide operations and infrastructure, ensuring the platform that supports 150+ advisors runs at the highest standard.</p>
         </div>
@@ -2704,7 +2804,7 @@ body{
         <div class="team-card-content">
           <div class="team-card-role">Chief Strategy Officer, Co-Founder</div>
           <h3 class="team-card-name">Thomas H. Tullidge Jr.</h3>
-          <p class="team-card-bio">Co-founded CSP in 2002. 35+ years advising on M&amp;A and complex corporate finance — formerly at Wachovia Securities and McGuireWoods.</p>
+          <p class="team-card-bio">Co-founded CSP in 2002. 35+ years advising on M&amp;A and complex corporate finance ‚Äî formerly at Wachovia Securities and McGuireWoods.</p>
         </div>
       </div>
     </div>
@@ -2754,7 +2854,7 @@ body{
       <div class="heritage-pillars reveal reveal-delay-3">
         <div class="heritage-pillar">
           <div class="heritage-pillar-label">Founded</div>
-          <div class="heritage-pillar-value">Built in 1999 to challenge conventional wisdom — aligning client, advisor, and firm through genuine partnership structure.</div>
+          <div class="heritage-pillar-value">Built in 1999 to challenge conventional wisdom ‚Äî aligning client, advisor, and firm through genuine partnership structure.</div>
         </div>
         <div class="heritage-pillar">
           <div class="heritage-pillar-label">Independence</div>
@@ -2762,7 +2862,7 @@ body{
         </div>
         <div class="heritage-pillar">
           <div class="heritage-pillar-label">Growth</div>
-          <div class="heritage-pillar-value">$12 billion in assets reached by staying ahead of industry trends — never through acquisition for its own sake.</div>
+          <div class="heritage-pillar-value">$12 billion in assets reached by staying ahead of industry trends ‚Äî never through acquisition for its own sake.</div>
         </div>
       </div>
 
@@ -2800,7 +2900,7 @@ body{
          aria-label="Read: Why Private Markets are Key to Portfolio Diversification">
         <div class="insight-category">Investment Strategy</div>
         <h3 class="insight-title">Why Private Markets are Key to Portfolio Diversification</h3>
-        <p class="insight-excerpt">Access to private equity, private credit, and real assets was once reserved for institutional investors. We examine how qualified investors can thoughtfully incorporate these exposures — and why the case for diversification beyond public markets has never been stronger.</p>
+        <p class="insight-excerpt">Access to private equity, private credit, and real assets was once reserved for institutional investors. We examine how qualified investors can thoughtfully incorporate these exposures ‚Äî and why the case for diversification beyond public markets has never been stronger.</p>
         <div class="insight-meta">
           <span>Market Outlook</span>
           <span class="insight-meta-dot" aria-hidden="true"></span>
@@ -2821,7 +2921,7 @@ body{
          aria-label="Read: When is the Right Time to Take Social Security?">
         <div class="insight-category">Retirement Planning</div>
         <h3 class="insight-title">When Is the Right Time to Take Social Security?</h3>
-        <p class="insight-excerpt">The decision affects your income for decades. We walk through the factors that matter most — and the trade-offs most families overlook.</p>
+        <p class="insight-excerpt">The decision affects your income for decades. We walk through the factors that matter most ‚Äî and the trade-offs most families overlook.</p>
         <div class="insight-meta">
           <span>Planning</span>
           <span class="insight-meta-dot" aria-hidden="true"></span>
@@ -2840,7 +2940,7 @@ body{
          aria-label="Read: Financial Planning in the Age of AI">
         <div class="insight-category">Wealth Planning</div>
         <h3 class="insight-title">Financial Planning in the Age of AI</h3>
-        <p class="insight-excerpt">Artificial intelligence is reshaping how advisors work — but the core of sound planning remains deeply human. What changes, and what stays the same.</p>
+        <p class="insight-excerpt">Artificial intelligence is reshaping how advisors work ‚Äî but the core of sound planning remains deeply human. What changes, and what stays the same.</p>
         <div class="insight-meta">
           <span>Technology</span>
           <span class="insight-meta-dot" aria-hidden="true"></span>
@@ -2864,7 +2964,7 @@ body{
     <div class="advisor-teaser-copy">
       <div class="advisor-teaser-eyebrow">For Financial Advisors</div>
       <h2 class="advisor-teaser-headline">Interested in joining<br>Cary Street Partners?</h2>
-      <p class="advisor-teaser-sub">Learn why experienced advisors choose our platform — independent, fiduciary, and built around your practice.</p>
+      <p class="advisor-teaser-sub">Learn why experienced advisors choose our platform ‚Äî independent, fiduciary, and built around your practice.</p>
     </div>
     <a href="join.html" class="btn-primary advisor-teaser-cta">
       Explore Advisor Opportunities
@@ -2980,18 +3080,18 @@ body{
 
 <!-- JAVASCRIPT -->
 <script>
-// ── Nav scroll behavior
+// ‚îÄ‚îÄ Nav scroll behavior
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 }, { passive: true });
 
-// ── Banner dismiss
+// ‚îÄ‚îÄ Banner dismiss
 document.getElementById('bannerClose').addEventListener('click', () => {
   document.getElementById('banner').style.display = 'none';
 });
 
-// ── Mobile drawer
+// ‚îÄ‚îÄ Mobile drawer
 const drawer = document.getElementById('navDrawer');
 const toggle = document.getElementById('mobileToggle');
 const closeBtn = document.getElementById('drawerClose');
@@ -3011,7 +3111,7 @@ closeBtn.addEventListener('click', closeDrawer);
 drawer.addEventListener('click', e => { if (e.target === drawer) closeDrawer(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
 
-// ── Scroll reveal — trigger once, stay visible permanently
+// ‚îÄ‚îÄ Scroll reveal ‚Äî trigger once, stay visible permanently
 const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -3025,7 +3125,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 });
 revealEls.forEach(el => revealObserver.observe(el));
 
-// ── Animated counters
+// ‚îÄ‚îÄ Animated counters
 function animateCounter(el, target, suffix, duration) {
   const start = performance.now();
   const update = (now) => {
@@ -3053,12 +3153,12 @@ const counterObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.cred-item').forEach(el => counterObs.observe(el));
 
-// ── Form handlers
+// ‚îÄ‚îÄ Form handlers
 function handleCTA(e) {
   e.preventDefault();
   const email = document.getElementById('cta-email').value;
   const btn = e.target.querySelector('button');
-  btn.textContent = 'Request Sent — We\'ll Be in Touch';
+  btn.textContent = 'Request Sent ‚Äî We\'ll Be in Touch';
   btn.style.background = '#2d4a2d';
   btn.style.color = '#a8d5a2';
   btn.disabled = true;
@@ -3067,13 +3167,13 @@ function handleCTA(e) {
 function handleRecruiting(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button');
-  btn.textContent = 'Submitted — Thank You';
+  btn.textContent = 'Submitted ‚Äî Thank You';
   btn.style.background = '#2d4a2d';
   btn.style.color = '#a8d5a2';
   btn.disabled = true;
 }
 
-// ── Hero scroll parallax — photo lags 10% behind the page
+// ‚îÄ‚îÄ Hero scroll parallax ‚Äî photo lags 10% behind the page
 (function () {
   const stack = document.getElementById('hero-photo-stack');
   if (!stack) return;
@@ -3083,13 +3183,13 @@ function handleRecruiting(e) {
 
   (function tick() {
     requestAnimationFrame(tick);
-    // Text scrolls at 1× — photo scrolls at 0.9× by pushing it down 10% of scroll distance
+    // Text scrolls at 1√ó ‚Äî photo scrolls at 0.9√ó by pushing it down 10% of scroll distance
     stack.style.transform = `translateY(${scrollY * 0.10}px)`;
   })();
 })();
 
 
-// ── Mission dropdown toggle
+// ‚îÄ‚îÄ Mission dropdown toggle
 const missionTrigger = document.getElementById('mission-trigger');
 const missionBody = document.getElementById('mission-body');
 if (missionTrigger && missionBody) {
@@ -3099,7 +3199,7 @@ if (missionTrigger && missionBody) {
   });
 }
 
-// ── Smooth entrance for hero elements on load
+// ‚îÄ‚îÄ Smooth entrance for hero elements on load
 window.addEventListener('load', () => {
   document.querySelectorAll('#hero .reveal').forEach((el, i) => {
     setTimeout(() => el.classList.add('visible'), 200 + i * 150);
@@ -3107,12 +3207,12 @@ window.addEventListener('load', () => {
 
 });
 
-// ── Service Modal ────────────────────────────────────
+// ‚îÄ‚îÄ Service Modal ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ
 const SERVICE_DATA = {
   'wealth-planning': {
     eyebrow: 'Service 01',
     title: 'Wealth Planning',
-    lead: 'True wealth planning extends far beyond investment allocation. We begin with a deep understanding of your complete financial picture — where you are, where you want to be, and what it will take to get there — then build a coordinated strategy that evolves with your life.',
+    lead: 'True wealth planning extends far beyond investment allocation. We begin with a deep understanding of your complete financial picture ‚Äî where you are, where you want to be, and what it will take to get there ‚Äî then build a coordinated strategy that evolves with your life.',
     sections: [
       {
         label: 'What It Includes',
@@ -3124,25 +3224,25 @@ const SERVICE_DATA = {
           'Estate planning coordination with your legal counsel',
           'Insurance coverage review and risk management assessment',
           'Employee benefits analysis and equity compensation planning',
-          'Major life event planning — career transitions, real estate, inheritance'
+          'Major life event planning ‚Äî career transitions, real estate, inheritance'
         ]
       },
       {
         label: 'Who It\'s For',
         title: 'Individuals and families navigating complexity',
-        body: 'Our wealth planning service is designed for executives, business owners, and high-net-worth families who have accumulated meaningful assets and recognize that managing them well requires a disciplined, long-term framework — not a series of isolated financial decisions.'
+        body: 'Our wealth planning service is designed for executives, business owners, and high-net-worth families who have accumulated meaningful assets and recognize that managing them well requires a disciplined, long-term framework ‚Äî not a series of isolated financial decisions.'
       },
       {
         label: 'Our Approach',
         title: 'Integrated, proactive, and highly personalized',
-        body: 'We challenge the status quo of old thinking and disconnected advice. Every component of your financial life is considered in context of the whole — your tax position informs your investment strategy, your estate plan informs your insurance structure, and your retirement timeline informs all of it. We meet with you regularly to review progress, adjust for life changes, and ensure your plan remains on course.'
+        body: 'We challenge the status quo of old thinking and disconnected advice. Every component of your financial life is considered in context of the whole ‚Äî your tax position informs your investment strategy, your estate plan informs your insurance structure, and your retirement timeline informs all of it. We meet with you regularly to review progress, adjust for life changes, and ensure your plan remains on course.'
       }
     ]
   },
   'investment-management': {
     eyebrow: 'Service 02',
     title: 'Investment Management',
-    lead: 'We manage investment portfolios with the same rigor and discipline we would apply to our own capital — anchored in independent research, unwavering in process, and always aligned with your long-term objectives. Access to the full investment landscape means we are never constrained by proprietary product mandates.',
+    lead: 'We manage investment portfolios with the same rigor and discipline we would apply to our own capital ‚Äî anchored in independent research, unwavering in process, and always aligned with your long-term objectives. Access to the full investment landscape means we are never constrained by proprietary product mandates.',
     sections: [
       {
         label: 'What It Includes',
@@ -3154,7 +3254,7 @@ const SERVICE_DATA = {
           'Active tax-loss harvesting and capital gains management',
           'Ongoing performance reporting and portfolio attribution',
           'Rebalancing and tactical adjustments as market conditions evolve',
-          'Custodian-agnostic platform — assets held at Schwab, Fidelity, or Pershing'
+          'Custodian-agnostic platform ‚Äî assets held at Schwab, Fidelity, or Pershing'
         ]
       },
       {
@@ -3165,14 +3265,14 @@ const SERVICE_DATA = {
       {
         label: 'Our Approach',
         title: 'Long-term discipline over short-term noise',
-        body: 'We believe the most destructive force in investing is reactive decision-making driven by market volatility. Our role is to build portfolios constructed to weather multiple market cycles, then guide you through periods of uncertainty with data and perspective — not emotion. We measure success by your progress toward financial independence, not by outperforming a benchmark in any given quarter.'
+        body: 'We believe the most destructive force in investing is reactive decision-making driven by market volatility. Our role is to build portfolios constructed to weather multiple market cycles, then guide you through periods of uncertainty with data and perspective ‚Äî not emotion. We measure success by your progress toward financial independence, not by outperforming a benchmark in any given quarter.'
       }
     ]
   },
   'retirement-planning': {
     eyebrow: 'Service 03',
     title: 'Retirement Planning',
-    lead: 'Retirement is not an endpoint — it is a multi-decade financial phase that requires as much strategic thought as the accumulation years that preceded it. We design retirement strategies built to sustain your income, protect your purchasing power, and give you confidence in every season of life.',
+    lead: 'Retirement is not an endpoint ‚Äî it is a multi-decade financial phase that requires as much strategic thought as the accumulation years that preceded it. We design retirement strategies built to sustain your income, protect your purchasing power, and give you confidence in every season of life.',
     sections: [
       {
         label: 'What It Includes',
@@ -3190,49 +3290,49 @@ const SERVICE_DATA = {
       {
         label: 'Key Considerations',
         title: 'Planning for a retirement that could last 30+ years',
-        body: 'Longevity is the defining risk of modern retirement. A plan built for a 15-year retirement is fundamentally different from one designed to sustain 30 or more years of income. We model multiple scenarios — market downturns, healthcare shocks, long-term care needs — and stress-test your plan to ensure it holds under pressure.'
+        body: 'Longevity is the defining risk of modern retirement. A plan built for a 15-year retirement is fundamentally different from one designed to sustain 30 or more years of income. We model multiple scenarios ‚Äî market downturns, healthcare shocks, long-term care needs ‚Äî and stress-test your plan to ensure it holds under pressure.'
       },
       {
         label: 'Our Approach',
-        title: 'From accumulation to distribution — seamlessly',
-        body: 'Most advisors focus on building wealth. Fewer specialize in the careful, tax-aware process of spending it down in the most efficient sequence possible. We work with you throughout the transition from working years into retirement to ensure your portfolio, tax strategy, and income plan are fully integrated — and that the transition feels anything but abrupt.'
+        title: 'From accumulation to distribution ‚Äî seamlessly',
+        body: 'Most advisors focus on building wealth. Fewer specialize in the careful, tax-aware process of spending it down in the most efficient sequence possible. We work with you throughout the transition from working years into retirement to ensure your portfolio, tax strategy, and income plan are fully integrated ‚Äî and that the transition feels anything but abrupt.'
       }
     ]
   },
   'family-wealth': {
     eyebrow: 'Service 04',
     title: 'Family Wealth Strategies',
-    lead: 'Preserving wealth across generations requires more than a will. It requires a coordinated framework of legal structures, tax strategies, and family communication designed to ensure that what you have built endures — and that the values behind it do too.',
+    lead: 'Preserving wealth across generations requires more than a will. It requires a coordinated framework of legal structures, tax strategies, and family communication designed to ensure that what you have built endures ‚Äî and that the values behind it do too.',
     sections: [
       {
         label: 'What It Includes',
         title: 'Comprehensive multi-generational planning',
         bullets: [
           'Estate planning coordination with your estate attorney',
-          'Gifting strategy design — annual exclusions, 529s, trusts, and direct gifts',
+          'Gifting strategy design ‚Äî annual exclusions, 529s, trusts, and direct gifts',
           'Irrevocable trust structures: SLATs, ILITs, GRATs, and dynasty trusts',
           'Business succession planning and ownership transfer strategy',
-          'Charitable giving vehicles — DAFs, CLTs, CRTs, and private foundations',
-          'Family governance frameworks — investment policy, family meetings, decision-making',
+          'Charitable giving vehicles ‚Äî DAFs, CLTs, CRTs, and private foundations',
+          'Family governance frameworks ‚Äî investment policy, family meetings, decision-making',
           'Education funding strategies across multiple beneficiaries'
         ]
       },
       {
         label: 'Who It\'s For',
         title: 'Families with significant intergenerational wealth',
-        body: 'Our family wealth services are designed for clients with estate planning complexity — typically those with taxable estates, closely held business interests, meaningful charitable intent, or multiple generations who will benefit from a coordinated approach to governance, gifting, and wealth transfer.'
+        body: 'Our family wealth services are designed for clients with estate planning complexity ‚Äî typically those with taxable estates, closely held business interests, meaningful charitable intent, or multiple generations who will benefit from a coordinated approach to governance, gifting, and wealth transfer.'
       },
       {
         label: 'Our Approach',
         title: 'Coordination, clarity, and continuity',
-        body: 'We serve as the central coordinator among your estate attorney, CPA, and other advisors — ensuring that the legal documents, tax strategies, and investment structures are all working together toward the same goals. We also facilitate family conversations about wealth — helping families articulate shared values and establish governance frameworks that reduce conflict and build cohesion across generations.'
+        body: 'We serve as the central coordinator among your estate attorney, CPA, and other advisors ‚Äî ensuring that the legal documents, tax strategies, and investment structures are all working together toward the same goals. We also facilitate family conversations about wealth ‚Äî helping families articulate shared values and establish governance frameworks that reduce conflict and build cohesion across generations.'
       }
     ]
   },
   'institutional': {
     eyebrow: 'Service 05',
     title: 'Institutional & Retirement Plans',
-    lead: 'Institutional investors face a distinct set of obligations — fiduciary duty, investment policy compliance, vendor oversight, and participant outcomes. We provide investment advisory and consulting services that help institutions meet those obligations with discipline and transparency.',
+    lead: 'Institutional investors face a distinct set of obligations ‚Äî fiduciary duty, investment policy compliance, vendor oversight, and participant outcomes. We provide investment advisory and consulting services that help institutions meet those obligations with discipline and transparency.',
     sections: [
       {
         label: 'What It Includes',
@@ -3251,12 +3351,12 @@ const SERVICE_DATA = {
       {
         label: 'Clients Served',
         title: 'Endowments, foundations, and corporate plan sponsors',
-        body: 'We serve a diverse range of institutional clients — nonprofit endowments, private foundations, corporate defined contribution and defined benefit plans, healthcare systems, and religious organizations. Each engagement is structured around the specific governance, regulatory, and return requirements of the institution.'
+        body: 'We serve a diverse range of institutional clients ‚Äî nonprofit endowments, private foundations, corporate defined contribution and defined benefit plans, healthcare systems, and religious organizations. Each engagement is structured around the specific governance, regulatory, and return requirements of the institution.'
       },
       {
         label: 'Our Approach',
         title: 'Independent. Transparent. Fiduciary-first.',
-        body: 'Institutional clients deserve the same independence and objectivity that we bring to our private wealth relationships. We have no affiliated funds to promote and no revenue-sharing arrangements that could compromise our objectivity. Our recommendations are grounded in independent research and governed by a rigorous investment process — with full transparency on fees, reasoning, and outcomes.'
+        body: 'Institutional clients deserve the same independence and objectivity that we bring to our private wealth relationships. We have no affiliated funds to promote and no revenue-sharing arrangements that could compromise our objectivity. Our recommendations are grounded in independent research and governed by a rigorous investment process ‚Äî with full transparency on fees, reasoning, and outcomes.'
       }
     ]
   },
@@ -3272,7 +3372,7 @@ const SERVICE_DATA = {
           'Comprehensive portfolio review and diagnostic assessment',
           'Asset allocation analysis relative to your goals and risk profile',
           'Investment manager evaluation and fee benchmarking',
-          'Tax efficiency review — capital gains exposure, wash-sale analysis',
+          'Tax efficiency review ‚Äî capital gains exposure, wash-sale analysis',
           'Concentrated position and risk analysis',
           'Written advisory reports with specific, actionable recommendations',
           'Ongoing access to your advisor for questions and scenario modeling'
@@ -3286,7 +3386,7 @@ const SERVICE_DATA = {
       {
         label: 'Our Approach',
         title: 'Honest analysis. No product agenda.',
-        body: 'The value of a true advisory relationship lies in objectivity. Because we are not managing the assets directly, there is no incentive to recommend any particular product or strategy for reasons other than your best interest. We bring the same analytical rigor to an advisory engagement as we do to discretionary management — and we are candid about what we find, even when the answer is uncomfortable.'
+        body: 'The value of a true advisory relationship lies in objectivity. Because we are not managing the assets directly, there is no incentive to recommend any particular product or strategy for reasons other than your best interest. We bring the same analytical rigor to an advisory engagement as we do to discretionary management ‚Äî and we are candid about what we find, even when the answer is uncomfortable.'
       }
     ]
   }
@@ -3355,7 +3455,7 @@ document.addEventListener('keydown', e => {
 });
 </script>
 
-<!-- ── LEAFLET MAP — CSP Office Locations ── -->
+<!-- ‚îÄ‚îÄ LEAFLET MAP ‚Äî CSP Office Locations ‚îÄ‚îÄ -->
 <script src="leaflet.js"></script>
 <script>
 (function() {
@@ -3373,7 +3473,7 @@ document.addEventListener('keydown', e => {
     touchZoom: false,
   });
 
-  // CartoDB Dark Matter — free, no API key
+  // CartoDB Dark Matter ‚Äî free, no API key
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://carto.com/" style="color:rgba(201,169,110,0.5);font-size:9px">CARTO</a>',
     subdomains: 'abcd',
@@ -3396,7 +3496,7 @@ document.addEventListener('keydown', e => {
     [38.93, -77.18, 'McLean, VA', false],
     [40.80, -74.48, 'Morristown, NJ', false],
     [26.71, -80.05, 'Palm Beach, FL', false],
-    [37.54, -77.43, 'Richmond, VA', true],  // HQ ★
+    [37.54, -77.43, 'Richmond, VA', true],  // HQ ‚òÖ
     [37.27, -79.94, 'Roanoke, VA', false],
     [29.42, -98.49, 'San Antonio, TX', false],
     [27.34, -82.53, 'Sarasota, FL', false],
@@ -3423,12 +3523,12 @@ document.addEventListener('keydown', e => {
   offices.forEach(([lat, lng, city, isHQ]) => {
     const marker = L.marker([lat, lng], { icon: dotIcon(isHQ) }).addTo(map);
     marker.bindTooltip(
-      `<span style="font-family:'Jost',sans-serif;font-size:11px;color:#C9A96E;letter-spacing:0.08em">${city}${isHQ ? ' ★ HQ' : ''}</span>`,
+      `<span style="font-family:'Jost',sans-serif;font-size:11px;color:#C9A96E;letter-spacing:0.08em">${city}${isHQ ? ' ‚òÖ HQ' : ''}</span>`,
       { className: 'csp-map-tooltip', direction: 'top', offset: [0, -6] }
     );
   });
 
-  // Zoom into eastern US + Texas — tighter, more purposeful view
+  // Zoom into eastern US + Texas ‚Äî tighter, more purposeful view
   // Slightly expand bounds to give breathing room around the office cluster
   map.fitBounds(
     L.latLngBounds([25.5, -99.5], [41.5, -74.0]),
@@ -3459,7 +3559,7 @@ document.addEventListener('keydown', e => {
   document.head.appendChild(style);
 })();
 
-// ── Heritage metrics: fade-in + count-up on scroll ──
+// ‚îÄ‚îÄ Heritage metrics: fade-in + count-up on scroll ‚îÄ‚îÄ
 (function () {
   const metrics = document.querySelectorAll('.heritage-metric');
   if (!metrics.length) return;
