@@ -148,6 +148,12 @@ body{
   transition:background 0.25s,color 0.25s;
 }
 .nav-cta:hover{background:var(--gold);color:var(--navy)}
+/* Mid-width: tighten the 6-link nav and drop the standalone CTA
+   (the banner + mobile drawer still carry it) so nothing crowds */
+@media(max-width:1180px){
+  .nav-links{gap:24px}
+  .nav-cta{display:none}
+}
 .nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
 .nav-mobile-toggle span{display:block;width:24px;height:1px;background:#fff;margin:6px 0;transition:transform 0.3s,opacity 0.3s}
 
@@ -2349,8 +2355,9 @@ body{
   <ul class="nav-links">
     <li><a href="cary-street-partners.html#services">Services</a></li>
     <li><a href="cary-street-partners.html#who-we-serve">Who We Serve</a></li>
-    <li><a href="leadership.html" aria-current="page" style="color:var(--gold)">Leadership</a></li>
+    <li><a href="cary-street-partners.html#locations">Locations</a></li>
     <li><a href="cary-street-partners.html#insights">Insights</a></li>
+    <li><a href="leadership.html" aria-current="page" style="color:var(--gold)">Leadership</a></li>
     <li><a href="cary-street-partners.html#advisor-teaser">For Advisors</a></li>
   </ul>
   <a href="cary-street-partners.html#cta" class="nav-cta">Begin a Conversation</a>
@@ -2364,9 +2371,9 @@ body{
   <ul class="nav-drawer-links">
     <li class="nav-drawer-link"><a href="cary-street-partners.html#services" onclick="closeDrawer()">Services</a></li>
     <li class="nav-drawer-link"><a href="cary-street-partners.html#who-we-serve" onclick="closeDrawer()">Who We Serve</a></li>
-    <li class="nav-drawer-link"><a href="leadership.html">Leadership</a></li>
+    <li class="nav-drawer-link"><a href="cary-street-partners.html#locations" onclick="closeDrawer()">Locations</a></li>
     <li class="nav-drawer-link"><a href="cary-street-partners.html#insights" onclick="closeDrawer()">Insights</a></li>
-    <li class="nav-drawer-link"><a href="cary-street-partners.html#heritage" onclick="closeDrawer()">Our Story</a></li>
+    <li class="nav-drawer-link"><a href="leadership.html">Leadership</a></li>
     <li class="nav-drawer-link"><a href="cary-street-partners.html#advisor-teaser" onclick="closeDrawer()">For Advisors</a></li>
   </ul>
   <div class="nav-drawer-cta">

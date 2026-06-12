@@ -13,6 +13,9 @@
 /* --- RESET & BASE ------------------------------------------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
+/* Global anchor offset so the fixed header never covers section content */
+section{scroll-margin-top:112px}
+.office-band{scroll-margin-top:112px}
 body{
   font-family:'Montserrat',sans-serif;
   background:var(--navy);
@@ -149,6 +152,12 @@ body{
   transition:background 0.25s,color 0.25s;
 }
 .nav-cta:hover{background:var(--gold);color:var(--navy)}
+/* Mid-width: tighten the 6-link nav and drop the standalone CTA
+   (the banner + mobile drawer still carry it) so nothing crowds */
+@media(max-width:1180px){
+  .nav-links{gap:24px}
+  .nav-cta{display:none}
+}
 .nav-mobile-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px}
 .nav-mobile-toggle span{display:block;width:24px;height:1px;background:#fff;margin:6px 0;transition:transform 0.3s,opacity 0.3s}
 
@@ -282,13 +291,13 @@ body{
   display:grid;
   grid-template-columns:repeat(12,1fr);
   grid-template-rows:auto auto 1fr;
-  padding:128px 0 96px 120px;
+  padding:128px 120px 96px 120px;
   max-width:1440px;
   margin:0 auto;
   width:100%;
 }
-/* -- Editorial figure -- bleeds past the container's right edge,
-     rises up under the headline so type and image interlock */
+/* -- Editorial figure -- the photograph sits fully enclosed by its gold
+     frame and rises slightly under the headline so type and image relate */
 .hero-figure{
   grid-column:7 / 13;
   grid-row:3;
@@ -296,8 +305,8 @@ body{
   z-index:1;
   align-self:start;
   margin-top:-36px;
-  /* full-bleed right: cancel the centered container's right gutter */
-  margin-right:calc((min(100vw,1440px) - 100vw)/2);
+  /* breathing room so the framed photo never crowds the container edge */
+  margin-right:18px;
 }
 .hero-photo-stack{
   position:relative;
@@ -305,24 +314,24 @@ body{
   aspect-ratio:700/467;
   will-change:transform;
 }
-/* Offset hairline frame -- steps off the photo toward the text column,
-   echoing the blueprint grid behind it */
+/* Matted hairline frame -- sits evenly outside the photo on all four sides
+   so the image reads as intentionally, precisely framed */
 .hero-photo-stack::before{
   content:'';
   position:absolute;
-  top:-24px;left:-24px;right:24px;bottom:24px;
-  border:1px solid rgba(201,169,110,0.32);
+  top:-18px;left:-18px;right:-18px;bottom:-18px;
+  border:1px solid rgba(201,169,110,0.38);
   pointer-events:none;
   z-index:2;
 }
-/* Gold plinth -- short solid bar grounding the photo's bottom-left corner */
+/* Gold accent -- short solid bar on the frame's bottom-left corner */
 .hero-photo-stack::after{
   content:'';
   position:absolute;
-  left:0;bottom:-2px;
-  width:72px;height:2px;
+  left:-18px;bottom:-18px;
+  width:64px;height:2px;
   background:var(--gold);
-  z-index:2;
+  z-index:3;
 }
 .hero-sign-photo{
   width:100%;
@@ -350,8 +359,8 @@ body{
   align-items:center;
   justify-content:flex-end;
   gap:14px;
-  margin-top:20px;
-  padding-right:56px;
+  margin-top:30px;
+  padding-right:0;
   font-family:'Montserrat',sans-serif;
   font-size:0.625rem;
   font-weight:600;
@@ -1372,7 +1381,7 @@ body{
 
 /* --- RICHMOND HERITAGE -------------------------------------- */
 /* --- HERITAGE / OUR FOOTPRINT ------------------------------- */
-#heritage{
+#locations{
   background:var(--navy);
   padding:0 0 120px;
   position:relative;
@@ -1559,6 +1568,75 @@ body{
   transition:color 0.3s,border-color 0.3s;
 }
 .heritage-cta-link:hover{color:#fff;border-color:rgba(255,255,255,0.4);}
+/* -- LOCATIONS DIRECTORY ------------------------------------- */
+.locations-directory{
+  max-width:1280px;
+  margin:64px auto 0;
+  padding:0 40px;
+}
+.loc-hq{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 28px;
+  padding:30px 36px;
+  margin-bottom:52px;
+  background:linear-gradient(135deg, rgba(201,169,110,0.10), rgba(201,169,110,0.015));
+  border:1px solid rgba(201,169,110,0.28);
+  border-left:3px solid var(--gold);
+}
+.loc-hq-tag{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.625rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--gold);
+}
+.loc-hq-city{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.1rem;font-weight:400;line-height:1;color:#fff;
+}
+.loc-hq-addr{
+  font-family:'Jost',sans-serif;
+  font-size:0.9rem;font-weight:300;color:rgba(255,255,255,0.55);
+  margin-left:auto;letter-spacing:0.02em;
+}
+.loc-groups{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:44px 52px;
+}
+.loc-group-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding-bottom:14px;margin-bottom:8px;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+}
+.loc-group-state{
+  font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#fff;
+}
+.loc-group-count{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--gold);white-space:nowrap;
+}
+.loc-city{
+  display:flex;align-items:center;gap:11px;
+  padding:11px 0;
+  font-family:'Jost',sans-serif;font-size:0.95rem;font-weight:300;
+  color:rgba(255,255,255,0.70);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  transition:color 0.2s,padding-left 0.2s;
+}
+.loc-city::before{
+  content:'';flex:0 0 auto;width:5px;height:5px;border-radius:50%;
+  background:rgba(201,169,110,0.5);transition:background 0.2s,transform 0.2s;
+}
+.loc-city:hover{color:#fff;padding-left:7px;}
+.loc-city:hover::before{background:var(--gold);transform:scale(1.5);}
+@media(max-width:768px){
+  .locations-directory{margin-top:48px;padding:0 24px;}
+  .loc-hq{flex-direction:column;align-items:flex-start;gap:6px;padding:24px;}
+  .loc-hq-addr{margin-left:0;}
+  .loc-groups{gap:36px;}
+}
 
 /* --- OFFICE BAND -------------------------------------------- */
 .office-band{
@@ -1619,6 +1697,36 @@ body{
   padding:120px 40px;
 }
 .insights-inner{max-width:1280px;margin:0 auto}
+/* -- Insights topic pills -- */
+.insights-topics{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:-12px 0 52px;
+}
+.insight-topic{
+  padding:9px 20px;
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:100px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.625rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);
+  cursor:default;
+  transition:color 0.2s,border-color 0.2s,background 0.2s;
+}
+.insight-topic:hover{
+  color:#fff;
+  border-color:rgba(201,169,110,0.5);
+}
+.insight-topic.is-active{
+  color:var(--navy);
+  background:var(--gold);
+  border-color:var(--gold);
+}
+@media(max-width:768px){
+  .insights-topics{gap:8px;margin-bottom:40px}
+  .insight-topic{padding:8px 14px;font-size:0.5625rem}
+}
 .insights-grid{
   display:grid;
   grid-template-columns:2fr 1fr 1fr;
@@ -2166,6 +2274,7 @@ body{
   .hero-headline{font-size:clamp(2.5rem,11vw,3.4rem);margin-bottom:36px;padding-right:0}
   .hero-figure{margin:0 -24px 40px;align-self:stretch}
   .hero-photo-stack::before{top:12px;left:12px;right:12px;bottom:12px}
+  .hero-photo-stack::after{left:12px;bottom:12px}
   .hero-figure-caption{margin-top:14px;padding-right:24px;font-size:0.5625rem}
   .hero-leftcol{width:100%;padding-top:0;padding-right:0}
   .hero-note{margin-top:48px;max-width:100%}
@@ -2192,7 +2301,7 @@ body{
   .process-steps{grid-template-columns:1fr;gap:32px}
   #team{padding:80px 24px}
   .team-grid{grid-template-columns:1fr 1fr}
-  #heritage{padding:0 0 80px}
+  #locations{padding:0 0 80px}
   .heritage-metrics{grid-template-columns:repeat(2,1fr)}
   .heritage-metric{padding:32px 24px}
   .heritage-visual{display:none}
@@ -2326,8 +2435,9 @@ body{
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#who-we-serve">Who We Serve</a></li>
-    <li><a href="leadership.html">Leadership</a></li>
+    <li><a href="#locations">Locations</a></li>
     <li><a href="#insights">Insights</a></li>
+    <li><a href="leadership.html">Leadership</a></li>
     <li><a href="#advisor-teaser">For Advisors</a></li>
   </ul>
   <a href="#cta" class="nav-cta">Begin a Conversation</a>
@@ -2342,9 +2452,9 @@ body{
   <ul class="nav-drawer-links">
     <li class="nav-drawer-link"><a href="#services" onclick="closeDrawer()">Services</a></li>
     <li class="nav-drawer-link"><a href="#who-we-serve" onclick="closeDrawer()">Who We Serve</a></li>
-    <li class="nav-drawer-link"><a href="leadership.html">Leadership</a></li>
+    <li class="nav-drawer-link"><a href="#locations" onclick="closeDrawer()">Locations</a></li>
     <li class="nav-drawer-link"><a href="#insights" onclick="closeDrawer()">Insights</a></li>
-    <li class="nav-drawer-link"><a href="#heritage" onclick="closeDrawer()">Our Story</a></li>
+    <li class="nav-drawer-link"><a href="leadership.html">Leadership</a></li>
     <li class="nav-drawer-link"><a href="#advisor-teaser" onclick="closeDrawer()">For Advisors</a></li>
   </ul>
   <div class="nav-drawer-cta">
@@ -2753,7 +2863,7 @@ body{
 </section>
 
 <!-- HERITAGE -->
-<section id="heritage" aria-label="Our national footprint">
+<section id="locations" aria-label="Our national footprint">
   <!-- METRICS BAND -->
   <div class="heritage-metrics" aria-label="Firm statistics">
     <div class="heritage-metric">
@@ -2808,6 +2918,56 @@ body{
 
     </div>
 
+    <!-- National office directory -->
+    <div class="locations-directory reveal">
+      <div class="loc-hq">
+        <span class="loc-hq-tag">Headquarters</span>
+        <span class="loc-hq-city">Richmond, Virginia</span>
+        <span class="loc-hq-addr">901 East Cary Street, Richmond, VA 23219</span>
+      </div>
+      <div class="loc-groups">
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">Virginia</span><span class="loc-group-count">9 Offices</span></div>
+        <div class="loc-city">Richmond</div>
+        <div class="loc-city">Glen Allen</div>
+        <div class="loc-city">McLean</div>
+        <div class="loc-city">Charlottesville</div>
+        <div class="loc-city">Fredericksburg</div>
+        <div class="loc-city">Virginia Beach</div>
+        <div class="loc-city">Roanoke</div>
+        <div class="loc-city">Abingdon</div>
+        <div class="loc-city">Wytheville</div>
+        </div>
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">Texas</span><span class="loc-group-count">3 Offices</span></div>
+        <div class="loc-city">Austin</div>
+        <div class="loc-city">Fort Worth</div>
+        <div class="loc-city">San Antonio</div>
+        </div>
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">Florida</span><span class="loc-group-count">3 Offices</span></div>
+        <div class="loc-city">Tampa</div>
+        <div class="loc-city">Sarasota</div>
+        <div class="loc-city">Palm Beach</div>
+        </div>
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">North Carolina</span><span class="loc-group-count">2 Offices</span></div>
+        <div class="loc-city">Charlotte</div>
+        <div class="loc-city">Greensboro</div>
+        </div>
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">Tennessee</span><span class="loc-group-count">2 Offices</span></div>
+        <div class="loc-city">Johnson City</div>
+        <div class="loc-city">Kingsport</div>
+        </div>
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">South Carolina &amp; New Jersey</span><span class="loc-group-count">2 Offices</span></div>
+        <div class="loc-city">Greenville, SC</div>
+        <div class="loc-city">Morristown, NJ</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -2823,13 +2983,21 @@ body{
   <div class="insights-inner">
     <div class="section-header reveal">
       <div class="section-eyebrow">
-        <span class="section-label dark-label">Perspectives</span>
+        <span class="section-label dark-label">Insights &amp; Perspectives</span>
         <h2 class="section-title">Intelligence worth<br>reading.</h2>
       </div>
       <a href="https://carystreetpartners.com/insights/" target="_blank" rel="noopener" class="section-link reveal reveal-delay-2">
         All Insights
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
+    </div>
+    <div class="insights-topics reveal reveal-delay-1" aria-label="Topics we cover">
+      <span class="insight-topic is-active">All</span>
+      <span class="insight-topic">Market Commentary</span>
+      <span class="insight-topic">Wealth Planning</span>
+      <span class="insight-topic">Retirement</span>
+      <span class="insight-topic">Private Markets</span>
+      <span class="insight-topic">Advisor Perspectives</span>
     </div>
     <div class="insights-grid">
 
