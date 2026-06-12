@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cary Street Partners &mdash; Independent Wealth Management</title>
-<meta name="description" content="Cary Street Partners is an independent wealth management firm managing over $12 billion in assets for affluent families, business owners, and institutions.">
+<title>Meet the Leadership Team &mdash; Cary Street Partners</title>
+<meta name="description" content="The senior executive team guiding Cary Street Partners &mdash; an independent wealth management firm managing over $12 billion in assets.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="leaflet.css"/>
 <style>
 /* --- RESET & BASE ------------------------------------------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -1317,29 +1316,6 @@ body{
   color:rgba(201,169,110,0.15);
   letter-spacing:0.1em;
 }
-/* -- Leadership teaser CTA (homepage) */
-.team-cta{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:32px;
-  text-align:center;
-  padding:56px 0 8px;
-}
-.team-cta-line{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.5rem;
-  font-weight:400;
-  line-height:1.5;
-  color:rgba(255,255,255,0.62);
-  max-width:620px;
-  margin:0;
-}
-.team-cta-btn{
-  padding:19px 44px;
-  font-size:0.72rem;
-  letter-spacing:0.2em;
-}
 /* -- Team sub-section divider (Executive Team / Senior Leadership) */
 .team-sub-header{
   display:flex;
@@ -2308,652 +2284,235 @@ body{
   .smodal-cta{flex-direction:column;align-items:flex-start}
 }
 </style>
+<style>
+/* --- LEADERSHIP PAGE OVERRIDES ------------------------------ */
+.lead-hero{
+  position:relative;
+  padding:200px 120px 96px;
+  max-width:1440px;
+  margin:0 auto;
+  background:var(--navy);
+}
+.lead-hero-eyebrow{
+  display:flex;align-items:center;gap:16px;margin-bottom:32px;
+}
+.lead-hero-eyebrow .line{width:40px;height:1px;background:var(--gold);}
+.lead-hero-eyebrow .text{
+  font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
+  color:#fff;opacity:0.85;
+}
+.lead-hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.8rem,5.2vw,5rem);
+  font-weight:300;line-height:1.06;letter-spacing:-0.015em;color:#fff;
+  margin-bottom:28px;max-width:900px;
+}
+.lead-hero h1 em{font-style:italic;color:var(--gold-light);}
+.lead-hero-sub{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.4rem;font-weight:400;line-height:1.55;
+  color:rgba(255,255,255,0.62);max-width:640px;
+}
+.lead-hero-sub em{font-style:italic;color:var(--gold-light);}
+#team{padding-top:40px;}
+.lead-back{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6875rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  color:rgba(255,255,255,0.55);text-decoration:none;
+  margin-bottom:48px;transition:color 0.25s;
+}
+.lead-back:hover{color:#fff;}
+.lead-cta{
+  background:var(--navy-mid);
+  padding:96px 120px;text-align:center;
+}
+.lead-cta-headline{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2rem,3.6vw,3.2rem);font-weight:300;line-height:1.15;
+  color:#fff;margin-bottom:40px;
+}
+.lead-cta-headline em{font-style:italic;color:var(--gold-light);}
+@media(max-width:768px){
+  .lead-hero{padding:150px 24px 56px;}
+  .lead-cta{padding:64px 24px;}
+  #team{padding-top:16px;}
+}
+</style>
 </head>
 <body>
 
-<!-- ANNOUNCEMENT BANNER -->
-<div id="banner">
-  <span class="banner-text">Now Accepting New Client Relationships</span>
-  <a class="banner-link" href="#cta">Begin a Conversation</a>
-  <button class="banner-close" id="bannerClose" aria-label="Close banner">&times;</button>
-</div>
-
-<!-- NAVIGATION -->
 <nav id="nav" aria-label="Main navigation">
-  <a href="#" class="nav-logo" aria-label="Cary Street Partners home">
+  <a href="cary-street-partners.html" class="nav-logo" aria-label="Cary Street Partners home">
     <img src="csp-logo-nav.svg" alt="Cary Street Partners Wealth Management" class="nav-logo-img">
   </a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#who-we-serve">Who We Serve</a></li>
-    <li><a href="leadership.html">Leadership</a></li>
-    <li><a href="#insights">Insights</a></li>
-    <li><a href="#advisor-teaser">For Advisors</a></li>
+    <li><a href="cary-street-partners.html#services">Services</a></li>
+    <li><a href="cary-street-partners.html#who-we-serve">Who We Serve</a></li>
+    <li><a href="leadership.html" aria-current="page" style="color:var(--gold)">Leadership</a></li>
+    <li><a href="cary-street-partners.html#insights">Insights</a></li>
+    <li><a href="cary-street-partners.html#advisor-teaser">For Advisors</a></li>
   </ul>
-  <a href="#cta" class="nav-cta">Begin a Conversation</a>
+  <a href="cary-street-partners.html#cta" class="nav-cta">Begin a Conversation</a>
   <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- MOBILE DRAWER -->
 <div class="nav-drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
   <button class="nav-drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
   <ul class="nav-drawer-links">
-    <li class="nav-drawer-link"><a href="#services" onclick="closeDrawer()">Services</a></li>
-    <li class="nav-drawer-link"><a href="#who-we-serve" onclick="closeDrawer()">Who We Serve</a></li>
+    <li class="nav-drawer-link"><a href="cary-street-partners.html#services" onclick="closeDrawer()">Services</a></li>
+    <li class="nav-drawer-link"><a href="cary-street-partners.html#who-we-serve" onclick="closeDrawer()">Who We Serve</a></li>
     <li class="nav-drawer-link"><a href="leadership.html">Leadership</a></li>
-    <li class="nav-drawer-link"><a href="#insights" onclick="closeDrawer()">Insights</a></li>
-    <li class="nav-drawer-link"><a href="#heritage" onclick="closeDrawer()">Our Story</a></li>
-    <li class="nav-drawer-link"><a href="#advisor-teaser" onclick="closeDrawer()">For Advisors</a></li>
+    <li class="nav-drawer-link"><a href="cary-street-partners.html#insights" onclick="closeDrawer()">Insights</a></li>
+    <li class="nav-drawer-link"><a href="cary-street-partners.html#heritage" onclick="closeDrawer()">Our Story</a></li>
+    <li class="nav-drawer-link"><a href="cary-street-partners.html#advisor-teaser" onclick="closeDrawer()">For Advisors</a></li>
   </ul>
   <div class="nav-drawer-cta">
-    <a href="#cta" class="btn-primary" onclick="closeDrawer()" style="display:inline-flex">Begin a Conversation
+    <a href="cary-street-partners.html#cta" class="btn-primary" onclick="closeDrawer()" style="display:inline-flex">Begin a Conversation
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
   </div>
 </div>
 
-<!-- HERO -->
-<section id="hero" aria-label="Hero">
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="hero-cursor-glow" id="heroCursorGlow" aria-hidden="true"></div>
-  <div class="hero-grid" aria-hidden="true"></div>
-  <div class="hero-grid-lit" id="heroGridLit" aria-hidden="true"></div>
-  <div class="hero-crosshair" id="heroCrosshair" aria-hidden="true"></div>
-  <div class="hero-crosshair-dot" id="heroCrosshairDot" aria-hidden="true"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow reveal">
-      <span class="hero-eyebrow-line" aria-hidden="true"></span>
-      <span class="hero-eyebrow-text">Est. 1999 &nbsp;&bull;&nbsp; Richmond, Virginia &nbsp;&bull;&nbsp; Independent &amp; Fiduciary</span>
-    </div>
-    <h1 class="hero-headline reveal reveal-delay-1">
-      A <em>higher standard</em> for<br>
-      the wealth you've built.
-    </h1>
-    <figure class="hero-figure reveal reveal-delay-2">
-      <div class="hero-photo-stack" id="hero-photo-stack">
-        <img class="hero-sign-photo" id="hero-photo-1" src="hero-sign.jpg" alt="Advisors in discussion behind the reclaimed-wood Cary Street Partners sign at the firm's Richmond headquarters">
-        <div class="hero-figure-scrim" aria-hidden="true"></div>
-      </div>
-      <figcaption class="hero-figure-caption">The Partners' Table &mdash; <em>901 East Cary Street, Richmond</em></figcaption>
-    </figure>
-    <div class="hero-leftcol">
-      <div class="hero-mission reveal reveal-delay-3">
-        <button class="mission-trigger" aria-expanded="false" aria-controls="mission-body" id="mission-trigger">
-          <span class="mission-trigger-label">Our Mission</span>
-          <span class="mission-trigger-icon" aria-hidden="true">
-            <svg class="mission-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </span>
-        </button>
-        <div class="mission-body" id="mission-body" role="region" aria-labelledby="mission-trigger">
-          <div class="mission-body-inner">
-            <p class="mission-text">A leading independent wealth management firm committed to excellence in all aspects of our business &mdash; elevating the standard for individuals, families, and institutions across every stage of their financial life.</p>
-            <div class="mission-rule" aria-hidden="true"></div>
-          </div>
-        </div>
-      </div>
-      <div class="hero-actions reveal reveal-delay-4">
-        <a href="#cta" class="btn-primary">
-          Begin a Conversation
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="#services" class="btn-ghost">
-          Explore Our Services
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-      <div class="hero-note reveal reveal-delay-5">
-        <span class="hero-note-rule" aria-hidden="true"></span>
-        <p>Twenty-five years independent. <em>$12&nbsp;billion</em> entrusted by the families and institutions we serve.</p>
-      </div>
-    </div>
+<div class="nav-drawer-overlay" id="drawerOverlay"></div>
+
+<main>
+<section class="lead-hero" aria-label="Leadership intro">
+  <div class="lead-hero-eyebrow reveal">
+    <span class="line" aria-hidden="true"></span>
+    <span class="text">Our People &nbsp;&bull;&nbsp; Senior Leadership</span>
   </div>
-  <div class="hero-scroll" aria-hidden="true">
-    <span class="hero-scroll-text">Scroll</span>
-    <span class="hero-scroll-line"></span>
-  </div>
+  <h1 class="reveal reveal-delay-1">The executives behind<br><em>a higher standard.</em></h1>
+  <p class="lead-hero-sub reveal reveal-delay-2">Wall Street experience. Independent conviction. The leadership team guiding $12&nbsp;billion in client assets across 21 offices nationwide.</p>
 </section>
 
-<!-- CREDIBILITY BAR -->
-<section id="credibility" aria-label="Firm credentials">
-  <div class="cred-inner">
-    <div class="cred-item reveal">
-      <div class="cred-number" data-target="12" data-suffix="B+"><span class="counter">$12B+</span></div>
-      <div class="cred-label">Assets Under Management</div>
-      <div class="cred-desc">Trusted by clients nationwide</div>
-    </div>
-    <div class="cred-item reveal reveal-delay-1">
-      <div class="cred-number"><span>25</span><span style="color:var(--gold)">+</span></div>
-      <div class="cred-label">Years of Independence</div>
-      <div class="cred-desc">No wirehouse conflicts, ever</div>
-    </div>
-    <div class="cred-item reveal reveal-delay-2">
-      <div class="cred-number"><span>150</span><span style="color:var(--gold)">+</span></div>
-      <div class="cred-label">Financial Professionals</div>
-      <div class="cred-desc">Advisors, analysts, planners</div>
-    </div>
-    <div class="cred-item reveal reveal-delay-3">
-      <div class="cred-number"><span>21</span></div>
-      <div class="cred-label">Office Locations</div>
-      <div class="cred-desc">Across seven states nationwide</div>
-    </div>
-  </div>
-</section>
-
-<!-- PHILOSOPHY -->
-<section id="philosophy" aria-label="Our philosophy">
-  <div class="philosophy-inner">
-    <div class="philosophy-label-col reveal">
-      <span class="philosophy-label">Our Philosophy</span>
-    </div>
-    <blockquote class="philosophy-statement reveal reveal-delay-1">
-      "We challenge the status quo of old thinking and systems, committed to excellence in all aspects of our business, and <em>unwilling to accept anything less.</em>"
-    </blockquote>
-  </div>
-  <div class="philosophy-footer">
-    <div class="philosophy-pillar reveal">
-      <div class="philosophy-pillar-title" style="color:#fff">Fiduciary, Always</div>
-      <p class="philosophy-pillar-text">We are legally and ethically required to act in your best interest &mdash; at every meeting, in every recommendation, without exception. It is not a marketing claim. It is our legal standard.</p>
-    </div>
-    <div class="philosophy-pillar reveal reveal-delay-1">
-      <div class="philosophy-pillar-title" style="color:#fff">Independent Thinking</div>
-      <p class="philosophy-pillar-text">We access the full universe of investment solutions without constraint. Our recommendations are driven entirely by research and your objectives &mdash; not by internal product shelves.</p>
-    </div>
-    <div class="philosophy-pillar reveal reveal-delay-2">
-      <div class="philosophy-pillar-title" style="color:#fff">Relationships, Not Transactions</div>
-      <p class="philosophy-pillar-text">Our clients don't rotate. Many have been with the same advisor for decades. We build practices around long-term relationships because that is how exceptional wealth stewardship works.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHY CHOOSE CSP -->
-<section id="why-csp" aria-label="Why families choose Cary Street Partners">
-  <div class="why-csp-inner">
-    <div class="why-csp-header reveal">
-      <div>
-        <div class="section-eyebrow" style="margin-bottom:20px">
-          <span class="section-label dark-label">The Difference</span>
-        </div>
-        <h2 class="why-csp-title">Why Families Choose<br><em>Cary Street Partners</em></h2>
-      </div>
-      <p class="why-csp-sub">The right firm isn't just about returns. It's about who's in your corner &mdash; and how they're structured to serve you.</p>
-    </div>
-    <div class="why-csp-grid">
-
-      <!-- Card 1 -->
-      <div class="why-card reveal">
-        <div class="why-card-number">01</div>
-        <div class="why-card-icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <div class="why-card-title">Independent Advice</div>
-        <div class="why-card-divider"></div>
-        <p class="why-card-body">No proprietary products. No sales quotas. Recommendations are driven entirely by research and your goals &mdash; never by what the firm needs to sell.</p>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="why-card reveal reveal-delay-1">
-        <div class="why-card-number">02</div>
-        <div class="why-card-icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/>
-          </svg>
-        </div>
-        <div class="why-card-title">Fiduciary Standard</div>
-        <div class="why-card-divider"></div>
-        <p class="why-card-body">We are legally and ethically obligated to act in your best interest &mdash; at every meeting, in every recommendation. Not a marketing claim. A legal standard.</p>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="why-card reveal reveal-delay-2">
-        <div class="why-card-number">03</div>
-        <div class="why-card-icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-        </div>
-        <div class="why-card-title">Partnership Culture</div>
-        <div class="why-card-divider"></div>
-        <p class="why-card-body">Our advisors, clients, and firm are structurally aligned to succeed together. When you grow, we grow. There are no conflicting interests built into our model.</p>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="why-card reveal reveal-delay-3">
-        <div class="why-card-number">04</div>
-        <div class="why-card-icon" aria-hidden="true">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-          </svg>
-        </div>
-        <div class="why-card-title">National Resources.<br>Personal Relationships.</div>
-        <div class="why-card-divider"></div>
-        <p class="why-card-body">Institutional-grade capabilities across 21 offices &mdash; delivered through advisors who know your name, your family, and your full financial picture.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" aria-label="Our services">
-  <div class="section-header">
-    <div class="section-eyebrow reveal">
-      <span class="section-label dark-label">What We Do</span>
-      <h2 class="section-title">Comprehensive solutions through<br>all areas of wealth management.</h2>
-    </div>
-    <a href="/services" class="section-link reveal reveal-delay-2">
-      All Services
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-  <div class="services-grid">
-
-    <div class="service-card reveal" data-service="wealth-planning">
-      <div class="service-num">01</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M20 4L4 12v16l16 8 16-8V12L20 4z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-        <path d="M4 12l16 8 16-8M20 20v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <h3 class="service-name">Wealth Planning</h3>
-      <p class="service-desc">A comprehensive financial plan that brings together your entire financial life &mdash; income, assets, tax strategy, estate planning, and life goals &mdash; into a single, coherent vision.</p>
-      <span class="service-arrow">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-
-    <div class="service-card reveal reveal-delay-1" data-service="investment-management">
-      <div class="service-num">02</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M6 34V22M14 34V14M22 34V18M30 34V8M38 34H2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <h3 class="service-name">Investment Management</h3>
-      <p class="service-desc">Disciplined, research-driven portfolio management built around your risk tolerance, time horizon, and liquidity needs &mdash; with full access to the global investment landscape.</p>
-      <span class="service-arrow">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-
-    <div class="service-card reveal reveal-delay-2" data-service="retirement-planning">
-      <div class="service-num">03</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M20 10v10l8 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <h3 class="service-name">Retirement Planning</h3>
-      <p class="service-desc">From accumulation through distribution, we design retirement strategies that preserve income, manage longevity risk, and protect what took a lifetime to build.</p>
-      <span class="service-arrow">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-
-    <div class="service-card reveal reveal-delay-1" data-service="family-wealth">
-      <div class="service-num">04</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M8 8h24v24H8zM8 16h24M16 8v24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-      </svg>
-      <h3 class="service-name">Family Wealth Strategies</h3>
-      <p class="service-desc">Multi-generational wealth requires multi-generational thinking. We coordinate estate planning, gifting strategies, trust structures, and family governance to protect your legacy.</p>
-      <span class="service-arrow">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-
-    <div class="service-card reveal reveal-delay-2" data-service="institutional">
-      <div class="service-num">05</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M4 20c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="1.5"/>
-        <path d="M4 20c0 8.837 7.163 16 16 16" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/>
-        <circle cx="20" cy="20" r="5" stroke="currentColor" stroke-width="1.5"/>
-      </svg>
-      <h3 class="service-name">Institutional &amp; Retirement Plans</h3>
-      <p class="service-desc">Customized investment advisory and fiduciary support for endowments, foundations, corporate retirement plans, and defined benefit programs.</p>
-      <span class="service-arrow">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-
-    <div class="service-card reveal reveal-delay-3" data-service="portfolio-advisory">
-      <div class="service-num">06</div>
-      <svg class="service-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <path d="M20 4l4 8 9 1.3-6.5 6.3 1.5 9L20 24l-8 4.6 1.5-9L7 13.3l9-1.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-      </svg>
-      <h3 class="service-name">Portfolio Advisory</h3>
-      <p class="service-desc">For clients seeking a second opinion or supplemental guidance, our advisory-only model delivers institutional-grade analysis without discretionary management.</p>
-      <span class="service-arrow">Learn More <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-    </div>
-
-  </div>
-</section>
-
-<!-- SERVICE MODAL -->
-<div id="service-modal" aria-modal="true" role="dialog" aria-labelledby="modal-title">
-  <div class="smodal-backdrop"></div>
-  <div class="smodal-panel">
-    <button class="smodal-close" aria-label="Close">
-      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-    </button>
-    <div class="smodal-inner" id="modal-content"></div>
-  </div>
-</div>
-
-<!-- WHO WE SERVE -->
-<section id="who-we-serve" aria-label="Who we serve">
-  <div class="serve-inner">
-    <div class="section-header" style="margin-bottom:0">
-      <div class="section-eyebrow reveal">
-        <span class="section-label dark-label">Who We Serve</span>
-        <h2 class="section-title">Independent by design.<br>Exceptional by standard.</h2>
-      </div>
-    </div>
-    <div class="serve-grid">
-      <div class="serve-card reveal">
-        <div class="serve-card-number" aria-hidden="true">01</div>
-        <h3 class="serve-card-type">Affluent Families</h3>
-        <p class="serve-card-desc">Families with complex financial lives benefit from our integrated approach &mdash; coordinating investments, taxes, estate plans, and education funding under one roof.</p>
-        <div class="serve-card-tags">
-          <span class="serve-tag">Estate Planning</span>
-          <span class="serve-tag">Tax Strategy</span>
-          <span class="serve-tag">Education</span>
-        </div>
-      </div>
-      <div class="serve-card reveal reveal-delay-1">
-        <div class="serve-card-number" aria-hidden="true">02</div>
-        <h3 class="serve-card-type">Business Owners</h3>
-        <p class="serve-card-desc">Whether preparing for a liquidity event, structuring a succession plan, or managing concentrated stock, we specialize in the unique complexity of business-owner wealth.</p>
-        <div class="serve-card-tags">
-          <span class="serve-tag">Exit Planning</span>
-          <span class="serve-tag">Succession</span>
-          <span class="serve-tag">Liquidity</span>
-        </div>
-      </div>
-      <div class="serve-card reveal reveal-delay-2">
-        <div class="serve-card-number" aria-hidden="true">03</div>
-        <h3 class="serve-card-type">Executives &amp; Professionals</h3>
-        <p class="serve-card-desc">Equity compensation, deferred income, and concentrated positions require specialized planning. We navigate the complexity so you can focus on your career.</p>
-        <div class="serve-card-tags">
-          <span class="serve-tag">Stock Options</span>
-          <span class="serve-tag">Deferred Comp</span>
-          <span class="serve-tag">RSUs</span>
-        </div>
-      </div>
-      <div class="serve-card reveal reveal-delay-3">
-        <div class="serve-card-number" aria-hidden="true">04</div>
-        <h3 class="serve-card-type">Retirees &amp; Institutions</h3>
-        <p class="serve-card-desc">From income distribution strategies to endowment management, we serve clients focused on preservation, income reliability, and responsible stewardship.</p>
-        <div class="serve-card-tags">
-          <span class="serve-tag">Income Planning</span>
-          <span class="serve-tag">Endowments</span>
-          <span class="serve-tag">Foundations</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process" aria-label="Our process">
-  <div class="process-inner">
-    <div class="section-header reveal" style="margin-bottom:0">
-      <div class="section-eyebrow">
-        <span class="section-label">How We Work</span>
-        <h2 class="section-title light">A deliberate process. A lifetime of results.</h2>
-      </div>
-    </div>
-    <div class="process-steps">
-      <div class="process-step reveal">
-        <div class="process-step-num" aria-hidden="true">01</div>
-        <h3 class="process-step-title">Discovery</h3>
-        <p class="process-step-text">We begin by listening &mdash; not presenting. An in-depth conversation about your full financial picture, your goals, your concerns, and what a successful future looks like to you.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-1">
-        <div class="process-step-num" aria-hidden="true">02</div>
-        <h3 class="process-step-title">Strategy</h3>
-        <p class="process-step-text">We construct a comprehensive financial plan that connects every dimension of your wealth &mdash; investments, taxes, estate, insurance, and liquidity &mdash; into one integrated strategy.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-2">
-        <div class="process-step-num" aria-hidden="true">03</div>
-        <h3 class="process-step-title">Implementation</h3>
-        <p class="process-step-text">We execute with precision, selecting from the full universe of investment solutions without constraint, guided solely by your plan and our research.</p>
-      </div>
-      <div class="process-step reveal reveal-delay-3">
-        <div class="process-step-num" aria-hidden="true">04</div>
-        <h3 class="process-step-title">Partnership</h3>
-        <p class="process-step-text">Wealth management is not a product you buy once. We meet regularly, monitor proactively, and adjust dynamically as your life and the markets evolve.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section id="team" aria-label="Our team">
+<section id="team" aria-label="Senior leadership team">
   <div class="team-inner">
-
-    <!-- Section header -->
-    <div class="section-header reveal">
-      <div class="section-eyebrow">
-        <span class="section-label dark-label">Our People</span>
-        <h2 class="section-title">Leadership built on<br>independence and trust.</h2>
-      </div>
-      <a href="leadership.html" class="section-link reveal reveal-delay-2">
-        Meet the Team
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-
-    <!-- High-res group photo banner -->
     <div class="team-group-banner reveal">
       <img class="team-group-photo" src="hero-advisors.jpg" alt="Cary Street Partners team">
       <div class="team-group-overlay"></div>
       <div class="team-group-label">150+ Financial Professionals Nationwide</div>
     </div>
 
-    <!-- Leadership teaser -- full team lives on leadership.html -->
-    <div class="team-cta reveal">
-      <p class="team-cta-line">Nine senior executives. Wall Street pedigrees from Nomura, MUFG, Kidder Peabody, and Wachovia &mdash; united by independence.</p>
-      <a href="leadership.html" class="btn-primary team-cta-btn">
-        Meet the Leadership Team
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
+    <div class="team-sub-header reveal">
+      <span class="team-sub-label">Senior Leadership</span>
+    </div>
+<div class="team-grid">
+      <!-- 1. Joe -->
+      <div class="team-card reveal">
+        <img class="team-card-img" src="advisor-schmuckler.jpg" alt="Joseph R. Schmuckler" onerror="this.style.display='none'">
+        <div class="team-card-gradient" aria-hidden="true"></div>
+        <div class="team-card-initials" aria-hidden="true">JS</div>
+        <div class="team-card-content">
+          <div class="team-card-role">Chief Executive Officer</div>
+          <h3 class="team-card-name">Joseph R. Schmuckler</h3>
+          <p class="team-card-bio">Former Wall Street executive with a career spanning Kidder Peabody, Nomura, and MUFG &mdash; leading CSP's strategic vision since 2015.</p>
+        </div>
+      </div>
+      <!-- 2. Walter -->
+      <div class="team-card reveal reveal-delay-1">
+        <img class="team-card-img" src="advisor-bayne.jpg" alt="Walter D. Bayne" onerror="this.style.display='none'">
+        <div class="team-card-gradient" aria-hidden="true"></div>
+        <div class="team-card-initials" aria-hidden="true">WB</div>
+        <div class="team-card-content">
+          <div class="team-card-role">President, Managing Director</div>
+          <h3 class="team-card-name">Walter D. Bayne</h3>
+          <p class="team-card-bio">Partners closely with the CEO to shape and execute the firm's strategic vision, overseeing advisor recruiting and growth nationwide.</p>
+        </div>
+      </div>
+      <!-- 3. Chen -->
+      <div class="team-card reveal reveal-delay-2">
+        <img class="team-card-img" src="exec-chen.jpg" alt="Leon H. Chen" onerror="this.style.display='none'">
+        <div class="team-card-gradient" aria-hidden="true"></div>
+        <div class="team-card-initials" aria-hidden="true">LC</div>
+        <div class="team-card-content">
+          <div class="team-card-role">Chief Technology Officer, Managing Director</div>
+          <h3 class="team-card-name">Leon H. Chen</h3>
+          <p class="team-card-bio">26 years of technology leadership at Nomura and MUFG &mdash; architecting the platform that powers CSP's 150+ advisor network since 2015.</p>
+        </div>
+      </div>
+      <!-- 4. Wes -->
+      <div class="team-card reveal reveal-delay-3">
+        <img class="team-card-img" src="advisor-gallup.jpg" alt="Wesley H. Gallup" onerror="this.style.display='none'">
+        <div class="team-card-gradient" aria-hidden="true"></div>
+        <div class="team-card-initials" aria-hidden="true">WG</div>
+        <div class="team-card-content">
+          <div class="team-card-role">Chief Operating Officer, CFP&reg;</div>
+          <h3 class="team-card-name">Wesley H. Gallup</h3>
+          <p class="team-card-bio">Oversees firm-wide operations and infrastructure, ensuring the platform that supports 150+ advisors runs at the highest standard.</p>
+        </div>
+      </div>
+      <!-- 5. Paige -->
+      <div class="team-card reveal">
+        <img class="team-card-img" src="advisor-garrigan.jpg" alt="Paige W. Garrigan" onerror="this.style.display='none'">
+        <div class="team-card-gradient" aria-hidden="true"></div>
+        <div class="team-card-initials" aria-hidden="true">PG</div>
+        <div class="team-card-content">
+          <div class="team-card-role">Chief Marketing &amp; Transitions Officer</div>
+          <h3 class="team-card-name">Paige W. Garrigan</h3>
+          <p class="team-card-bio">Leads the firm's brand strategy, advisor transitions, and client experience initiatives across all 21 offices nationwide.</p>
+        </div>
+      </div>
+      <!-- 6. Jaimal -->
+      <div class="team-card reveal reveal-delay-1">
+        <img class="team-card-img" src="exec-hayes.jpg" alt="Jaimal C. Hayes" onerror="this.style.display='none'">
+        <div class="team-card-gradient" aria-hidden="true"></div>
+        <div class="team-card-initials" aria-hidden="true">JH</div>
+        <div class="team-card-content">
+          <div class="team-card-role">Chief Compliance Officer, Managing Director</div>
+          <h3 class="team-card-name">Jaimal C. Hayes</h3>
+          <p class="team-card-bio">Leads broker dealer compliance and the Supervision Department. Former compliance roles at Truist, Capital One, and Genworth Financial.</p>
+        </div>
+      </div>
+      <!-- 7. Nancy -->
+      <div class="team-card reveal reveal-delay-2">
+        <img class="team-card-img" src="advisor-oliver.jpg" alt="Nancy R. Oliver" onerror="this.style.display='none'">
+        <div class="team-card-gradient" aria-hidden="true"></div>
+        <div class="team-card-initials" aria-hidden="true">NO</div>
+        <div class="team-card-content">
+          <div class="team-card-role">Chief Compliance Officer, Investment Advisory, Managing Director</div>
+          <h3 class="team-card-name">Nancy R. Oliver</h3>
+          <p class="team-card-bio">Oversees investment advisory compliance across CSP's national platform, ensuring the highest regulatory standards for clients and advisors alike.</p>
+        </div>
+      </div>
+      <!-- 8. Matthew -->
+      <div class="team-card reveal reveal-delay-3">
+        <img class="team-card-img" src="exec-rubin.jpg" alt="Matthew L. Rubin" onerror="this.style.display='none'">
+        <div class="team-card-gradient" aria-hidden="true"></div>
+        <div class="team-card-initials" aria-hidden="true">MR</div>
+        <div class="team-card-content">
+          <div class="team-card-role">Chief Investment Officer</div>
+          <h3 class="team-card-name">Matthew L. Rubin</h3>
+          <p class="team-card-bio">Founded AnchorCove Partners before joining CSP. Leads wealth management strategy and portfolio management across multiple asset classes.</p>
+        </div>
+      </div>
+      <!-- 9. Thomas -->
+      <div class="team-card reveal">
+        <img class="team-card-img" src="exec-tullidge.jpg" alt="Thomas H. Tullidge Jr." onerror="this.style.display='none'">
+        <div class="team-card-gradient" aria-hidden="true"></div>
+        <div class="team-card-initials" aria-hidden="true">TT</div>
+        <div class="team-card-content">
+          <div class="team-card-role">Chief Strategy Officer, Co-Founder</div>
+          <h3 class="team-card-name">Thomas H. Tullidge Jr.</h3>
+          <p class="team-card-bio">Co-founded CSP in 2002. 35+ years advising on M&amp;A and complex corporate finance &mdash; formerly at Wachovia Securities and McGuireWoods.</p>
+        </div>
+      </div>
     </div>
 
   </div>
 </section>
 
-<!-- HERITAGE -->
-<section id="heritage" aria-label="Our national footprint">
-  <!-- METRICS BAND -->
-  <div class="heritage-metrics" aria-label="Firm statistics">
-    <div class="heritage-metric">
-      <div class="heritage-metric-bar"></div>
-      <div class="heritage-metric-num" data-countup data-target="21" data-suffix="">21</div>
-      <div class="heritage-metric-label">Office Locations</div>
-    </div>
-    <div class="heritage-metric">
-      <div class="heritage-metric-bar"></div>
-      <div class="heritage-metric-num" data-countup data-target="7" data-suffix="">7</div>
-      <div class="heritage-metric-label">States with Offices</div>
-    </div>
-    <div class="heritage-metric">
-      <div class="heritage-metric-bar"></div>
-      <div class="heritage-metric-num" data-countup data-target="48" data-suffix="">48</div>
-      <div class="heritage-metric-label">States Served</div>
-    </div>
-  </div>
-
-  <!-- ASYMMETRIC GRID -->
-  <div class="heritage-inner">
-
-    <!-- LEFT: Map -->
-    <div class="heritage-visual reveal">
-      <div class="heritage-map" id="csp-offices-map" aria-label="Cary Street Partners office locations across the United States"></div>
-    </div>
-
-    <!-- RIGHT: Content -->
-    <div class="heritage-copy">
-      <div class="section-eyebrow reveal" style="margin-bottom:28px">
-        <span class="section-label">Our Footprint</span>
-      </div>
-      <h2 class="reveal reveal-delay-1">
-        <em>Rooted in Richmond.</em><br>Trusted Across the Nation.
-      </h2>
-      <p class="heritage-tagline reveal reveal-delay-2">From our Richmond roots to a growing national presence.</p>
-
-      <div class="heritage-pillars reveal reveal-delay-3">
-        <div class="heritage-pillar">
-          <div class="heritage-pillar-label">Founded</div>
-          <div class="heritage-pillar-value">Built in 1999 to challenge conventional wisdom &mdash; aligning client, advisor, and firm through genuine partnership structure.</div>
-        </div>
-        <div class="heritage-pillar">
-          <div class="heritage-pillar-label">Independence</div>
-          <div class="heritage-pillar-value">Free from the conflicts of wirehouse models. Our independence is our clients' advantage.</div>
-        </div>
-        <div class="heritage-pillar">
-          <div class="heritage-pillar-label">Growth</div>
-          <div class="heritage-pillar-value">$12 billion in assets reached by staying ahead of industry trends &mdash; never through acquisition for its own sake.</div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
+<section class="lead-cta" aria-label="Begin a conversation">
+  <h2 class="lead-cta-headline reveal">A team this committed deserves<br>a <em>conversation.</em></h2>
+  <a href="cary-street-partners.html#cta" class="btn-primary reveal reveal-delay-1">
+    Begin a Conversation
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
 </section>
+</main>
 
-<!-- OFFICE PHOTO BAND -->
-<div class="office-band" aria-hidden="true">
-  <img class="office-band-photo" src="office-conference.jpg" alt="Cary Street Partners conference room" onerror="this.style.display='none'">
-  <div class="office-band-overlay"></div>
-  <div class="office-band-text">901 East Cary Street &nbsp;&bull;&nbsp; Richmond, Virginia</div>
-</div>
-
-<!-- INSIGHTS -->
-<section id="insights" aria-label="Market insights and perspectives">
-  <div class="insights-inner">
-    <div class="section-header reveal">
-      <div class="section-eyebrow">
-        <span class="section-label dark-label">Perspectives</span>
-        <h2 class="section-title">Intelligence worth<br>reading.</h2>
-      </div>
-      <a href="https://carystreetpartners.com/insights/" target="_blank" rel="noopener" class="section-link reveal reveal-delay-2">
-        All Insights
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="insights-grid">
-
-      <!-- Featured article -->
-      <a class="insight-card large reveal"
-         href="https://carystreetpartners.com/insight/why-private-markets-are-key-to-portfolio-diversification/"
-         target="_blank" rel="noopener"
-         aria-label="Read: Why Private Markets are Key to Portfolio Diversification">
-        <div class="insight-category">Investment Strategy</div>
-        <h3 class="insight-title">Why Private Markets are Key to Portfolio Diversification</h3>
-        <p class="insight-excerpt">Access to private equity, private credit, and real assets was once reserved for institutional investors. We examine how qualified investors can thoughtfully incorporate these exposures &mdash; and why the case for diversification beyond public markets has never been stronger.</p>
-        <div class="insight-meta">
-          <span>Market Outlook</span>
-          <span class="insight-meta-dot" aria-hidden="true"></span>
-          <span>June 2025</span>
-          <span class="insight-meta-dot" aria-hidden="true"></span>
-          <span>12 min read</span>
-        </div>
-        <div class="insight-read-more" aria-hidden="true">
-          Read Article
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-      </a>
-
-      <!-- Article 2 -->
-      <a class="insight-card reveal reveal-delay-1"
-         href="https://carystreetpartners.com/insight/when-is-the-right-time-to-take-social-security/"
-         target="_blank" rel="noopener"
-         aria-label="Read: When is the Right Time to Take Social Security?">
-        <div class="insight-category">Retirement Planning</div>
-        <h3 class="insight-title">When Is the Right Time to Take Social Security?</h3>
-        <p class="insight-excerpt">The decision affects your income for decades. We walk through the factors that matter most &mdash; and the trade-offs most families overlook.</p>
-        <div class="insight-meta">
-          <span>Planning</span>
-          <span class="insight-meta-dot" aria-hidden="true"></span>
-          <span>May 2025</span>
-        </div>
-        <div class="insight-read-more" aria-hidden="true">
-          Read Article
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-      </a>
-
-      <!-- Article 3 -->
-      <a class="insight-card reveal reveal-delay-2"
-         href="https://carystreetpartners.com/insight/financial-planning-in-the-age-of-ai/"
-         target="_blank" rel="noopener"
-         aria-label="Read: Financial Planning in the Age of AI">
-        <div class="insight-category">Wealth Planning</div>
-        <h3 class="insight-title">Financial Planning in the Age of AI</h3>
-        <p class="insight-excerpt">Artificial intelligence is reshaping how advisors work &mdash; but the core of sound planning remains deeply human. What changes, and what stays the same.</p>
-        <div class="insight-meta">
-          <span>Technology</span>
-          <span class="insight-meta-dot" aria-hidden="true"></span>
-          <span>June 2025</span>
-          <span class="insight-meta-dot" aria-hidden="true"></span>
-          <span>5 min read</span>
-        </div>
-        <div class="insight-read-more" aria-hidden="true">
-          Read Article
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-      </a>
-
-    </div>
-  </div>
-</section>
-
-<!-- ADVISOR TEASER -->
-<section id="advisor-teaser" aria-label="Advisor opportunities">
-  <div class="advisor-teaser-inner reveal">
-    <div class="advisor-teaser-copy">
-      <div class="advisor-teaser-eyebrow">For Financial Advisors</div>
-      <h2 class="advisor-teaser-headline">Interested in joining<br>Cary Street Partners?</h2>
-      <p class="advisor-teaser-sub">Learn why experienced advisors choose our platform &mdash; independent, fiduciary, and built around your practice.</p>
-    </div>
-    <a href="join.html" class="btn-primary advisor-teaser-cta">
-      Explore Advisor Opportunities
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- CTA -->
-<section id="cta" aria-label="Begin a conversation">
-  <div class="cta-bg" aria-hidden="true"></div>
-  <div class="cta-inner">
-    <div class="cta-eyebrow reveal">Ready when you are</div>
-    <h2 class="cta-headline reveal reveal-delay-1">
-      The right conversation<br>starts with <em>one.</em>
-    </h2>
-    <p class="cta-sub reveal reveal-delay-2">
-      There is no sales pitch in your first meeting. No product recommendations. Just an honest conversation about your financial life, your goals, and whether we are the right firm for you.
-    </p>
-    <form class="cta-form reveal reveal-delay-3" onsubmit="handleCTA(event)" style="margin-bottom:16px">
-      <label for="cta-email" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Email address</label>
-      <input class="cta-input" type="email" id="cta-email" name="email" placeholder="Enter your email address" required autocomplete="email">
-      <button type="submit" class="btn-primary" style="white-space:nowrap">
-        Request a Consultation
-      </button>
-    </form>
-    <p class="cta-disclaimer reveal reveal-delay-4">Or call us directly: <a href="tel:+18042885678" style="color:var(--gold-light);text-decoration:none">(804) 288-5678</a> &nbsp;&bull;&nbsp; No obligation. Completely confidential.</p>
-    <div class="cta-trust reveal reveal-delay-5">
-      <div class="cta-trust-item">
-        <svg class="cta-trust-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1.5L10 6h4.5l-3.5 2.5 1.5 4.5L8 10.5l-4.5 2.5 1.5-4.5L1.5 6H6z" stroke="currentColor" stroke-width="1.2"/></svg>
-        SEC Registered Investment Advisor
-      </div>
-      <div class="cta-trust-item">
-        <svg class="cta-trust-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 2l1.2 3.6H13l-2.9 2.1 1.1 3.6L8 9.2l-3.2 2.1 1.1-3.6L3 5.6h3.8z" stroke="currentColor" stroke-width="1.2"/></svg>
-        Fiduciary Standard
-      </div>
-      <div class="cta-trust-item">
-        <svg class="cta-trust-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M14 8A6 6 0 112 8a6 6 0 0112 0z" stroke="currentColor" stroke-width="1.2"/><path d="M8 5v4l2.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-        25+ Years of Independence
-      </div>
-      <div class="cta-trust-item">
-        <svg class="cta-trust-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="2" y="3" width="12" height="10" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M5 7h6M5 10h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-        $12B+ Under Management
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer id="footer">
   <div class="footer-top">
     <div class="footer-brand">
@@ -3018,521 +2577,42 @@ body{
   </div>
 </footer>
 
-<!-- JAVASCRIPT -->
 <script>
-// -- Nav scroll behavior
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
-
-// -- Banner dismiss
-document.getElementById('bannerClose').addEventListener('click', () => {
-  document.getElementById('banner').style.display = 'none';
-});
-
-// -- Mobile drawer
-const drawer = document.getElementById('navDrawer');
-const toggle = document.getElementById('mobileToggle');
-const closeBtn = document.getElementById('drawerClose');
-
-function openDrawer() {
-  drawer.classList.add('open');
-  toggle.setAttribute('aria-expanded', 'true');
-  document.body.style.overflow = 'hidden';
-}
-function closeDrawer() {
-  drawer.classList.remove('open');
-  toggle.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}
-toggle.addEventListener('click', openDrawer);
-closeBtn.addEventListener('click', closeDrawer);
-drawer.addEventListener('click', e => { if (e.target === drawer) closeDrawer(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
-
-// -- Scroll reveal -- trigger once, stay visible permanently
-const revealEls = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
+// Reveal-on-scroll
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
     entry.target.classList.add('visible');
-    revealObserver.unobserve(entry.target); // never reset after first reveal
+    observer.unobserve(entry.target);
   });
-}, {
-  threshold: 0.1,
-  rootMargin: '0px 0px -40px 0px'
-});
-revealEls.forEach(el => revealObserver.observe(el));
-
-// -- Animated counters
-function animateCounter(el, target, suffix, duration) {
-  const start = performance.now();
-  const update = (now) => {
-    const progress = Math.min((now - start) / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.round(eased * target);
-    el.textContent = (suffix === 'B+' ? '$' : '') + current + (suffix || '');
-    if (progress < 1) requestAnimationFrame(update);
-  };
-  requestAnimationFrame(update);
-}
-
-const counterObs = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const el = entry.target.querySelector('.counter');
-    if (el) {
-      const num = el.closest('.cred-number');
-      const target = parseInt(num?.dataset.target || '12');
-      const suffix = num?.dataset.suffix || '';
-      animateCounter(el, target, suffix, 1800);
-    }
-    counterObs.unobserve(entry.target);
-  });
-}, { threshold: 0.5 });
-document.querySelectorAll('.cred-item').forEach(el => counterObs.observe(el));
-
-// -- Form handlers
-function handleCTA(e) {
-  e.preventDefault();
-  const email = document.getElementById('cta-email').value;
-  const btn = e.target.querySelector('button');
-  btn.textContent = 'Request Sent \u2014 We\'ll Be in Touch';
-  btn.style.background = '#2d4a2d';
-  btn.style.color = '#a8d5a2';
-  btn.disabled = true;
-}
-
-function handleRecruiting(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button');
-  btn.textContent = 'Submitted \u2014 Thank You';
-  btn.style.background = '#2d4a2d';
-  btn.style.color = '#a8d5a2';
-  btn.disabled = true;
-}
-
-// -- Hero scroll parallax -- photo lags 10% behind the page
-(function () {
-  const stack = document.getElementById('hero-photo-stack');
-  if (!stack) return;
-
-  let scrollY = 0;
-  window.addEventListener('scroll', () => { scrollY = window.scrollY; }, { passive: true });
-
-  (function tick() {
-    requestAnimationFrame(tick);
-    // Text scrolls at 1x -- photo scrolls at 0.9x by pushing it down 10% of scroll distance
-    stack.style.transform = `translateY(${scrollY * 0.10}px)`;
-  })();
-})();
-
-
-// -- Mission dropdown toggle
-const missionTrigger = document.getElementById('mission-trigger');
-const missionBody = document.getElementById('mission-body');
-if (missionTrigger && missionBody) {
-  missionTrigger.addEventListener('click', () => {
-    const isOpen = missionBody.classList.toggle('open');
-    missionTrigger.setAttribute('aria-expanded', isOpen);
-  });
-}
-
-// -- Smooth entrance for hero elements on load
+}, { threshold: 0.15 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// Reveal hero immediately
 window.addEventListener('load', () => {
-  document.querySelectorAll('#hero .reveal').forEach((el, i) => {
-    setTimeout(() => el.classList.add('visible'), 200 + i * 150);
+  document.querySelectorAll('.lead-hero .reveal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 150 + i * 150);
   });
-
 });
 
-// -- Service Modal ------------------------------------
-const SERVICE_DATA = {
-  'wealth-planning': {
-    eyebrow: 'Service 01',
-    title: 'Wealth Planning',
-    lead: 'True wealth planning extends far beyond investment allocation. We begin with a deep understanding of your complete financial picture \u2014 where you are, where you want to be, and what it will take to get there \u2014 then build a coordinated strategy that evolves with your life.',
-    sections: [
-      {
-        label: 'What It Includes',
-        title: 'A plan built around your entire financial life',
-        bullets: [
-          'Comprehensive financial plan development and annual review',
-          'Cash flow analysis, budgeting, and savings optimization',
-          'Income tax planning and multi-year projection modeling',
-          'Estate planning coordination with your legal counsel',
-          'Insurance coverage review and risk management assessment',
-          'Employee benefits analysis and equity compensation planning',
-          'Major life event planning \u2014 career transitions, real estate, inheritance'
-        ]
-      },
-      {
-        label: 'Who It\'s For',
-        title: 'Individuals and families navigating complexity',
-        body: 'Our wealth planning service is designed for executives, business owners, and high-net-worth families who have accumulated meaningful assets and recognize that managing them well requires a disciplined, long-term framework \u2014 not a series of isolated financial decisions.'
-      },
-      {
-        label: 'Our Approach',
-        title: 'Integrated, proactive, and highly personalized',
-        body: 'We challenge the status quo of old thinking and disconnected advice. Every component of your financial life is considered in context of the whole \u2014 your tax position informs your investment strategy, your estate plan informs your insurance structure, and your retirement timeline informs all of it. We meet with you regularly to review progress, adjust for life changes, and ensure your plan remains on course.'
-      }
-    ]
-  },
-  'investment-management': {
-    eyebrow: 'Service 02',
-    title: 'Investment Management',
-    lead: 'We manage investment portfolios with the same rigor and discipline we would apply to our own capital \u2014 anchored in independent research, unwavering in process, and always aligned with your long-term objectives. Access to the full investment landscape means we are never constrained by proprietary product mandates.',
-    sections: [
-      {
-        label: 'What It Includes',
-        title: 'Disciplined portfolio construction and ongoing management',
-        bullets: [
-          'Custom portfolio design based on your goals, time horizon, and risk profile',
-          'Access to equities, fixed income, alternatives, and private markets',
-          'Institutional-quality due diligence on all investment vehicles',
-          'Active tax-loss harvesting and capital gains management',
-          'Ongoing performance reporting and portfolio attribution',
-          'Rebalancing and tactical adjustments as market conditions evolve',
-          'Custodian-agnostic platform \u2014 assets held at Schwab, Fidelity, or Pershing'
-        ]
-      },
-      {
-        label: 'Our Philosophy',
-        title: 'Evidence-based. Independent. Client-first.',
-        body: 'As an independent firm, we are under no obligation to use proprietary products or meet firm-wide asset allocation mandates. Every investment recommendation is made solely in the context of your individual needs. Our process draws on independent research, quantitative modeling, and decades of institutional investment experience.'
-      },
-      {
-        label: 'Our Approach',
-        title: 'Long-term discipline over short-term noise',
-        body: 'We believe the most destructive force in investing is reactive decision-making driven by market volatility. Our role is to build portfolios constructed to weather multiple market cycles, then guide you through periods of uncertainty with data and perspective \u2014 not emotion. We measure success by your progress toward financial independence, not by outperforming a benchmark in any given quarter.'
-      }
-    ]
-  },
-  'retirement-planning': {
-    eyebrow: 'Service 03',
-    title: 'Retirement Planning',
-    lead: 'Retirement is not an endpoint \u2014 it is a multi-decade financial phase that requires as much strategic thought as the accumulation years that preceded it. We design retirement strategies built to sustain your income, protect your purchasing power, and give you confidence in every season of life.',
-    sections: [
-      {
-        label: 'What It Includes',
-        title: 'End-to-end retirement strategy',
-        bullets: [
-          'Retirement readiness analysis and income projection modeling',
-          'Social Security optimization and claiming strategy',
-          'Required Minimum Distribution (RMD) planning and sequencing',
-          'Roth conversion analysis and tax-bracket management',
-          'Healthcare cost planning and Medicare coordination',
-          'Pension and defined benefit distribution strategy',
-          'Withdrawal sequencing to maximize tax efficiency across account types'
-        ]
-      },
-      {
-        label: 'Key Considerations',
-        title: 'Planning for a retirement that could last 30+ years',
-        body: 'Longevity is the defining risk of modern retirement. A plan built for a 15-year retirement is fundamentally different from one designed to sustain 30 or more years of income. We model multiple scenarios \u2014 market downturns, healthcare shocks, long-term care needs \u2014 and stress-test your plan to ensure it holds under pressure.'
-      },
-      {
-        label: 'Our Approach',
-        title: 'From accumulation to distribution \u2014 seamlessly',
-        body: 'Most advisors focus on building wealth. Fewer specialize in the careful, tax-aware process of spending it down in the most efficient sequence possible. We work with you throughout the transition from working years into retirement to ensure your portfolio, tax strategy, and income plan are fully integrated \u2014 and that the transition feels anything but abrupt.'
-      }
-    ]
-  },
-  'family-wealth': {
-    eyebrow: 'Service 04',
-    title: 'Family Wealth Strategies',
-    lead: 'Preserving wealth across generations requires more than a will. It requires a coordinated framework of legal structures, tax strategies, and family communication designed to ensure that what you have built endures \u2014 and that the values behind it do too.',
-    sections: [
-      {
-        label: 'What It Includes',
-        title: 'Comprehensive multi-generational planning',
-        bullets: [
-          'Estate planning coordination with your estate attorney',
-          'Gifting strategy design \u2014 annual exclusions, 529s, trusts, and direct gifts',
-          'Irrevocable trust structures: SLATs, ILITs, GRATs, and dynasty trusts',
-          'Business succession planning and ownership transfer strategy',
-          'Charitable giving vehicles \u2014 DAFs, CLTs, CRTs, and private foundations',
-          'Family governance frameworks \u2014 investment policy, family meetings, decision-making',
-          'Education funding strategies across multiple beneficiaries'
-        ]
-      },
-      {
-        label: 'Who It\'s For',
-        title: 'Families with significant intergenerational wealth',
-        body: 'Our family wealth services are designed for clients with estate planning complexity \u2014 typically those with taxable estates, closely held business interests, meaningful charitable intent, or multiple generations who will benefit from a coordinated approach to governance, gifting, and wealth transfer.'
-      },
-      {
-        label: 'Our Approach',
-        title: 'Coordination, clarity, and continuity',
-        body: 'We serve as the central coordinator among your estate attorney, CPA, and other advisors \u2014 ensuring that the legal documents, tax strategies, and investment structures are all working together toward the same goals. We also facilitate family conversations about wealth \u2014 helping families articulate shared values and establish governance frameworks that reduce conflict and build cohesion across generations.'
-      }
-    ]
-  },
-  'institutional': {
-    eyebrow: 'Service 05',
-    title: 'Institutional & Retirement Plans',
-    lead: 'Institutional investors face a distinct set of obligations \u2014 fiduciary duty, investment policy compliance, vendor oversight, and participant outcomes. We provide investment advisory and consulting services that help institutions meet those obligations with discipline and transparency.',
-    sections: [
-      {
-        label: 'What It Includes',
-        title: 'Comprehensive institutional advisory services',
-        bullets: [
-          'Investment policy statement (IPS) development and annual review',
-          'Asset allocation modeling and portfolio construction',
-          'Manager selection, due diligence, and ongoing monitoring',
-          'ERISA fiduciary support for 401(k) and defined benefit plans',
-          'Participant investment education and enrollment support',
-          'Fee benchmarking and vendor fee negotiation',
-          'Endowment and foundation spending policy analysis',
-          'Committee meeting support and quarterly reporting packages'
-        ]
-      },
-      {
-        label: 'Clients Served',
-        title: 'Endowments, foundations, and corporate plan sponsors',
-        body: 'We serve a diverse range of institutional clients \u2014 nonprofit endowments, private foundations, corporate defined contribution and defined benefit plans, healthcare systems, and religious organizations. Each engagement is structured around the specific governance, regulatory, and return requirements of the institution.'
-      },
-      {
-        label: 'Our Approach',
-        title: 'Independent. Transparent. Fiduciary-first.',
-        body: 'Institutional clients deserve the same independence and objectivity that we bring to our private wealth relationships. We have no affiliated funds to promote and no revenue-sharing arrangements that could compromise our objectivity. Our recommendations are grounded in independent research and governed by a rigorous investment process \u2014 with full transparency on fees, reasoning, and outcomes.'
-      }
-    ]
-  },
-  'portfolio-advisory': {
-    eyebrow: 'Service 06',
-    title: 'Portfolio Advisory',
-    lead: 'Not every client wants discretionary management. For those who prefer to retain investment control while gaining access to institutional-grade analysis and an independent perspective, our portfolio advisory service delivers the insight without the handoff.',
-    sections: [
-      {
-        label: 'What It Includes',
-        title: 'Institutional-quality analysis on your terms',
-        bullets: [
-          'Comprehensive portfolio review and diagnostic assessment',
-          'Asset allocation analysis relative to your goals and risk profile',
-          'Investment manager evaluation and fee benchmarking',
-          'Tax efficiency review \u2014 capital gains exposure, wash-sale analysis',
-          'Concentrated position and risk analysis',
-          'Written advisory reports with specific, actionable recommendations',
-          'Ongoing access to your advisor for questions and scenario modeling'
-        ]
-      },
-      {
-        label: 'Who It\'s For',
-        title: 'Sophisticated investors seeking an independent voice',
-        body: 'Our advisory clients include self-directed investors who want a professional second opinion, individuals who manage accounts at multiple institutions and want a consolidated view, and clients who prefer to execute trades themselves but value objective guidance on strategy and structure.'
-      },
-      {
-        label: 'Our Approach',
-        title: 'Honest analysis. No product agenda.',
-        body: 'The value of a true advisory relationship lies in objectivity. Because we are not managing the assets directly, there is no incentive to recommend any particular product or strategy for reasons other than your best interest. We bring the same analytical rigor to an advisory engagement as we do to discretionary management \u2014 and we are candid about what we find, even when the answer is uncomfortable.'
-      }
-    ]
-  }
-};
-
-function buildModalContent(key) {
-  const d = SERVICE_DATA[key];
-  if (!d) return '';
-  let sectionsHTML = d.sections.map(s => {
-    let body = '';
-    if (s.bullets) {
-      body = `<ul class="smodal-bullets">${s.bullets.map(b => `<li>${b}</li>`).join('')}</ul>`;
-    } else {
-      body = `<p class="smodal-section-body">${s.body}</p>`;
-    }
-    return `<div>
-      <div class="smodal-section-label">${s.label}</div>
-      <div class="smodal-section-title">${s.title}</div>
-      ${body}
-    </div>`;
-  }).join('');
-
-  return `
-    <div class="smodal-eyebrow">${d.eyebrow}</div>
-    <h2 class="smodal-title" id="modal-title">${d.title}</h2>
-    <p class="smodal-lead">${d.lead}</p>
-    <div class="smodal-sections">${sectionsHTML}</div>
-    <div class="smodal-cta">
-      <p>Ready to discuss how this service fits your situation? We'd welcome the conversation.</p>
-      <button class="smodal-cta-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});closeServiceModal()">
-        Schedule a Conversation
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </button>
-    </div>`;
+// Mobile drawer
+const toggle = document.getElementById('mobileToggle');
+const navDrawer = document.getElementById('navDrawer');
+const drawerClose = document.getElementById('drawerClose');
+const drawerOverlay = document.getElementById('drawerOverlay');
+function closeDrawer() {
+  navDrawer.classList.remove('open');
+  drawerOverlay.classList.remove('visible');
+  toggle.setAttribute('aria-expanded', 'false');
 }
-
-function openServiceModal(key) {
-  const modal = document.getElementById('service-modal');
-  document.getElementById('modal-content').innerHTML = buildModalContent(key);
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
-  modal.querySelector('.smodal-close').focus();
-}
-
-function closeServiceModal() {
-  const modal = document.getElementById('service-modal');
-  modal.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-// Wire up service cards
-document.querySelectorAll('.service-card[data-service]').forEach(card => {
-  card.style.cursor = 'pointer';
-  card.addEventListener('click', () => openServiceModal(card.dataset.service));
-});
-
-// Close on backdrop click
-document.querySelector('.smodal-backdrop').addEventListener('click', closeServiceModal);
-
-// Close button
-document.querySelector('.smodal-close').addEventListener('click', closeServiceModal);
-
-// Close on Escape
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeServiceModal();
-});
-</script>
-
-<!-- -- LEAFLET MAP -- CSP Office Locations -- -->
-<script src="leaflet.js"></script>
-<script>
-(function() {
-  const mapEl = document.getElementById('csp-offices-map');
-  if (!mapEl) return;
-
-  const map = L.map('csp-offices-map', {
-    zoomControl: false,
-    attributionControl: true,
-    dragging: false,
-    scrollWheelZoom: false,
-    doubleClickZoom: false,
-    boxZoom: false,
-    keyboard: false,
-    touchZoom: false,
+if (toggle) {
+  toggle.addEventListener('click', () => {
+    navDrawer.classList.add('open');
+    drawerOverlay.classList.add('visible');
+    toggle.setAttribute('aria-expanded', 'true');
   });
-
-  // CartoDB Dark Matter -- free, no API key
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://carto.com/" style="color:rgba(201,169,110,0.5);font-size:9px">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 19
-  }).addTo(map);
-
-  // All 21 CSP offices [lat, lng, city, isHQ]
-  const offices = [
-    [36.70, -81.98, 'Abingdon, VA', false],
-    [30.27, -97.74, 'Austin, TX', false],
-    [35.23, -80.84, 'Charlotte, NC', false],
-    [38.03, -78.48, 'Charlottesville, VA', false],
-    [32.75, -97.33, 'Fort Worth, TX', false],
-    [38.30, -77.46, 'Fredericksburg, VA', false],
-    [37.66, -77.49, 'Glen Allen, VA', false],
-    [36.07, -79.79, 'Greensboro, NC', false],
-    [34.85, -82.39, 'Greenville, SC', false],
-    [36.32, -82.35, 'Johnson City, TN', false],
-    [36.55, -82.56, 'Kingsport, TN', false],
-    [38.93, -77.18, 'McLean, VA', false],
-    [40.80, -74.48, 'Morristown, NJ', false],
-    [26.71, -80.05, 'Palm Beach, FL', false],
-    [37.54, -77.43, 'Richmond, VA', true],  // HQ *
-    [37.27, -79.94, 'Roanoke, VA', false],
-    [29.42, -98.49, 'San Antonio, TX', false],
-    [27.34, -82.53, 'Sarasota, FL', false],
-    [27.95, -82.46, 'Tampa, FL', false],
-    [36.85, -75.98, 'Virginia Beach, VA', false],
-    [36.95, -81.08, 'Wytheville, VA', false],
-  ];
-
-  // Pulsing CSS dot icon
-  function dotIcon(isHQ) {
-    const size = isHQ ? 13 : 7;
-    const cls  = isHQ ? 'csp-dot-hq' : 'csp-dot';
-    // Stagger animation so dots don't all pulse in sync
-    const delay = (Math.random() * 2).toFixed(2) + 's';
-    return L.divIcon({
-      className: '',
-      html: `<div class="${cls}" style="width:${size}px;height:${size}px;animation-delay:${delay}"></div>`,
-      iconSize: [0, 0],
-      iconAnchor: [0, 0],
-      popupAnchor: [0, -10]
-    });
-  }
-
-  offices.forEach(([lat, lng, city, isHQ]) => {
-    const marker = L.marker([lat, lng], { icon: dotIcon(isHQ) }).addTo(map);
-    marker.bindTooltip(
-      `<span style="font-family:'Jost',sans-serif;font-size:11px;color:#C9A96E;letter-spacing:0.08em">${city}${isHQ ? ' \u2605 HQ' : ''}</span>`,
-      { className: 'csp-map-tooltip', direction: 'top', offset: [0, -6] }
-    );
-  });
-
-  // Zoom into eastern US + Texas -- tighter, more purposeful view
-  // Slightly expand bounds to give breathing room around the office cluster
-  map.fitBounds(
-    L.latLngBounds([25.5, -99.5], [41.5, -74.0]),
-    { padding: [16, 16] }
-  );
-
-  // Store globally so we can adjust from console if needed
-  window.cspMap = map;
-
-  // Style the attribution control to be subtle
-  const style = document.createElement('style');
-  style.textContent = `
-    #csp-offices-map .leaflet-control-attribution {
-      background: rgba(8,21,43,0.7) !important;
-      color: rgba(201,169,110,0.4) !important;
-      font-size: 9px !important;
-      border-top: 1px solid rgba(201,169,110,0.1) !important;
-    }
-    .csp-map-tooltip {
-      background: rgba(8,21,43,0.92) !important;
-      border: 1px solid rgba(201,169,110,0.3) !important;
-      border-radius: 0 !important;
-      padding: 5px 10px !important;
-      box-shadow: none !important;
-    }
-    .csp-map-tooltip::before { display:none !important; }
-  `;
-  document.head.appendChild(style);
-})();
-
-// -- Heritage metrics: fade-in + count-up on scroll --
-(function () {
-  const metrics = document.querySelectorAll('.heritage-metric');
-  if (!metrics.length) return;
-
-  function countUp(el) {
-    const target = parseFloat(el.dataset.target);
-    const prefix = el.dataset.prefix || '';
-    const suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : '';
-    const start  = el.dataset.start ? parseFloat(el.dataset.start) : 0;
-    const dur    = 1600;
-    const t0     = performance.now();
-    function tick(now) {
-      const p = Math.min((now - t0) / dur, 1);
-      const e = 1 - Math.pow(1 - p, 3);
-      const v = Math.round(start + (target - start) * e);
-      el.innerHTML = prefix + v + suffix;
-      if (p < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      entry.target.classList.add('visible');
-      const num = entry.target.querySelector('[data-countup]');
-      if (num && !num._counted) { num._counted = true; countUp(num); }
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.25 });
-
-  metrics.forEach(m => observer.observe(m));
-})();
+  drawerClose.addEventListener('click', closeDrawer);
+  drawerOverlay.addEventListener('click', closeDrawer);
+}
 </script>
 </body>
 </html>
