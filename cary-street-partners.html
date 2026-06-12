@@ -366,17 +366,20 @@ body{
   font-weight:600;
   letter-spacing:0.22em;
   text-transform:uppercase;
-  color:rgba(255,255,255,0.5);
+  color:rgba(255,255,255,0.30);
+  /* fades in from the left so the label recedes like the photo scrim + writing */
+  -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 42%);
+  mask-image:linear-gradient(90deg, transparent 0%, #000 42%);
 }
 .hero-figure-caption em{
   font-style:normal;
-  color:var(--gold);
+  color:rgba(201,169,110,0.62);
 }
 .hero-figure-caption::before{
   content:'';
   width:32px;height:1px;
   background:var(--gold);
-  opacity:0.75;
+  opacity:0.45;
 }
 .hero-leftcol{
   grid-column:1 / 7;
@@ -2435,7 +2438,7 @@ body{
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#who-we-serve">Who We Serve</a></li>
-    <li><a href="#locations">Locations</a></li>
+    <li><a href="locations.html">Locations</a></li>
     <li><a href="#insights">Insights</a></li>
     <li><a href="leadership.html">Leadership</a></li>
     <li><a href="#advisor-teaser">For Advisors</a></li>
@@ -2452,7 +2455,7 @@ body{
   <ul class="nav-drawer-links">
     <li class="nav-drawer-link"><a href="#services" onclick="closeDrawer()">Services</a></li>
     <li class="nav-drawer-link"><a href="#who-we-serve" onclick="closeDrawer()">Who We Serve</a></li>
-    <li class="nav-drawer-link"><a href="#locations" onclick="closeDrawer()">Locations</a></li>
+    <li class="nav-drawer-link"><a href="locations.html">Locations</a></li>
     <li class="nav-drawer-link"><a href="#insights" onclick="closeDrawer()">Insights</a></li>
     <li class="nav-drawer-link"><a href="leadership.html">Leadership</a></li>
     <li class="nav-drawer-link"><a href="#advisor-teaser" onclick="closeDrawer()">For Advisors</a></li>
@@ -2918,54 +2921,12 @@ body{
 
     </div>
 
-    <!-- National office directory -->
-    <div class="locations-directory reveal">
-      <div class="loc-hq">
-        <span class="loc-hq-tag">Headquarters</span>
-        <span class="loc-hq-city">Richmond, Virginia</span>
-        <span class="loc-hq-addr">901 East Cary Street, Richmond, VA 23219</span>
-      </div>
-      <div class="loc-groups">
-        <div class="loc-group">
-          <div class="loc-group-head"><span class="loc-group-state">Virginia</span><span class="loc-group-count">9 Offices</span></div>
-        <div class="loc-city">Richmond</div>
-        <div class="loc-city">Glen Allen</div>
-        <div class="loc-city">McLean</div>
-        <div class="loc-city">Charlottesville</div>
-        <div class="loc-city">Fredericksburg</div>
-        <div class="loc-city">Virginia Beach</div>
-        <div class="loc-city">Roanoke</div>
-        <div class="loc-city">Abingdon</div>
-        <div class="loc-city">Wytheville</div>
-        </div>
-        <div class="loc-group">
-          <div class="loc-group-head"><span class="loc-group-state">Texas</span><span class="loc-group-count">3 Offices</span></div>
-        <div class="loc-city">Austin</div>
-        <div class="loc-city">Fort Worth</div>
-        <div class="loc-city">San Antonio</div>
-        </div>
-        <div class="loc-group">
-          <div class="loc-group-head"><span class="loc-group-state">Florida</span><span class="loc-group-count">3 Offices</span></div>
-        <div class="loc-city">Tampa</div>
-        <div class="loc-city">Sarasota</div>
-        <div class="loc-city">Palm Beach</div>
-        </div>
-        <div class="loc-group">
-          <div class="loc-group-head"><span class="loc-group-state">North Carolina</span><span class="loc-group-count">2 Offices</span></div>
-        <div class="loc-city">Charlotte</div>
-        <div class="loc-city">Greensboro</div>
-        </div>
-        <div class="loc-group">
-          <div class="loc-group-head"><span class="loc-group-state">Tennessee</span><span class="loc-group-count">2 Offices</span></div>
-        <div class="loc-city">Johnson City</div>
-        <div class="loc-city">Kingsport</div>
-        </div>
-        <div class="loc-group">
-          <div class="loc-group-head"><span class="loc-group-state">South Carolina &amp; New Jersey</span><span class="loc-group-count">2 Offices</span></div>
-        <div class="loc-city">Greenville, SC</div>
-        <div class="loc-city">Morristown, NJ</div>
-        </div>
-      </div>
+    <!-- Footprint CTA -- full office directory lives on locations.html -->
+    <div class="heritage-locations-cta reveal">
+      <a href="locations.html" class="section-link">
+        Explore All 21 Offices
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
     </div>
 
   </div>
@@ -3070,7 +3031,6 @@ body{
 <section id="advisor-teaser" aria-label="Advisor opportunities">
   <div class="advisor-teaser-inner reveal">
     <div class="advisor-teaser-copy">
-      <div class="advisor-teaser-eyebrow">For Financial Advisors</div>
       <h2 class="advisor-teaser-headline">Interested in joining<br>Cary Street Partners?</h2>
       <p class="advisor-teaser-sub">Learn why experienced advisors choose our platform &mdash; independent, fiduciary, and built around your practice.</p>
     </div>

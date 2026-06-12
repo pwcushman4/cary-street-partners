@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meet the Leadership Team &mdash; Cary Street Partners</title>
-<meta name="description" content="The senior executive team guiding Cary Street Partners &mdash; an independent wealth management firm managing over $12 billion in assets.">
+<title>Our Locations &mdash; Cary Street Partners</title>
+<meta name="description" content="Cary Street Partners serves clients from 21 offices across seven states, headquartered at 901 East Cary Street in Richmond, Virginia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Jost:wght@200;300;400;500;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,6 +12,9 @@
 /* --- RESET & BASE ------------------------------------------- */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;font-size:16px}
+/* Global anchor offset so the fixed header never covers section content */
+section{scroll-margin-top:112px}
+.office-band{scroll-margin-top:112px}
 body{
   font-family:'Montserrat',sans-serif;
   background:var(--navy);
@@ -287,13 +290,13 @@ body{
   display:grid;
   grid-template-columns:repeat(12,1fr);
   grid-template-rows:auto auto 1fr;
-  padding:128px 0 96px 120px;
+  padding:128px 120px 96px 120px;
   max-width:1440px;
   margin:0 auto;
   width:100%;
 }
-/* -- Editorial figure -- bleeds past the container's right edge,
-     rises up under the headline so type and image interlock */
+/* -- Editorial figure -- the photograph sits fully enclosed by its gold
+     frame and rises slightly under the headline so type and image relate */
 .hero-figure{
   grid-column:7 / 13;
   grid-row:3;
@@ -301,8 +304,8 @@ body{
   z-index:1;
   align-self:start;
   margin-top:-36px;
-  /* full-bleed right: cancel the centered container's right gutter */
-  margin-right:calc((min(100vw,1440px) - 100vw)/2);
+  /* breathing room so the framed photo never crowds the container edge */
+  margin-right:18px;
 }
 .hero-photo-stack{
   position:relative;
@@ -310,24 +313,24 @@ body{
   aspect-ratio:700/467;
   will-change:transform;
 }
-/* Offset hairline frame -- steps off the photo toward the text column,
-   echoing the blueprint grid behind it */
+/* Matted hairline frame -- sits evenly outside the photo on all four sides
+   so the image reads as intentionally, precisely framed */
 .hero-photo-stack::before{
   content:'';
   position:absolute;
-  top:-24px;left:-24px;right:24px;bottom:24px;
-  border:1px solid rgba(201,169,110,0.32);
+  top:-18px;left:-18px;right:-18px;bottom:-18px;
+  border:1px solid rgba(201,169,110,0.38);
   pointer-events:none;
   z-index:2;
 }
-/* Gold plinth -- short solid bar grounding the photo's bottom-left corner */
+/* Gold accent -- short solid bar on the frame's bottom-left corner */
 .hero-photo-stack::after{
   content:'';
   position:absolute;
-  left:0;bottom:-2px;
-  width:72px;height:2px;
+  left:-18px;bottom:-18px;
+  width:64px;height:2px;
   background:var(--gold);
-  z-index:2;
+  z-index:3;
 }
 .hero-sign-photo{
   width:100%;
@@ -355,24 +358,27 @@ body{
   align-items:center;
   justify-content:flex-end;
   gap:14px;
-  margin-top:20px;
-  padding-right:56px;
+  margin-top:30px;
+  padding-right:0;
   font-family:'Montserrat',sans-serif;
   font-size:0.625rem;
   font-weight:600;
   letter-spacing:0.22em;
   text-transform:uppercase;
-  color:rgba(255,255,255,0.5);
+  color:rgba(255,255,255,0.30);
+  /* fades in from the left so the label recedes like the photo scrim + writing */
+  -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 42%);
+  mask-image:linear-gradient(90deg, transparent 0%, #000 42%);
 }
 .hero-figure-caption em{
   font-style:normal;
-  color:var(--gold);
+  color:rgba(201,169,110,0.62);
 }
 .hero-figure-caption::before{
   content:'';
   width:32px;height:1px;
   background:var(--gold);
-  opacity:0.75;
+  opacity:0.45;
 }
 .hero-leftcol{
   grid-column:1 / 7;
@@ -1322,6 +1328,29 @@ body{
   color:rgba(201,169,110,0.15);
   letter-spacing:0.1em;
 }
+/* -- Leadership teaser CTA (homepage) */
+.team-cta{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:32px;
+  text-align:center;
+  padding:56px 0 8px;
+}
+.team-cta-line{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.5rem;
+  font-weight:400;
+  line-height:1.5;
+  color:rgba(255,255,255,0.62);
+  max-width:620px;
+  margin:0;
+}
+.team-cta-btn{
+  padding:19px 44px;
+  font-size:0.72rem;
+  letter-spacing:0.2em;
+}
 /* -- Team sub-section divider (Executive Team / Senior Leadership) */
 .team-sub-header{
   display:flex;
@@ -1354,7 +1383,7 @@ body{
 
 /* --- RICHMOND HERITAGE -------------------------------------- */
 /* --- HERITAGE / OUR FOOTPRINT ------------------------------- */
-#heritage{
+#locations{
   background:var(--navy);
   padding:0 0 120px;
   position:relative;
@@ -1541,6 +1570,75 @@ body{
   transition:color 0.3s,border-color 0.3s;
 }
 .heritage-cta-link:hover{color:#fff;border-color:rgba(255,255,255,0.4);}
+/* -- LOCATIONS DIRECTORY ------------------------------------- */
+.locations-directory{
+  max-width:1280px;
+  margin:64px auto 0;
+  padding:0 40px;
+}
+.loc-hq{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:8px 28px;
+  padding:30px 36px;
+  margin-bottom:52px;
+  background:linear-gradient(135deg, rgba(201,169,110,0.10), rgba(201,169,110,0.015));
+  border:1px solid rgba(201,169,110,0.28);
+  border-left:3px solid var(--gold);
+}
+.loc-hq-tag{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.625rem;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;
+  color:var(--gold);
+}
+.loc-hq-city{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.1rem;font-weight:400;line-height:1;color:#fff;
+}
+.loc-hq-addr{
+  font-family:'Jost',sans-serif;
+  font-size:0.9rem;font-weight:300;color:rgba(255,255,255,0.55);
+  margin-left:auto;letter-spacing:0.02em;
+}
+.loc-groups{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:44px 52px;
+}
+.loc-group-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  padding-bottom:14px;margin-bottom:8px;
+  border-bottom:1px solid rgba(255,255,255,0.12);
+}
+.loc-group-state{
+  font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#fff;
+}
+.loc-group-count{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.6rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--gold);white-space:nowrap;
+}
+.loc-city{
+  display:flex;align-items:center;gap:11px;
+  padding:11px 0;
+  font-family:'Jost',sans-serif;font-size:0.95rem;font-weight:300;
+  color:rgba(255,255,255,0.70);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  transition:color 0.2s,padding-left 0.2s;
+}
+.loc-city::before{
+  content:'';flex:0 0 auto;width:5px;height:5px;border-radius:50%;
+  background:rgba(201,169,110,0.5);transition:background 0.2s,transform 0.2s;
+}
+.loc-city:hover{color:#fff;padding-left:7px;}
+.loc-city:hover::before{background:var(--gold);transform:scale(1.5);}
+@media(max-width:768px){
+  .locations-directory{margin-top:48px;padding:0 24px;}
+  .loc-hq{flex-direction:column;align-items:flex-start;gap:6px;padding:24px;}
+  .loc-hq-addr{margin-left:0;}
+  .loc-groups{gap:36px;}
+}
 
 /* --- OFFICE BAND -------------------------------------------- */
 .office-band{
@@ -1601,6 +1699,36 @@ body{
   padding:120px 40px;
 }
 .insights-inner{max-width:1280px;margin:0 auto}
+/* -- Insights topic pills -- */
+.insights-topics{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:-12px 0 52px;
+}
+.insight-topic{
+  padding:9px 20px;
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:100px;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.625rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);
+  cursor:default;
+  transition:color 0.2s,border-color 0.2s,background 0.2s;
+}
+.insight-topic:hover{
+  color:#fff;
+  border-color:rgba(201,169,110,0.5);
+}
+.insight-topic.is-active{
+  color:var(--navy);
+  background:var(--gold);
+  border-color:var(--gold);
+}
+@media(max-width:768px){
+  .insights-topics{gap:8px;margin-bottom:40px}
+  .insight-topic{padding:8px 14px;font-size:0.5625rem}
+}
 .insights-grid{
   display:grid;
   grid-template-columns:2fr 1fr 1fr;
@@ -2148,6 +2276,7 @@ body{
   .hero-headline{font-size:clamp(2.5rem,11vw,3.4rem);margin-bottom:36px;padding-right:0}
   .hero-figure{margin:0 -24px 40px;align-self:stretch}
   .hero-photo-stack::before{top:12px;left:12px;right:12px;bottom:12px}
+  .hero-photo-stack::after{left:12px;bottom:12px}
   .hero-figure-caption{margin-top:14px;padding-right:24px;font-size:0.5625rem}
   .hero-leftcol{width:100%;padding-top:0;padding-right:0}
   .hero-note{margin-top:48px;max-width:100%}
@@ -2174,7 +2303,7 @@ body{
   .process-steps{grid-template-columns:1fr;gap:32px}
   #team{padding:80px 24px}
   .team-grid{grid-template-columns:1fr 1fr}
-  #heritage{padding:0 0 80px}
+  #locations{padding:0 0 80px}
   .heritage-metrics{grid-template-columns:repeat(2,1fr)}
   .heritage-metric{padding:32px 24px}
   .heritage-visual{display:none}
@@ -2291,70 +2420,23 @@ body{
 }
 </style>
 <style>
-/* --- LEADERSHIP PAGE OVERRIDES ------------------------------ */
-.lead-hero{
-  position:relative;
-  padding:160px 120px 88px;
-  width:100%;
-  /* defined blue banner panel -- clearly lighter than the navy page below */
-  background:linear-gradient(135deg, var(--navy-light) 0%, var(--navy-mid) 58%, var(--navy-mid) 100%);
-  border-bottom:1px solid rgba(201,169,110,0.25);
-  box-shadow:inset 0 -1px 0 rgba(255,255,255,0.03);
-  overflow:hidden;
-}
-.lead-hero::after{
-  content:'';
-  position:absolute;inset:0;
-  background:radial-gradient(120% 140% at 85% 0%, rgba(201,169,110,0.10), transparent 55%);
-  pointer-events:none;
-}
-.lead-hero > *{position:relative;z-index:1;}
-.lead-back{margin:0 0 30px;}
-.lead-hero-eyebrow{
-  display:flex;align-items:center;gap:16px;margin-bottom:32px;
-}
-.lead-hero-eyebrow .line{width:40px;height:1px;background:var(--gold);}
-.lead-hero-eyebrow .text{
-  font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;
-  color:#fff;opacity:0.85;
-}
-.lead-hero h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2.8rem,5.2vw,5rem);
-  font-weight:300;line-height:1.06;letter-spacing:-0.015em;color:#fff;
-  margin-bottom:28px;max-width:900px;
-}
-.lead-hero h1 em{font-style:italic;color:var(--gold-light);}
-.lead-hero-sub{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.4rem;font-weight:400;line-height:1.55;
-  color:rgba(255,255,255,0.62);max-width:640px;
-}
-.lead-hero-sub em{font-style:italic;color:var(--gold-light);}
-#team{padding-top:40px;}
-.lead-back{
-  display:inline-flex;align-items:center;gap:10px;
-  font-family:'Montserrat',sans-serif;
-  font-size:0.6875rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(255,255,255,0.55);text-decoration:none;
-  margin-bottom:48px;transition:color 0.25s;
-}
-.lead-back:hover{color:#fff;}
-.lead-cta{
-  background:var(--navy-mid);
-  padding:96px 120px;text-align:center;
-}
-.lead-cta-headline{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(2rem,3.6vw,3.2rem);font-weight:300;line-height:1.15;
-  color:#fff;margin-bottom:40px;
-}
-.lead-cta-headline em{font-style:italic;color:var(--gold-light);}
-@media(max-width:768px){
-  .lead-hero{padding:150px 24px 56px;}
-  .lead-cta{padding:64px 24px;}
-  #team{padding-top:16px;}
-}
+.loc-back{position:relative;z-index:5;display:inline-flex;align-items:center;gap:10px;margin:140px 0 0 120px;font-family:'Montserrat',sans-serif;font-size:0.6875rem;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.25s}
+.loc-back svg{transition:transform 0.25s}
+.loc-back:hover{color:#fff}.loc-back:hover svg{transform:translateX(-4px)}
+.loc-hero{max-width:1440px;margin:0 auto;padding:40px 120px 64px}
+.loc-hero-eyebrow{display:flex;align-items:center;gap:16px;margin-bottom:32px}
+.loc-hero-eyebrow .line{width:40px;height:1px;background:var(--gold)}
+.loc-hero-eyebrow .text{font-size:0.7rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:#fff;opacity:0.85}
+.loc-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5.4vw,5rem);font-weight:300;line-height:1.05;letter-spacing:-0.015em;color:#fff;margin-bottom:26px;max-width:900px}
+.loc-hero h1 em{font-style:italic;color:var(--gold-light)}
+.loc-hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;line-height:1.55;color:rgba(255,255,255,0.62);max-width:680px}
+.loc-page-metrics{background:var(--navy);padding-bottom:8px}
+.loc-cta{background:var(--navy-mid);padding:96px 120px;text-align:center}
+.loc-cta-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.6vw,3.2rem);font-weight:300;line-height:1.15;color:#fff;margin-bottom:40px}
+.loc-cta-headline em{font-style:italic;color:var(--gold-light)}
+body{background:var(--navy)}
+.locations-directory{padding-bottom:96px}
+@media(max-width:768px){.loc-back{margin:120px 0 0 24px}.loc-hero{padding:32px 24px 48px}.loc-cta{padding:64px 24px}}
 </style>
 </head>
 <body>
@@ -2366,9 +2448,9 @@ body{
   <ul class="nav-links">
     <li><a href="cary-street-partners.html#services">Services</a></li>
     <li><a href="cary-street-partners.html#who-we-serve">Who We Serve</a></li>
-    <li><a href="locations.html">Locations</a></li>
+    <li><a href="locations.html" aria-current="page" style="color:var(--gold)">Locations</a></li>
     <li><a href="cary-street-partners.html#insights">Insights</a></li>
-    <li><a href="leadership.html" aria-current="page" style="color:var(--gold)">Leadership</a></li>
+    <li><a href="leadership.html">Leadership</a></li>
     <li><a href="cary-street-partners.html#advisor-teaser">For Advisors</a></li>
   </ul>
   <a href="cary-street-partners.html#cta" class="nav-cta">Begin a Conversation</a>
@@ -2393,141 +2475,99 @@ body{
     </a>
   </div>
 </div>
-
 <div class="nav-drawer-overlay" id="drawerOverlay"></div>
 
 <main>
-<section class="lead-hero" aria-label="Leadership intro">
-  <a href="cary-street-partners.html" class="lead-back reveal">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Back to Cary Street Partners
-  </a>
-  <div class="lead-hero-eyebrow reveal">
+<a href="cary-street-partners.html" class="loc-back">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Back to Cary Street Partners
+</a>
+
+<section class="loc-hero" aria-label="Locations intro">
+  <div class="loc-hero-eyebrow reveal">
     <span class="line" aria-hidden="true"></span>
-    <span class="text">Our People &nbsp;&bull;&nbsp; Senior Leadership</span>
+    <span class="text">Our Footprint &nbsp;&bull;&nbsp; National Reach</span>
   </div>
-  <h1 class="reveal reveal-delay-1">The executives behind<br><em>a higher standard.</em></h1>
-  <p class="lead-hero-sub reveal reveal-delay-2">Wall Street experience. Independent conviction. The leadership team guiding $12&nbsp;billion in client assets across 21 offices nationwide.</p>
+  <h1 class="reveal reveal-delay-1"><em>Rooted in Richmond.</em><br>Trusted across the nation.</h1>
+  <p class="loc-hero-sub reveal reveal-delay-2">From our headquarters at 901 East Cary Street to a growing presence in seven states, Cary Street Partners brings independent, fiduciary wealth management to clients wherever they call home.</p>
 </section>
 
-<section id="team" aria-label="Senior leadership team">
-  <div class="team-inner">
-    <div class="team-group-banner reveal">
-      <img class="team-group-photo" src="hero-advisors.jpg" alt="Cary Street Partners team">
-      <div class="team-group-overlay"></div>
-      <div class="team-group-label">150+ Financial Professionals Nationwide</div>
+<section class="loc-page-metrics" aria-label="Footprint statistics">
+<div class="heritage-metrics" aria-label="Firm statistics">
+    <div class="heritage-metric">
+      <div class="heritage-metric-bar"></div>
+      <div class="heritage-metric-num" data-countup data-target="21" data-suffix="">21</div>
+      <div class="heritage-metric-label">Office Locations</div>
     </div>
-
-    <div class="team-sub-header reveal">
-      <span class="team-sub-label">Senior Leadership</span>
+    <div class="heritage-metric">
+      <div class="heritage-metric-bar"></div>
+      <div class="heritage-metric-num" data-countup data-target="7" data-suffix="">7</div>
+      <div class="heritage-metric-label">States with Offices</div>
     </div>
-<div class="team-grid">
-      <!-- 1. Joe -->
-      <div class="team-card reveal">
-        <img class="team-card-img" src="advisor-schmuckler.jpg" alt="Joseph R. Schmuckler" onerror="this.style.display='none'">
-        <div class="team-card-gradient" aria-hidden="true"></div>
-        <div class="team-card-initials" aria-hidden="true">JS</div>
-        <div class="team-card-content">
-          <div class="team-card-role">Chief Executive Officer</div>
-          <h3 class="team-card-name">Joseph R. Schmuckler</h3>
-          <p class="team-card-bio">Former Wall Street executive with a career spanning Kidder Peabody, Nomura, and MUFG &mdash; leading CSP's strategic vision since 2015.</p>
-        </div>
-      </div>
-      <!-- 2. Walter -->
-      <div class="team-card reveal reveal-delay-1">
-        <img class="team-card-img" src="advisor-bayne.jpg" alt="Walter D. Bayne" onerror="this.style.display='none'">
-        <div class="team-card-gradient" aria-hidden="true"></div>
-        <div class="team-card-initials" aria-hidden="true">WB</div>
-        <div class="team-card-content">
-          <div class="team-card-role">President, Managing Director</div>
-          <h3 class="team-card-name">Walter D. Bayne</h3>
-          <p class="team-card-bio">Partners closely with the CEO to shape and execute the firm's strategic vision, overseeing advisor recruiting and growth nationwide.</p>
-        </div>
-      </div>
-      <!-- 3. Chen -->
-      <div class="team-card reveal reveal-delay-2">
-        <img class="team-card-img" src="exec-chen.jpg" alt="Leon H. Chen" onerror="this.style.display='none'">
-        <div class="team-card-gradient" aria-hidden="true"></div>
-        <div class="team-card-initials" aria-hidden="true">LC</div>
-        <div class="team-card-content">
-          <div class="team-card-role">Chief Technology Officer, Managing Director</div>
-          <h3 class="team-card-name">Leon H. Chen</h3>
-          <p class="team-card-bio">26 years of technology leadership at Nomura and MUFG &mdash; architecting the platform that powers CSP's 150+ advisor network since 2015.</p>
-        </div>
-      </div>
-      <!-- 4. Wes -->
-      <div class="team-card reveal reveal-delay-3">
-        <img class="team-card-img" src="advisor-gallup.jpg" alt="Wesley H. Gallup" onerror="this.style.display='none'">
-        <div class="team-card-gradient" aria-hidden="true"></div>
-        <div class="team-card-initials" aria-hidden="true">WG</div>
-        <div class="team-card-content">
-          <div class="team-card-role">Chief Operating Officer, CFP&reg;</div>
-          <h3 class="team-card-name">Wesley H. Gallup</h3>
-          <p class="team-card-bio">Oversees firm-wide operations and infrastructure, ensuring the platform that supports 150+ advisors runs at the highest standard.</p>
-        </div>
-      </div>
-      <!-- 5. Paige -->
-      <div class="team-card reveal">
-        <img class="team-card-img" src="advisor-garrigan.jpg" alt="Paige W. Garrigan" onerror="this.style.display='none'">
-        <div class="team-card-gradient" aria-hidden="true"></div>
-        <div class="team-card-initials" aria-hidden="true">PG</div>
-        <div class="team-card-content">
-          <div class="team-card-role">Chief Marketing &amp; Transitions Officer</div>
-          <h3 class="team-card-name">Paige W. Garrigan</h3>
-          <p class="team-card-bio">Leads the firm's brand strategy, advisor transitions, and client experience initiatives across all 21 offices nationwide.</p>
-        </div>
-      </div>
-      <!-- 6. Jaimal -->
-      <div class="team-card reveal reveal-delay-1">
-        <img class="team-card-img" src="exec-hayes.jpg" alt="Jaimal C. Hayes" onerror="this.style.display='none'">
-        <div class="team-card-gradient" aria-hidden="true"></div>
-        <div class="team-card-initials" aria-hidden="true">JH</div>
-        <div class="team-card-content">
-          <div class="team-card-role">Chief Compliance Officer, Managing Director</div>
-          <h3 class="team-card-name">Jaimal C. Hayes</h3>
-          <p class="team-card-bio">Leads broker dealer compliance and the Supervision Department. Former compliance roles at Truist, Capital One, and Genworth Financial.</p>
-        </div>
-      </div>
-      <!-- 7. Nancy -->
-      <div class="team-card reveal reveal-delay-2">
-        <img class="team-card-img" src="advisor-oliver.jpg" alt="Nancy R. Oliver" onerror="this.style.display='none'">
-        <div class="team-card-gradient" aria-hidden="true"></div>
-        <div class="team-card-initials" aria-hidden="true">NO</div>
-        <div class="team-card-content">
-          <div class="team-card-role">Chief Compliance Officer, Investment Advisory, Managing Director</div>
-          <h3 class="team-card-name">Nancy R. Oliver</h3>
-          <p class="team-card-bio">Oversees investment advisory compliance across CSP's national platform, ensuring the highest regulatory standards for clients and advisors alike.</p>
-        </div>
-      </div>
-      <!-- 8. Matthew -->
-      <div class="team-card reveal reveal-delay-3">
-        <img class="team-card-img" src="exec-rubin.jpg" alt="Matthew L. Rubin" onerror="this.style.display='none'">
-        <div class="team-card-gradient" aria-hidden="true"></div>
-        <div class="team-card-initials" aria-hidden="true">MR</div>
-        <div class="team-card-content">
-          <div class="team-card-role">Chief Investment Officer</div>
-          <h3 class="team-card-name">Matthew L. Rubin</h3>
-          <p class="team-card-bio">Founded AnchorCove Partners before joining CSP. Leads wealth management strategy and portfolio management across multiple asset classes.</p>
-        </div>
-      </div>
-      <!-- 9. Thomas -->
-      <div class="team-card reveal">
-        <img class="team-card-img" src="exec-tullidge.jpg" alt="Thomas H. Tullidge Jr." onerror="this.style.display='none'">
-        <div class="team-card-gradient" aria-hidden="true"></div>
-        <div class="team-card-initials" aria-hidden="true">TT</div>
-        <div class="team-card-content">
-          <div class="team-card-role">Chief Strategy Officer, Co-Founder</div>
-          <h3 class="team-card-name">Thomas H. Tullidge Jr.</h3>
-          <p class="team-card-bio">Co-founded CSP in 2002. 35+ years advising on M&amp;A and complex corporate finance &mdash; formerly at Wachovia Securities and McGuireWoods.</p>
-        </div>
-      </div>
+    <div class="heritage-metric">
+      <div class="heritage-metric-bar"></div>
+      <div class="heritage-metric-num" data-countup data-target="48" data-suffix="">48</div>
+      <div class="heritage-metric-label">States Served</div>
     </div>
-
   </div>
 </section>
 
-<section class="lead-cta" aria-label="Begin a conversation">
-  <h2 class="lead-cta-headline reveal">A team this committed deserves<br>a <em>conversation.</em></h2>
+<section id="locations" aria-label="Office directory">
+  <div class="heritage-inner" style="display:block">
+    <!-- National office directory -->
+    <div class="locations-directory reveal">
+      <div class="loc-hq">
+        <span class="loc-hq-tag">Headquarters</span>
+        <span class="loc-hq-city">Richmond, Virginia</span>
+        <span class="loc-hq-addr">901 East Cary Street, Richmond, VA 23219</span>
+      </div>
+      <div class="loc-groups">
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">Virginia</span><span class="loc-group-count">9 Offices</span></div>
+        <div class="loc-city">Richmond</div>
+        <div class="loc-city">Glen Allen</div>
+        <div class="loc-city">McLean</div>
+        <div class="loc-city">Charlottesville</div>
+        <div class="loc-city">Fredericksburg</div>
+        <div class="loc-city">Virginia Beach</div>
+        <div class="loc-city">Roanoke</div>
+        <div class="loc-city">Abingdon</div>
+        <div class="loc-city">Wytheville</div>
+        </div>
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">Texas</span><span class="loc-group-count">3 Offices</span></div>
+        <div class="loc-city">Austin</div>
+        <div class="loc-city">Fort Worth</div>
+        <div class="loc-city">San Antonio</div>
+        </div>
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">Florida</span><span class="loc-group-count">3 Offices</span></div>
+        <div class="loc-city">Tampa</div>
+        <div class="loc-city">Sarasota</div>
+        <div class="loc-city">Palm Beach</div>
+        </div>
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">North Carolina</span><span class="loc-group-count">2 Offices</span></div>
+        <div class="loc-city">Charlotte</div>
+        <div class="loc-city">Greensboro</div>
+        </div>
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">Tennessee</span><span class="loc-group-count">2 Offices</span></div>
+        <div class="loc-city">Johnson City</div>
+        <div class="loc-city">Kingsport</div>
+        </div>
+        <div class="loc-group">
+          <div class="loc-group-head"><span class="loc-group-state">South Carolina &amp; New Jersey</span><span class="loc-group-count">2 Offices</span></div>
+        <div class="loc-city">Greenville, SC</div>
+        <div class="loc-city">Morristown, NJ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="loc-cta" aria-label="Begin a conversation">
+  <h2 class="loc-cta-headline reveal">Wherever you are, <em>we are nearby.</em></h2>
   <a href="cary-street-partners.html#cta" class="btn-primary reveal reveal-delay-1">
     Begin a Conversation
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -2600,38 +2640,20 @@ body{
 </footer>
 
 <script>
-// Reveal-on-scroll
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    entry.target.classList.add('visible');
-    observer.unobserve(entry.target);
-  });
-}, { threshold: 0.15 });
+  entries.forEach(entry => { if (!entry.isIntersecting) return; entry.target.classList.add('visible'); observer.unobserve(entry.target); });
+}, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-// Reveal hero immediately
 window.addEventListener('load', () => {
-  document.querySelectorAll('.lead-hero .reveal').forEach((el, i) => {
-    setTimeout(() => el.classList.add('visible'), 150 + i * 150);
-  });
+  document.querySelectorAll('.loc-hero .reveal').forEach((el, i) => setTimeout(() => el.classList.add('visible'), 150 + i * 120));
 });
-
-// Mobile drawer
 const toggle = document.getElementById('mobileToggle');
 const navDrawer = document.getElementById('navDrawer');
 const drawerClose = document.getElementById('drawerClose');
 const drawerOverlay = document.getElementById('drawerOverlay');
-function closeDrawer() {
-  navDrawer.classList.remove('open');
-  drawerOverlay.classList.remove('visible');
-  toggle.setAttribute('aria-expanded', 'false');
-}
-if (toggle) {
-  toggle.addEventListener('click', () => {
-    navDrawer.classList.add('open');
-    drawerOverlay.classList.add('visible');
-    toggle.setAttribute('aria-expanded', 'true');
-  });
+function closeDrawer(){ navDrawer.classList.remove('open'); drawerOverlay.classList.remove('visible'); toggle.setAttribute('aria-expanded','false'); }
+if (toggle){
+  toggle.addEventListener('click', () => { navDrawer.classList.add('open'); drawerOverlay.classList.add('visible'); toggle.setAttribute('aria-expanded','true'); });
   drawerClose.addEventListener('click', closeDrawer);
   drawerOverlay.addEventListener('click', closeDrawer);
 }
