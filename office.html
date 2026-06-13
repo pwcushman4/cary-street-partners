@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Locations &mdash; Cary Street Partners</title>
-<meta name="description" content="Cary Street Partners serves clients from 21 offices across seven states, headquartered at 901 East Cary Street in Richmond, Virginia.">
+<title>Office &mdash; Cary Street Partners</title>
+<meta name="description" content="A Cary Street Partners office. Independent, fiduciary wealth management, backed by the full resources of the firm.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="leaflet.css"/>
@@ -2546,18 +2546,32 @@ body{background:var(--navy)}
 }
 </style>
 <style>
-/* clickable, premium office markers */
-.csp-dot,.csp-dot-hq{cursor:pointer;transition:transform 0.22s var(--ease-out),box-shadow 0.22s}
-.leaflet-marker-icon{cursor:pointer}
-.leaflet-marker-icon:hover .csp-dot,.leaflet-marker-icon:focus .csp-dot{animation-play-state:paused;transform:translate(-50%,-50%) scale(1.8);box-shadow:0 0 16px 3px rgba(201,169,110,0.85)}
-.leaflet-marker-icon:hover .csp-dot-hq,.leaflet-marker-icon:focus .csp-dot-hq{animation-play-state:paused;transform:translate(-50%,-50%) scale(1.5);box-shadow:0 0 22px 5px rgba(228,207,160,0.9)}
-.leaflet-marker-icon:focus{outline:none}
-.leaflet-marker-icon:focus-visible .csp-dot,.leaflet-marker-icon:focus-visible .csp-dot-hq{box-shadow:0 0 0 3px rgba(201,169,110,0.95),0 0 16px 3px rgba(201,169,110,0.6)}
-/* rich tooltip */
-.csp-tip{font-family:'Montserrat',sans-serif;text-align:left;min-width:128px}
-.csp-tip-city{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:#fff;line-height:1.05}
-.csp-tip-state{font-size:0.56rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:4px}
-.csp-tip-cta{font-size:0.56rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-top:9px}
+/* ===== OFFICE DETAIL PAGE ===== */
+.office-hero{max-width:1440px;margin:0 auto;padding:24px 120px 52px;position:relative;overflow:hidden}
+.office-hero::after{content:'';position:absolute;top:-30%;right:-6%;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,0.09),transparent 70%);pointer-events:none}
+.office-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,5vw,4.6rem);font-weight:300;line-height:1.04;letter-spacing:-0.015em;color:#fff;margin:0 0 18px;position:relative}
+.office-hero h1 em{font-style:italic;color:var(--gold-light)}
+.office-hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;line-height:1.55;color:rgba(255,255,255,0.62);max-width:640px;position:relative}
+.office-body{max-width:1440px;margin:0 auto;padding:8px 120px 0}
+.office-grid{display:grid;grid-template-columns:1fr 1.12fr;gap:64px;align-items:start}
+.office-detail{padding:22px 0;border-bottom:1px solid rgba(255,255,255,0.08)}
+.office-detail:first-child{border-top:1px solid rgba(255,255,255,0.08)}
+.office-detail .lbl{font-family:'Montserrat',sans-serif;font-size:0.6rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.office-detail .val{font-family:'Jost',sans-serif;font-size:1.05rem;font-weight:300;color:rgba(255,255,255,0.82);line-height:1.6}
+.office-detail .val a{color:inherit;text-decoration:none;transition:color 0.2s}
+.office-detail .val a:hover{color:var(--gold-light)}
+.office-cta{margin-top:34px;display:inline-flex}
+.office-map-frame{position:relative;height:460px;border:1px solid rgba(201,169,110,0.25);background:#08152B;overflow:hidden}
+#office-map{position:absolute;inset:0;width:100%;height:100%;background:#08152B}
+.office-map-frame::after{content:'';position:absolute;inset:0;z-index:500;pointer-events:none;box-shadow:inset 0 0 90px 24px rgba(8,21,43,0.7)}
+.office-team-sec{max-width:1280px;margin:0 auto;padding:104px 120px 0}
+@media(max-width:900px){
+  .office-hero{padding:16px 24px 40px}
+  .office-body{padding:0 24px}
+  .office-grid{grid-template-columns:1fr;gap:36px}
+  .office-map-frame{height:340px}
+  .office-team-sec{padding:80px 24px 0}
+}
 </style>
 </head>
 <body>
@@ -2599,209 +2613,44 @@ body{background:var(--navy)}
 <div class="nav-drawer-overlay" id="drawerOverlay"></div>
 
 <main>
-<a href="index.html" class="loc-back">
+<a href="locations.html" class="loc-back">
   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  Back to Cary Street Partners
+  Back to All Locations
 </a>
 
-<!-- HERO -->
-<section class="loc-hero" aria-label="Locations intro">
+<section class="office-hero" aria-label="Office">
   <div class="loc-hero-eyebrow reveal">
     <span class="line" aria-hidden="true"></span>
-    <span class="text">Our Footprint &nbsp;&bull;&nbsp; National Reach</span>
+    <span class="text" id="o-eyebrow">Cary Street Partners</span>
   </div>
-  <h1 class="reveal reveal-delay-1"><em>Rooted in Richmond.</em><br>Trusted across the nation.</h1>
-  <p class="loc-hero-sub reveal reveal-delay-2">We began with a single office on Cary Street. Twenty-five years later, that founding conviction &mdash; independent, fiduciary advice &mdash; reaches families and institutions from twenty-one offices across seven states.</p>
+  <h1 class="reveal reveal-delay-1" id="o-title">Office</h1>
+  <p class="office-hero-sub reveal reveal-delay-2" id="o-sub"></p>
 </section>
 
-<!-- STATS -->
-<section class="loc-page-metrics" aria-label="Firm statistics">
-  <div class="heritage-metrics">
-    <div class="heritage-metric">
-      <div class="heritage-metric-bar"></div>
-      <div class="heritage-metric-num" data-countup data-target="12" data-prefix="$" data-suffix="B+">$12B+</div>
-      <div class="heritage-metric-label">Assets Under Management</div>
+<section class="office-body reveal" aria-label="Office details">
+  <div class="office-grid">
+    <div class="office-details">
+      <div class="office-detail"><div class="lbl">Address</div><div class="val" id="o-address"></div></div>
+      <div class="office-detail"><div class="lbl">Phone</div><div class="val"><a id="o-phone" href="#"></a></div></div>
+      <div class="office-detail"><div class="lbl">Email</div><div class="val"><a id="o-email" href="#"></a></div></div>
+      <div class="office-detail"><div class="lbl">Office Hours</div><div class="val">Monday&ndash;Friday, 8:30am&ndash;5:00pm</div></div>
+      <a href="index.html#cta" class="btn-primary office-cta">Schedule a Conversation <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
-    <div class="heritage-metric">
-      <div class="heritage-metric-bar"></div>
-      <div class="heritage-metric-num" data-countup data-target="25" data-suffix="+">25+</div>
-      <div class="heritage-metric-label">Years Independent</div>
-    </div>
-    <div class="heritage-metric">
-      <div class="heritage-metric-bar"></div>
-      <div class="heritage-metric-num" data-countup data-target="21" data-suffix="">21</div>
-      <div class="heritage-metric-label">Office Locations</div>
-    </div>
-    <div class="heritage-metric">
-      <div class="heritage-metric-bar"></div>
-      <div class="heritage-metric-num" data-countup data-target="7" data-suffix="">7</div>
-      <div class="heritage-metric-label">States with Offices</div>
+    <div class="office-map-frame">
+      <div id="office-map" role="img" aria-label="Map showing the office location"></div>
     </div>
   </div>
 </section>
 
-<!-- IMMERSIVE MAP -->
-<section class="loc-map-section" aria-label="National office map">
-  <div class="loc-map-head reveal">
-    <h2>Twenty-one offices.<br><em>One standard.</em></h2>
-    <p>Each marker is a Cary Street Partners office. Hover to find the city; Richmond, our headquarters, anchors a footprint that radiates across the Southeast and beyond.</p>
-  </div>
-  <div class="loc-map-wrap reveal reveal-delay-1">
-    <div class="loc-map-frame">
-      <div id="loc-map" role="img" aria-label="Map of Cary Street Partners office locations across the United States"></div>
-      <div class="loc-map-legend">
-        <div class="loc-map-legend-item"><span class="loc-map-legend-dot hq" aria-hidden="true"></span>Richmond Headquarters</div>
-        <div class="loc-map-legend-item"><span class="loc-map-legend-dot" aria-hidden="true"></span>Office Location</div>
-      </div>
-    </div>
-  </div>
+<section class="office-team-sec reveal" aria-label="Your local team">
+  <div class="loc-section-eyebrow"><span class="line" aria-hidden="true"></span><span class="text">Your Local Team</span></div>
+  <h2 class="loc-section-title" id="o-team-title">Advisors and planners,<br><em>right here.</em></h2>
+  <p id="o-team-copy" style="font-family:'Jost',sans-serif;font-weight:300;font-size:1.05rem;line-height:1.85;color:rgba(255,255,255,0.62);max-width:760px;margin:0"></p>
 </section>
 
-<!-- GROWTH STORY -->
-<section class="loc-growth" aria-label="Our story">
-  <div class="loc-section-eyebrow reveal"><span class="line" aria-hidden="true"></span><span class="text">Our Story</span></div>
-  <h2 class="loc-section-title reveal reveal-delay-1">Built on conviction.<br><em>Grown by trust.</em></h2>
-  <div class="loc-growth-grid">
-    <div class="loc-growth-card reveal">
-      <div class="loc-growth-num">Est. 1999</div>
-      <h3>Founded</h3>
-      <p>Built in 1999 to challenge conventional wisdom &mdash; aligning client, advisor, and firm interests through a genuine partnership structure.</p>
-    </div>
-    <div class="loc-growth-card reveal reveal-delay-1">
-      <div class="loc-growth-num">Independent</div>
-      <h3>Independence</h3>
-      <p>Free from the conflicts of the wirehouse model. Our independence remains our clients&rsquo; enduring advantage &mdash; objective advice, always.</p>
-    </div>
-    <div class="loc-growth-card reveal reveal-delay-2">
-      <div class="loc-growth-num">$12 Billion+</div>
-      <h3>Growth</h3>
-      <p>More than $12 billion entrusted to the firm &mdash; earned through organic growth, advisor partnerships, and lasting client relationships.</p>
-    </div>
-  </div>
-</section>
-
-<!-- RICHMOND HQ SPOTLIGHT -->
-<section class="loc-hq-spot reveal" aria-label="Richmond headquarters">
-  <div class="loc-hq-spot-inner">
-    <div class="loc-hq-photo">
-      <img src="office-richmond.jpg" alt="Cary Street Partners headquarters at 901 East Cary Street, Richmond, Virginia">
-    </div>
-    <div class="loc-hq-copy">
-      <div class="tag">The Foundation of the Firm</div>
-      <h2>901 East Cary Street,<br><em>Richmond, Virginia</em></h2>
-      <div class="addr">Headquarters &nbsp;&bull;&nbsp; Est. 1999</div>
-      <p>Cary Street Partners was founded in Richmond and named for the street that runs through the heart of the city&rsquo;s financial district. It has been our home and our namesake ever since.</p>
-      <p>From these offices we built a firm on a single conviction: that advice should be independent, fiduciary, and aligned with the people it serves. A quarter century later, that conviction reaches seven states &mdash; but it still starts here.</p>
-    </div>
-  </div>
-</section>
-
-<!-- OFFICE PRESENCE -- EXPANDABLE STATE CARDS -->
-<section class="loc-states" aria-label="Offices by state">
-  <div class="loc-section-eyebrow reveal"><span class="line" aria-hidden="true"></span><span class="text">Office Presence</span></div>
-  <h2 class="loc-section-title reveal reveal-delay-1">Twenty-one offices,<br><em>state by state.</em></h2>
-  <div class="loc-states-grid reveal reveal-delay-1">
-
-    <div class="loc-state open">
-      <button class="loc-state-head" aria-expanded="true">
-        <span class="loc-state-name">Virginia</span>
-        <span class="loc-state-meta"><span class="loc-state-count">9 Offices</span>
-        <span class="loc-state-chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
-      </button>
-      <div class="loc-state-body"><div class="loc-state-cities">
-        <span class="loc-chip hq">Richmond &mdash; HQ</span>
-        <span class="loc-chip">Glen Allen</span><span class="loc-chip">McLean</span><span class="loc-chip">Charlottesville</span><span class="loc-chip">Fredericksburg</span><span class="loc-chip">Virginia Beach</span><span class="loc-chip">Roanoke</span><span class="loc-chip">Abingdon</span><span class="loc-chip">Wytheville</span>
-      </div></div>
-    </div>
-
-    <div class="loc-state">
-      <button class="loc-state-head" aria-expanded="false">
-        <span class="loc-state-name">Texas</span>
-        <span class="loc-state-meta"><span class="loc-state-count">3 Offices</span>
-        <span class="loc-state-chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
-      </button>
-      <div class="loc-state-body"><div class="loc-state-cities">
-        <span class="loc-chip">Austin</span><span class="loc-chip">Fort Worth</span><span class="loc-chip">San Antonio</span>
-      </div></div>
-    </div>
-
-    <div class="loc-state">
-      <button class="loc-state-head" aria-expanded="false">
-        <span class="loc-state-name">Florida</span>
-        <span class="loc-state-meta"><span class="loc-state-count">3 Offices</span>
-        <span class="loc-state-chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
-      </button>
-      <div class="loc-state-body"><div class="loc-state-cities">
-        <span class="loc-chip">Tampa</span><span class="loc-chip">Sarasota</span><span class="loc-chip">Palm Beach</span>
-      </div></div>
-    </div>
-
-    <div class="loc-state">
-      <button class="loc-state-head" aria-expanded="false">
-        <span class="loc-state-name">North Carolina</span>
-        <span class="loc-state-meta"><span class="loc-state-count">2 Offices</span>
-        <span class="loc-state-chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
-      </button>
-      <div class="loc-state-body"><div class="loc-state-cities">
-        <span class="loc-chip">Charlotte</span><span class="loc-chip">Greensboro</span>
-      </div></div>
-    </div>
-
-    <div class="loc-state">
-      <button class="loc-state-head" aria-expanded="false">
-        <span class="loc-state-name">Tennessee</span>
-        <span class="loc-state-meta"><span class="loc-state-count">2 Offices</span>
-        <span class="loc-state-chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
-      </button>
-      <div class="loc-state-body"><div class="loc-state-cities">
-        <span class="loc-chip">Johnson City</span><span class="loc-chip">Kingsport</span>
-      </div></div>
-    </div>
-
-    <div class="loc-state">
-      <button class="loc-state-head" aria-expanded="false">
-        <span class="loc-state-name">South Carolina</span>
-        <span class="loc-state-meta"><span class="loc-state-count">1 Office</span>
-        <span class="loc-state-chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
-      </button>
-      <div class="loc-state-body"><div class="loc-state-cities">
-        <span class="loc-chip">Greenville</span>
-      </div></div>
-    </div>
-
-    <div class="loc-state">
-      <button class="loc-state-head" aria-expanded="false">
-        <span class="loc-state-name">New Jersey</span>
-        <span class="loc-state-meta"><span class="loc-state-count">1 Office</span>
-        <span class="loc-state-chev" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
-      </button>
-      <div class="loc-state-body"><div class="loc-state-cities">
-        <span class="loc-chip">Morristown</span>
-      </div></div>
-    </div>
-
-  </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="loc-timeline" aria-label="Expansion timeline">
-  <div class="loc-section-eyebrow reveal"><span class="line" aria-hidden="true"></span><span class="text">A Quarter Century of Growth</span></div>
-  <h2 class="loc-section-title reveal reveal-delay-1">From one office<br><em>to twenty-one.</em></h2>
-  <div class="loc-tl-track">
-    <div class="loc-tl-item reveal"><div class="loc-tl-year">1999</div><p>Founded in Richmond, Virginia, on a partnership model built to align client and advisor.</p></div>
-    <div class="loc-tl-item reveal reveal-delay-1"><div class="loc-tl-year">2002</div><p>The independent, fiduciary platform takes shape &mdash; advice free of wirehouse conflicts.</p></div>
-    <div class="loc-tl-item reveal reveal-delay-2"><div class="loc-tl-year">2015</div><p>Expansion accelerates across the Southeast as experienced advisors join the firm.</p></div>
-    <div class="loc-tl-item reveal reveal-delay-3"><div class="loc-tl-year">Today</div><p>$12B+ in assets, 21 offices, seven states &mdash; and a footprint still growing.</p></div>
-  </div>
-</section>
-
-<!-- CTA -->
 <section class="loc-cta" aria-label="Begin a conversation">
-  <h2 class="loc-cta-headline reveal">Wherever you are, <em>we are nearby.</em></h2>
-  <a href="index.html#cta" class="btn-primary reveal reveal-delay-1">
-    Begin a Conversation
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
+  <h2 class="loc-cta-headline reveal">Let&rsquo;s talk about <em>your goals.</em></h2>
+  <a href="index.html#cta" class="btn-primary reveal reveal-delay-1">Begin a Conversation <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
 </section>
 </main>
 
@@ -2945,21 +2794,12 @@ window.addEventListener('load',()=>{
   // sort by distance from Richmond so markers bloom outward from HQ
   const ordered=offices.map(o=>({o,d:dist(o)})).sort((a,b)=>a.d-b.d);
 
-  const STATES={VA:'Virginia',TX:'Texas',NC:'North Carolina',SC:'South Carolina',TN:'Tennessee',NJ:'New Jersey',FL:'Florida'};
-  function slugify(n){return n.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
   function place(){
     ordered.forEach(({o},i)=>{
       const [lat,lng,city,isHQ]=o;
-      const parts=city.split(',');
-      const cityName=parts[0].trim();
-      const abbr=(parts[1]||'').trim();
-      const stateFull=STATES[abbr]||abbr;
-      const url='office.html?id='+slugify(cityName);
       const delay=(i*0.07).toFixed(2);
-      const m=L.marker([lat,lng],{icon:dotIcon(isHQ,delay),keyboard:true,riseOnHover:true,title:cityName+' Office',alt:cityName+', '+stateFull+'. View office page.'}).addTo(map);
-      m.bindTooltip('<div class="csp-tip"><div class="csp-tip-city">'+cityName+'</div><div class="csp-tip-state">'+stateFull+(isHQ?'  \u2022  Headquarters':'')+'</div><div class="csp-tip-cta">View Office \u2192</div></div>',{className:'csp-map-tooltip',direction:'top',offset:[0,-8]});
-      m.on('click',function(){ window.location.href=url; });
-      m.on('keypress',function(e){ var k=e.originalEvent&&e.originalEvent.key; if(k==='Enter'||k===' '){ e.originalEvent.preventDefault(); window.location.href=url; } });
+      const m=L.marker([lat,lng],{icon:dotIcon(isHQ,delay)}).addTo(map);
+      m.bindTooltip('<span style="font-family:\'Jost\',sans-serif;font-size:11px;color:#C9A96E;letter-spacing:0.08em">'+city+(isHQ?' \u2605 HQ':'')+'</span>',{className:'csp-map-tooltip',direction:'top',offset:[0,-6]});
     });
   }
 
@@ -2968,7 +2808,7 @@ window.addEventListener('load',()=>{
 
   // attribution + tooltip styling
   const st=document.createElement('style');
-  st.textContent='#loc-map .leaflet-control-attribution{background:rgba(8,21,43,0.7)!important;color:rgba(201,169,110,0.4)!important;font-size:9px!important;border-top:1px solid rgba(201,169,110,0.1)!important}.csp-map-tooltip{background:rgba(8,21,43,0.95)!important;border:1px solid rgba(201,169,110,0.35)!important;border-radius:0!important;padding:11px 15px!important;box-shadow:0 8px 24px rgba(0,0,0,0.4)!important}.csp-map-tooltip::before{display:none!important}';
+  st.textContent='#loc-map .leaflet-control-attribution{background:rgba(8,21,43,0.7)!important;color:rgba(201,169,110,0.4)!important;font-size:9px!important;border-top:1px solid rgba(201,169,110,0.1)!important}.csp-map-tooltip{background:rgba(8,21,43,0.92)!important;border:1px solid rgba(201,169,110,0.3)!important;border-radius:0!important;padding:5px 10px!important;box-shadow:none!important}.csp-map-tooltip::before{display:none!important}';
   document.head.appendChild(st);
 
   // bloom markers in only when the map scrolls into view
@@ -3001,6 +2841,70 @@ if (toggle){
   drawerClose.addEventListener('click', closeDrawer);
   drawerOverlay.addEventListener('click', closeDrawer);
 }
+</script>
+<script>
+/* ---- Office detail page (data-driven) ---- */
+(function(){
+  var OFFICES = {
+    "richmond":        {city:"Richmond",        state:"Virginia",       abbr:"VA", lat:37.54, lng:-77.43, hq:true, address:"901 East Cary Street, Richmond, VA 23219"},
+    "glen-allen":      {city:"Glen Allen",      state:"Virginia",       abbr:"VA", lat:37.66, lng:-77.49},
+    "mclean":          {city:"McLean",          state:"Virginia",       abbr:"VA", lat:38.93, lng:-77.18},
+    "charlottesville": {city:"Charlottesville", state:"Virginia",       abbr:"VA", lat:38.03, lng:-78.48},
+    "fredericksburg":  {city:"Fredericksburg",  state:"Virginia",       abbr:"VA", lat:38.30, lng:-77.46},
+    "virginia-beach":  {city:"Virginia Beach",  state:"Virginia",       abbr:"VA", lat:36.85, lng:-75.98},
+    "roanoke":         {city:"Roanoke",         state:"Virginia",       abbr:"VA", lat:37.27, lng:-79.94},
+    "abingdon":        {city:"Abingdon",        state:"Virginia",       abbr:"VA", lat:36.70, lng:-81.98},
+    "wytheville":      {city:"Wytheville",      state:"Virginia",       abbr:"VA", lat:36.95, lng:-81.08},
+    "austin":          {city:"Austin",          state:"Texas",          abbr:"TX", lat:30.27, lng:-97.74},
+    "fort-worth":      {city:"Fort Worth",      state:"Texas",          abbr:"TX", lat:32.75, lng:-97.33},
+    "san-antonio":     {city:"San Antonio",     state:"Texas",          abbr:"TX", lat:29.42, lng:-98.49},
+    "tampa":           {city:"Tampa",           state:"Florida",        abbr:"FL", lat:27.95, lng:-82.46},
+    "sarasota":        {city:"Sarasota",        state:"Florida",        abbr:"FL", lat:27.34, lng:-82.53},
+    "palm-beach":      {city:"Palm Beach",      state:"Florida",        abbr:"FL", lat:26.71, lng:-80.05},
+    "charlotte":       {city:"Charlotte",       state:"North Carolina", abbr:"NC", lat:35.23, lng:-80.84},
+    "greensboro":      {city:"Greensboro",      state:"North Carolina", abbr:"NC", lat:36.07, lng:-79.79},
+    "johnson-city":    {city:"Johnson City",    state:"Tennessee",      abbr:"TN", lat:36.32, lng:-82.35},
+    "kingsport":       {city:"Kingsport",       state:"Tennessee",      abbr:"TN", lat:36.55, lng:-82.56},
+    "greenville":      {city:"Greenville",      state:"South Carolina", abbr:"SC", lat:34.85, lng:-82.39},
+    "morristown":      {city:"Morristown",      state:"New Jersey",     abbr:"NJ", lat:40.80, lng:-74.48}
+  };
+  var PHONE="(804) 288-5678", PHONE_TEL="+18042885678", EMAIL="info@carystreetpartners.com";
+
+  var id = (new URLSearchParams(location.search).get("id") || "richmond").toLowerCase();
+  var o = OFFICES[id] || OFFICES["richmond"];
+
+  function set(eid, txt){ var e=document.getElementById(eid); if(e) e.textContent=txt; }
+
+  document.title = o.city + (o.hq ? " Headquarters" : " Office") + " \u2014 Cary Street Partners";
+  set("o-eyebrow", (o.hq ? "Headquarters" : "Cary Street Partners Office") + "  \u2022  " + o.state);
+  var t=document.getElementById("o-title"); if(t) t.innerHTML = o.city + ", <em>" + o.state + "</em>";
+  set("o-sub", o.hq
+    ? "Our founding office and headquarters, on the street that gives the firm its name \u2014 independent, fiduciary wealth management for families, business owners, and institutions."
+    : "Independent, fiduciary wealth management for families, business owners, and institutions across the " + o.city + " region.");
+  var addr=document.getElementById("o-address"); if(addr) addr.textContent = o.address ? o.address : (o.city + ", " + o.abbr);
+  var ph=document.getElementById("o-phone"); if(ph){ ph.textContent=PHONE; ph.href="tel:"+PHONE_TEL; }
+  var em=document.getElementById("o-email"); if(em){ em.textContent=EMAIL; em.href="mailto:"+EMAIL; }
+  set("o-team-copy", "A team of experienced advisors, planners, and client-service professionals serves clients from our " + o.city + " office \u2014 backed by the full research, investment, and planning resources of Cary Street Partners. To be introduced to an advisor here, schedule a conversation and we will connect you with the right person on the " + o.city + " team.");
+
+  if (typeof L !== "undefined" && document.getElementById("office-map")) {
+    var m = L.map("office-map", {zoomControl:false, attributionControl:true, scrollWheelZoom:false, dragging:true, doubleClickZoom:true, touchZoom:true});
+    L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {attribution:'&copy; <a href="https://carto.com/" style="color:rgba(201,169,110,0.5);font-size:9px">CARTO</a>', subdomains:"abcd", maxZoom:19}).addTo(m);
+    m.setView([o.lat, o.lng], 11);
+    var size = o.hq ? 15 : 12;
+    var cls = o.hq ? "csp-dot-hq" : "csp-dot";
+    var icon = L.divIcon({className:"", html:'<div class="'+cls+'" style="width:'+size+'px;height:'+size+'px"></div>', iconSize:[0,0], iconAnchor:[0,0]});
+    L.marker([o.lat, o.lng], {icon:icon}).addTo(m);
+    var st=document.createElement("style");
+    st.textContent='#office-map .leaflet-control-attribution{background:rgba(8,21,43,0.7)!important;color:rgba(201,169,110,0.4)!important;font-size:9px!important}';
+    document.head.appendChild(st);
+    setTimeout(function(){ m.invalidateSize(); }, 150);
+    window.addEventListener("load", function(){ setTimeout(function(){ m.invalidateSize(); }, 250); });
+  }
+
+  window.addEventListener("load", function(){
+    document.querySelectorAll(".office-hero .reveal").forEach(function(el,i){ setTimeout(function(){ el.classList.add("visible"); }, 120 + i*120); });
+  });
+})();
 </script>
 </body>
 </html>

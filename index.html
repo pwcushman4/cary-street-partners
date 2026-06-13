@@ -2420,6 +2420,19 @@ body{
   .smodal-cta{flex-direction:column;align-items:flex-start}
 }
 </style>
+<style>
+/* clickable, premium office markers (homepage footprint map) */
+.csp-dot,.csp-dot-hq{cursor:pointer;transition:transform 0.22s var(--ease-out),box-shadow 0.22s}
+.leaflet-marker-icon{cursor:pointer}
+.leaflet-marker-icon:hover .csp-dot,.leaflet-marker-icon:focus .csp-dot{animation-play-state:paused;transform:translate(-50%,-50%) scale(1.8);box-shadow:0 0 16px 3px rgba(201,169,110,0.85)}
+.leaflet-marker-icon:hover .csp-dot-hq,.leaflet-marker-icon:focus .csp-dot-hq{animation-play-state:paused;transform:translate(-50%,-50%) scale(1.5);box-shadow:0 0 22px 5px rgba(228,207,160,0.9)}
+.leaflet-marker-icon:focus{outline:none}
+.leaflet-marker-icon:focus-visible .csp-dot,.leaflet-marker-icon:focus-visible .csp-dot-hq{box-shadow:0 0 0 3px rgba(201,169,110,0.95),0 0 16px 3px rgba(201,169,110,0.6)}
+.csp-tip{font-family:'Montserrat',sans-serif;text-align:left;min-width:128px}
+.csp-tip-city{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:#fff;line-height:1.05}
+.csp-tip-state{font-size:0.56rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:4px}
+.csp-tip-cta{font-size:0.56rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-top:9px}
+</style>
 </head>
 <body>
 
@@ -3574,12 +3587,21 @@ document.addEventListener('keydown', e => {
     });
   }
 
+  const STATES = {VA:'Virginia',TX:'Texas',NC:'North Carolina',SC:'South Carolina',TN:'Tennessee',NJ:'New Jersey',FL:'Florida'};
+  const slugify = (n) => n.trim().toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
   offices.forEach(([lat, lng, city, isHQ]) => {
-    const marker = L.marker([lat, lng], { icon: dotIcon(isHQ) }).addTo(map);
+    const parts = city.split(',');
+    const cityName = parts[0].trim();
+    const abbr = (parts[1]||'').trim();
+    const stateFull = STATES[abbr] || abbr;
+    const url = 'office.html?id=' + slugify(cityName);
+    const marker = L.marker([lat, lng], { icon: dotIcon(isHQ), keyboard:true, riseOnHover:true, title: cityName+' Office', alt: cityName+', '+stateFull+'. View office page.' }).addTo(map);
     marker.bindTooltip(
-      `<span style="font-family:'Jost',sans-serif;font-size:11px;color:#C9A96E;letter-spacing:0.08em">${city}${isHQ ? ' \u2605 HQ' : ''}</span>`,
-      { className: 'csp-map-tooltip', direction: 'top', offset: [0, -6] }
+      `<div class="csp-tip"><div class="csp-tip-city">${cityName}</div><div class="csp-tip-state">${stateFull}${isHQ ? '  \u2022  Headquarters' : ''}</div><div class="csp-tip-cta">View Office \u2192</div></div>`,
+      { className: 'csp-map-tooltip', direction: 'top', offset: [0, -8] }
     );
+    marker.on('click', () => { window.location.href = url; });
+    marker.on('keypress', (e) => { const k = e.originalEvent && e.originalEvent.key; if (k==='Enter'||k===' ') { e.originalEvent.preventDefault(); window.location.href = url; } });
   });
 
   // Zoom into eastern US + Texas -- tighter, more purposeful view
@@ -3602,11 +3624,11 @@ document.addEventListener('keydown', e => {
       border-top: 1px solid rgba(201,169,110,0.1) !important;
     }
     .csp-map-tooltip {
-      background: rgba(8,21,43,0.92) !important;
-      border: 1px solid rgba(201,169,110,0.3) !important;
+      background: rgba(8,21,43,0.95) !important;
+      border: 1px solid rgba(201,169,110,0.35) !important;
       border-radius: 0 !important;
-      padding: 5px 10px !important;
-      box-shadow: none !important;
+      padding: 11px 15px !important;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
     }
     .csp-map-tooltip::before { display:none !important; }
   `;
