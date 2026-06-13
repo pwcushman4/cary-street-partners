@@ -35,22 +35,23 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      padding: 24px 40px;
+      padding: 18px 40px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(8,21,43,0.96);
+      background: rgba(8,21,43,0.97);
       transition: background 0.4s, padding 0.4s;
       border-bottom: 1px solid var(--border-dark);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
     }
     nav.scrolled {
-      background: rgba(8,21,43,0.96);
+      background: rgba(8,21,43,0.97);
       padding: 16px 40px;
       border-bottom-color: var(--border-dark);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(16px);
     }
-    .nav-logo img { height: 44px; width: auto; display: block; }
+    .nav-logo { display:flex; align-items:center; text-decoration:none; line-height:0; }
+    .nav-logo img { height: 52px; width: auto; display: block; }
     .nav-back {
       display: inline-flex;
       align-items: center;
@@ -67,9 +68,44 @@
     .nav-back svg { transition: transform 0.2s; }
     .nav-back:hover svg { transform: translateX(-3px); }
 
+    /* ---- FULL NAVIGATION (matches Locations / main site) ---- */
+    .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+    .nav-links a { font-family:'Montserrat',sans-serif; font-size:0.6875rem; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; color:rgba(255,255,255,0.75); text-decoration:none; transition:color 0.2s; position:relative; }
+    .nav-links a::after { content:''; position:absolute; bottom:-4px; left:0; right:0; height:1px; background:var(--gold); transform:scaleX(0); transform-origin:left; transition:transform 0.3s var(--ease-out); }
+    .nav-links a:hover { color:#fff; }
+    .nav-links a:hover::after { transform:scaleX(1); }
+    .nav-links a[aria-current="page"] { color:var(--gold); }
+    .nav-cta { font-family:'Montserrat',sans-serif; padding:10px 24px; background:transparent; border:1px solid var(--gold); color:var(--gold); font-size:0.6875rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; text-decoration:none; cursor:pointer; transition:background 0.25s,color 0.25s; }
+    .nav-cta:hover { background:var(--gold); color:var(--navy); }
+    .nav-mobile-toggle { display:none; background:none; border:none; cursor:pointer; padding:4px; }
+    .nav-mobile-toggle span { display:block; width:24px; height:1px; background:#fff; margin:6px 0; transition:transform 0.3s,opacity 0.3s; }
+    .nav-drawer { position:fixed; inset:0; background:var(--navy); z-index:200; display:flex; flex-direction:column; padding:80px 40px 60px; transform:translateX(100%); transition:transform 0.4s var(--ease-out); }
+    .nav-drawer.open { transform:translateX(0); }
+    .nav-drawer-close { position:absolute; top:24px; right:24px; background:none; border:none; color:#fff; cursor:pointer; padding:8px; font-size:1.5rem; line-height:1; }
+    .nav-drawer-links { display:flex; flex-direction:column; gap:0; list-style:none; flex:1; }
+    .nav-drawer-link { border-bottom:1px solid var(--border-dark); padding:20px 0; }
+    .nav-drawer-link a { font-family:'Cormorant Garamond',serif; font-size:1.75rem; font-weight:300; color:#fff; text-decoration:none; transition:color 0.2s; }
+    .nav-drawer-link a:hover { color:var(--gold); }
+    .nav-drawer-link a[aria-current="page"] { color:var(--gold); }
+    .nav-drawer-cta { margin-top:40px; }
+    .nav-drawer-overlay { display:none; }
+
+    /* In-content back link, beneath the nav (mirrors Locations page) */
+    .adv-back { display:inline-flex; align-items:center; gap:10px; margin:120px 0 0 40px; font-family:'Montserrat',sans-serif; font-size:0.6875rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.55); text-decoration:none; transition:color 0.25s; }
+    .adv-back svg { transition:transform 0.25s; }
+    .adv-back:hover { color:#fff; }
+    .adv-back:hover svg { transform:translateX(-4px); }
+
+    @media(max-width:1180px){ .nav-links{gap:24px} .nav-cta{display:none} }
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .nav-mobile-toggle{display:block}
+      .adv-back{margin:100px 0 0 24px}
+    }
+
     /* ── HERO ── */
     #hero {
-      padding: 180px 40px 100px;
+      padding: 40px 40px 100px;
       max-width: 1280px;
       margin: 0 auto;
     }
@@ -491,15 +527,46 @@
 <body>
 
 <!-- NAV -->
-<nav id="nav">
-  <a href="index.html" class="nav-logo">
-    <img src="csp-logo-nav.svg" alt="Cary Street Partners">
+<nav id="nav" aria-label="Main navigation">
+  <a href="index.html" class="nav-logo" aria-label="Cary Street Partners home">
+    <img src="csp-logo-nav.svg" alt="Cary Street Partners Wealth Management" class="nav-logo-img">
   </a>
-  <a href="index.html" class="nav-back">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Back to Homepage
-  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#who-we-serve">Who We Serve</a></li>
+    <li><a href="locations.html">Locations</a></li>
+    <li><a href="index.html#insights">Insights</a></li>
+    <li><a href="leadership.html">Leadership</a></li>
+    <li><a href="join.html" aria-current="page" style="color:var(--gold)">For Advisors</a></li>
+  </ul>
+  <a href="index.html#cta" class="nav-cta">Begin a Conversation</a>
+  <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="nav-drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <button class="nav-drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+  <ul class="nav-drawer-links">
+    <li class="nav-drawer-link"><a href="index.html#services" onclick="closeDrawer()">Services</a></li>
+    <li class="nav-drawer-link"><a href="index.html#who-we-serve" onclick="closeDrawer()">Who We Serve</a></li>
+    <li class="nav-drawer-link"><a href="locations.html">Locations</a></li>
+    <li class="nav-drawer-link"><a href="index.html#insights" onclick="closeDrawer()">Insights</a></li>
+    <li class="nav-drawer-link"><a href="leadership.html">Leadership</a></li>
+    <li class="nav-drawer-link"><a href="join.html" aria-current="page" style="color:var(--gold)">For Advisors</a></li>
+  </ul>
+  <div class="nav-drawer-cta">
+    <a href="index.html#cta" class="btn-primary" onclick="closeDrawer()" style="display:inline-flex">Begin a Conversation
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</div>
+<div class="nav-drawer-overlay" id="drawerOverlay"></div>
+
+<a href="index.html" class="adv-back">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  Back to Cary Street Partners
+</a>
 
 <!-- HERO -->
 <section id="hero">
@@ -738,6 +805,17 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 revealEls.forEach(el => observer.observe(el));
+
+// Mobile drawer
+const navDrawer = document.getElementById('navDrawer');
+const drawerOverlay = document.getElementById('drawerOverlay');
+const mobileToggle = document.getElementById('mobileToggle');
+const drawerClose = document.getElementById('drawerClose');
+function closeDrawer(){ navDrawer.classList.remove('open'); if(mobileToggle) mobileToggle.setAttribute('aria-expanded','false'); }
+if (mobileToggle){
+  mobileToggle.addEventListener('click', () => { navDrawer.classList.add('open'); mobileToggle.setAttribute('aria-expanded','true'); });
+  drawerClose.addEventListener('click', closeDrawer);
+}
 
 // Form handler
 function handleSubmit(e) {
